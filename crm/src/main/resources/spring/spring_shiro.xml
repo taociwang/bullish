@@ -47,12 +47,10 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 /login.html=anon
                 /login.do=anon
                 /1.html=anon
+                /wpt/clien.html=anon
                 /welcome.html=anon
-                /static/layui/**=anon
-                /static/template/**=anon
-                /js/**=anon
-                /swagger/**=anon
-                /**=authc
+                /static/**=anon
+                /**=anon
 
             </value>
         </property>
