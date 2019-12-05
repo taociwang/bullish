@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"> <!-- bean definitions here -->
+
+    <!--安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"></property>
+    </bean>
+    <!--自己的授权认证领域-->
+    <bean id="myRealm" class="com.hy.crm.shiro.MyRealm">
+        <!--加密-->
+        <property name="credentialsMatcher" >
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <!--加密方式-->
+                <property name="hashAlgorithmName" value="MD5"></property>
+                <!--加密次数-->
+                <property name="hashIterations" value="1000"></property>
+            </bean>
+        </property>
+    </bean>
+    <!--shiro的web过滤器 id名称必须和web的targetFilterLifecycle名称一样（shiroFilter）-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!--注入安全管理器 必须配置-->
+        <property name="securityManager" ref="securityManager"></property>
+        <!--没有登录认证访问需要登录认证的页面跳转指定地址-->
+        <property name="loginUrl" value="/login.html"></property>
+        <!--
+        	配置哪些页面需要受保护.
+        	以及访问这些页面需要的权限.
+        	1). anon 可以被匿名访问
+        	2). authc 必须认证(即登录)后才可能访问的页面.
+        	3). logout 登出.
+        	4). roles 角色过滤器
+        -->
+        <property name="filterChainDefinitions">
+            <value>
+                /login.html=anon
+                /login.do=anon
+                /1.html=anon
+                /welcome.html=anon
+                /static/layui/**=anon
+                /static/template/**=anon
+                /js/**=anon
+                /swagger/**=anon
+                /**=authc
+
+            </value>
+        </property>
+    </bean>
+</beans>

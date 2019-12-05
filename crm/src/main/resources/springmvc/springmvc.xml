@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd"> <!-- bean definitions here -->
+
+    <!--配置注解处理器映射器和适配器-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+
+    <!--开启注解扫描-->
+    <context:component-scan base-package="com.hy.crm"></context:component-scan>
+
+    <!--配置template模板解析器-->
+    <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <property name="characterEncoding" value="utf-8"></property>
+        <property name="templateMode" value="HTML5"></property>
+        <property name="prefix" value="/emp_template/"></property>
+        <property name="cacheable" value="false"></property>
+        <property name="suffix" value=".html"></property>
+        <property name="order" value="0"></property>
+    </bean>
+
+    <!--配置thymeleaf 模板引擎-->
+    <bean id="templateEngine" class="org.thymeleaf.TemplateEngine">
+        <property name="templateResolver" ref="templateResolver"></property>
+    </bean>
+    <!--配置thymeleaf 视图解析器-->
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"></property>
+        <property name="characterEncoding" value="utf-8"></property>
+        <property name="order" value="1"></property>
+    </bean>
+    <!--配置jsp 模板引擎-->
+    <bean id="resourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="2"></property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--  set the max upload size100MB     -->
+        <property name="maxUploadSize">
+            <value>104857600</value>
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+    </bean>
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor"  class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--开启Shiro的注解，实现对Controller的方法级权限检查(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证-->
+    <!--配置以下两个bean即可实现此功能 -->
+    <!--Enable Shiro Annotations for Spring-configured beans. Only run after thelifecycleBeanProcessor has run -->
+    <bean  class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+           depends-on="lifecycleBeanPostProcessor" >
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+    <bean  class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
+    </bean>
+
+    <!-- 配置SpringMVC的异常解析器 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!-- 发生授权异常时，跳到指定页 -->
+                <prop  key="org.apache.shiro.authz.UnauthorizedException">/error</prop>
+
+                <!--SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException-->
+                <!--遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/error_fileupload.jsp页面-->
+                <!-- <propkey="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/error_fileupload</prop>-->
+            </props>
+        </property>
+    </bean>
+</beans>
