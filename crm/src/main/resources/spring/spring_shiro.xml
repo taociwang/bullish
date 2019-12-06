@@ -48,7 +48,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 /login.do=anon
                 /1.html=anon
                 /wpt/clien.html=anon
-                /welcome.html=anon
+               /welcome.html=anon
                 /static/**=anon
                 /**=anon
 
