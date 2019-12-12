@@ -136,12 +136,12 @@
             $('#loginBtn').val("正在登录...");
             $.ajax({
                 type: 'post',
-                url: '/spring_mybatis_10_8_war_exploded/querylogin.do',
+                url: 'crm/user/login.do',
                 data: {username: loginUsername, password: loginPassword},
                 success: function (data) {
                     layer.close(loginLoadIndex);
-                    if ( data === '1') {
-                        window.location.href = 'layui.html?usern='+loginUsername;
+                    if ( data === '1' || data===1) {
+                        window.location.href = '1.html?usern='+loginUsername;
                     } else {
                         layer.msg("登录失败", {icon: 5});
                         $('#loginBtn').val("登录");
