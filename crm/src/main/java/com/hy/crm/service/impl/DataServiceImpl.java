@@ -24,7 +24,7 @@ public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements ID
     private DataMapper dataMapper;
 
     /**
-     * 根据类别id查询所有类别
+     * 根据typeid查询所有类别
      * @param typeid
      * @return
      */

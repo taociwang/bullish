@@ -1,9 +1,15 @@
 package com.hy.crm.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.hy.crm.entity.Data;
+import com.hy.crm.service.impl.DataServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/crm/data")
 public class DataController {
+    @Autowired
+    private DataServiceImpl dataService;
 
+    @RequestMapping("/query.do")
+    public List<Data> query() {
+        return dataService.list(new QueryWrapper<Data>().eq("typeid",607));
+    }
 }
