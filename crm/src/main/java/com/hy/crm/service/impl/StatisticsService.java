@@ -140,4 +140,51 @@ public class StatisticsService {
         return dataMapper.sourecStatistics();
     }
 
+    /**
+     * 所有商机
+     */
+    public List<TypeStatisticsBo> funnel(){
+        List<TypeStatisticsBo> list=businessMapper.funnel();
+        TypeStatisticsBo bo=businessMapper.funnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
+    /**
+     * 本年度商机
+     */
+    public List<TypeStatisticsBo> yearFunnel(){
+        List<TypeStatisticsBo> list=businessMapper.yearFunnel();
+        TypeStatisticsBo bo=businessMapper.yearFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
+
+    /**
+     * 上年度商机
+     */
+    public List<TypeStatisticsBo> lastYearFunnel(){
+        List<TypeStatisticsBo> list=businessMapper.lastYearFunnel();
+        TypeStatisticsBo bo=businessMapper.lastYearFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
+
+    /**
+     * 本季度商机
+     */
+    public List<TypeStatisticsBo> quarterFunnel(){
+        List<TypeStatisticsBo> list=businessMapper.quarterFunnel();
+        TypeStatisticsBo bo=businessMapper.quarterFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
+    /**
+     * 上季度商机
+     */
+    public List<TypeStatisticsBo> lastQuarterFunnel(){
+        List<TypeStatisticsBo> list=businessMapper.lastQuarterFunnel();
+        TypeStatisticsBo bo=businessMapper.lastQuarterFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
 }
