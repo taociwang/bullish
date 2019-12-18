@@ -73,7 +73,7 @@ public class StatisticsService {
     public StatisticsBo week_statistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.weekByUId(userid));
         statistics.setBus_last_coutn(businessMapper.lastWeekByUserid(userid));
         statistics.setCon_count(contractMapper.weekByUserid(userid));
@@ -92,7 +92,7 @@ public class StatisticsService {
     public StatisticsBo monthStatistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.monthByUserid(userid));
         statistics.setBus_last_coutn(businessMapper.lastMonthByUserid(userid));
         statistics.setCon_count(contractMapper.monthByUserid(userid));
@@ -111,7 +111,7 @@ public class StatisticsService {
     public StatisticsBo quarterStatistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.quarterByUserid(userid));
         statistics.setBus_last_coutn(businessMapper.lastQuarterByUserid(userid));
         statistics.setCon_count(contractMapper.quarterByUserid(userid));

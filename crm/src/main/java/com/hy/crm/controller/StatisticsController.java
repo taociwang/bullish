@@ -37,7 +37,7 @@ public class StatisticsController {
     public String weekStatistics(HttpServletRequest request, Model model){
         //User user=(User) request.getSession().getAttribute("user");
         User user=new User();
-        user.setId("1");
+        user.setId(1);
         user.setUsername("张三");
         model.addAttribute("statistics",statisticsService.week_statistics(user));
         return "statistics/week";
@@ -52,7 +52,7 @@ public class StatisticsController {
     public String monthStatistics(HttpServletRequest request, Model model){
         //User user=(User) request.getSession().getAttribute("user");
         User user=new User();
-        user.setId("1");
+        user.setId(1);
         user.setUsername("张三");
         model.addAttribute("statistics",statisticsService.monthStatistics(user));
         return "statistics/month";
@@ -67,7 +67,7 @@ public class StatisticsController {
     public String quarterStatistics(HttpServletRequest request, Model model){
         //User user=(User) request.getSession().getAttribute("user");
         User user=new User();
-        user.setId("1");
+        user.setId(1);
         user.setUsername("张三");
         model.addAttribute("statistics",statisticsService.monthStatistics(user));
         return "statistics/quarter";
