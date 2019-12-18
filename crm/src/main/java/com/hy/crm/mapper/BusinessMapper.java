@@ -1,6 +1,7 @@
 package com.hy.crm.mapper;
 
 import com.hy.crm.bo.StatisticsBo;
+import com.hy.crm.bo.TypeStatisticsBo;
 import com.hy.crm.entity.Business;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
@@ -77,5 +78,45 @@ public interface BusinessMapper extends BaseMapper<Business> {
     public List<StatisticsBo> lastQuarter_g();
     @Select("SELECT count(*) from Business where QUARTER(date)=QUARTER(DATE_SUB(now(),interval 1 QUARTER)) and userid=#{userid}")
     public Integer lastQuarterByUserid(String userid);
+
+    /**
+     * 漏斗 所有
+     */
+    @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did  GROUP BY b.syzt) a order by a.count")
+    public List<TypeStatisticsBo> funnel();
+    @Select("select count(*),sum(predictsum) from business")
+    public TypeStatisticsBo funnelCount();
+
+    /**
+     * 漏斗 本年度
+     */
+    @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now()) GROUP BY b.syzt) a order by a.count")
+    public List<TypeStatisticsBo> yearFunnel();
+    @Select("select count(*),sum(predictsum) from business where YEAR(b.date) = YEAR(now())")
+    public TypeStatisticsBo yearFunnelCount();
+
+    /**
+     * 漏斗 上年度
+     */
+    @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now())-1 GROUP BY b.syzt) a order by a.count")
+    public List<TypeStatisticsBo> lastYearFunnel();
+    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())-1")
+    public TypeStatisticsBo lastYearFunnelCount();
+
+    /**
+     * 漏斗 本季度
+     */
+    @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now()) GROUP BY b.syzt) a order by a.count")
+    public List<TypeStatisticsBo> quarterFunnel();
+    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())")
+    public TypeStatisticsBo quarterFunnelCount();
+
+    /**
+     * 漏斗 上季度
+     */
+    @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now())-1 GROUP BY b.syzt) a order by a.count")
+    public List<TypeStatisticsBo> lastQuarterFunnel();
+    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())-1")
+    public TypeStatisticsBo lastQuarterFunnelCount();
 
 }
