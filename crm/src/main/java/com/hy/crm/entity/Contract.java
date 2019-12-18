@@ -114,6 +114,16 @@ public class Contract implements Serializable {
      */
     private String clienid;
 
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
     public String getClienid() {
         return clienid;
     }

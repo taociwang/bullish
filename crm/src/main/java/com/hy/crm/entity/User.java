@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    private String id;
 
     /**
      * 用户名称
@@ -63,10 +64,19 @@ public class User implements Serializable {
         this.state = state;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-        "username=" + username +
+                "id="+ id +
+        ",username=" + username +
         ", password=" + password +
         ", phone=" + phone +
         ", state=" + state +

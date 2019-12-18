@@ -90,6 +90,19 @@ public class After_sale implements Serializable {
      */
     private Integer serve_grade;
 
+    /**
+     * 用户id
+     */
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
     public Integer getServe_grade() {
         return serve_grade;
     }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration >
+
+    <!--日志 LOG4J-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <!--mybatis 开启二级缓存-->
+        <setting name="cacheEnabled" value="true"></setting>
+    </settings>
+
+    <!--批量别名-->
+    <typeAliases>
+        <package name="com.hy.crm.entity"></package>
+    </typeAliases>
+
+    <!--批量加载映射文件-->
+    <!--<mappers>
+        &lt;!&ndash;<package name="com.hy.mybatis.mapper"></package>&ndash;&gt;
+        <mapper resource="mapper/EmpMapper.xml"></mapper>
+    </mappers>-->
+</configuration>
