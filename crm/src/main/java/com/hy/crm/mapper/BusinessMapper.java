@@ -84,7 +84,7 @@ public interface BusinessMapper extends BaseMapper<Business> {
      */
     @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did  GROUP BY b.syzt) a order by a.count")
     public List<TypeStatisticsBo> funnel();
-    @Select("select count(*),sum(predictsum) from business")
+    @Select("select count(*) count,sum(predictsum) sum from business")
     public TypeStatisticsBo funnelCount();
 
     /**
@@ -92,7 +92,7 @@ public interface BusinessMapper extends BaseMapper<Business> {
      */
     @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now()) GROUP BY b.syzt) a order by a.count")
     public List<TypeStatisticsBo> yearFunnel();
-    @Select("select count(*),sum(predictsum) from business where YEAR(b.date) = YEAR(now())")
+    @Select("select count(*) count,sum(predictsum) sum from business where YEAR(date) = YEAR(now())")
     public TypeStatisticsBo yearFunnelCount();
 
     /**
@@ -100,7 +100,7 @@ public interface BusinessMapper extends BaseMapper<Business> {
      */
     @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now())-1 GROUP BY b.syzt) a order by a.count")
     public List<TypeStatisticsBo> lastYearFunnel();
-    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())-1")
+    @Select("select count(*) count ,sum(predictsum) sum from business where YEAR(date) = YEAR(now())-1")
     public TypeStatisticsBo lastYearFunnelCount();
 
     /**
@@ -108,7 +108,7 @@ public interface BusinessMapper extends BaseMapper<Business> {
      */
     @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now()) GROUP BY b.syzt) a order by a.count")
     public List<TypeStatisticsBo> quarterFunnel();
-    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())")
+    @Select("select count(*) count ,sum(predictsum) sum from business where YEAR(date) = YEAR(now())")
     public TypeStatisticsBo quarterFunnelCount();
 
     /**
@@ -116,7 +116,7 @@ public interface BusinessMapper extends BaseMapper<Business> {
      */
     @Select("SELECT * from (select d.type_name  typeName ,count(b.bid) count,IFNULL(sum(b.predictsum),0) sum from data d LEFT JOIN business b on b.syzt=d.did where typeid=4 and YEAR(b.date) = YEAR(now())-1 GROUP BY b.syzt) a order by a.count")
     public List<TypeStatisticsBo> lastQuarterFunnel();
-    @Select("select count(*),sum(predictsum) from business where YEAR(date) = YEAR(now())-1")
+    @Select("select count(*) count,sum(predictsum) sum from business where YEAR(date) = YEAR(now())-1")
     public TypeStatisticsBo lastQuarterFunnelCount();
 
 }

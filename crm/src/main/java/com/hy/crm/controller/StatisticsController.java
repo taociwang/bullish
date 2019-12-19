@@ -2,6 +2,7 @@ package com.hy.crm.controller;
 
 import com.hy.crm.bo.TypeStatisticsBo;
 import com.hy.crm.entity.User;
+import com.hy.crm.mapper.BusinessMapper;
 import com.hy.crm.service.impl.StatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -113,4 +114,55 @@ public class StatisticsController {
     public List<TypeStatisticsBo> industry(Model model){
         return statisticsService.industryStatistics();
     }
+
+    /**
+     * 所有商机 统计成交数量 成交金额
+     * @return
+     */
+    @RequestMapping("/funnel.do")
+    @ResponseBody
+    public List<TypeStatisticsBo> funnel(){
+        return statisticsService.funnel();
+    }
+
+    /**
+     * 年度商机 统计成交数量 成交金额
+     * @return
+     */
+    @RequestMapping("/yearFunnel.do")
+    @ResponseBody
+    public List<TypeStatisticsBo> yearFunnel(){
+        return statisticsService.yearFunnel();
+    }
+
+    /**
+     * 上年度商机 统计成交数量 成交金额
+     * @return
+     */
+    @RequestMapping("/lastYearFunnel.do")
+    @ResponseBody
+    public List<TypeStatisticsBo> lastYearFunnel(){
+        return statisticsService.lastYearFunnel();
+    }
+
+    /**
+     * 本季度商机 统计成交数量 成交金额
+     * @return
+     */
+    @RequestMapping("/quarterFunnel.do")
+    @ResponseBody
+    public List<TypeStatisticsBo> quarterFunnel(){
+        return statisticsService.quarterFunnel();
+    }
+
+    /**
+     * 上季度商机 统计成交数量 成交金额
+     * @return
+     */
+    @RequestMapping("/lastQuarterFunnel.do")
+    @ResponseBody
+    public List<TypeStatisticsBo> lastQuarterFunnel(){
+        return statisticsService.lastQuarterFunnel();
+    }
+
 }
