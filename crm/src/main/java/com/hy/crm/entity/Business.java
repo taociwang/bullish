@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -10,10 +14,11 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName(value = "business")
 public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId(value = "bid",type = IdType.AUTO)
     private Integer bid;
 
     /**
@@ -95,6 +100,80 @@ public class Business implements Serializable {
      * 商机所属部门
      */
     private String sjssbm;
+    /*
+    * 预计时间
+    * */
+    public String date;
+    /*
+    * 客户来源
+    * */
+    public String khly;
+    /*
+    * 职务
+    * */
+    public String duty;
+    /*
+    * 电话
+    * */
+    public Integer bphone;
+
+    /*
+    * 邮箱
+    * */
+    public String bmailbox;
+
+    /*
+    * 最后跟单时间
+    * */
+    public String zdate;
+
+    public String getZdate() {
+        return zdate;
+    }
+
+    public void setZdate(String zdate) {
+        this.zdate = zdate;
+    }
+
+    public Integer getBphone() {
+        return bphone;
+    }
+
+    public void setBphone(Integer bphone) {
+        this.bphone = bphone;
+    }
+
+    public String getBmailbox() {
+        return bmailbox;
+    }
+
+    public void setBmailbox(String bmailbox) {
+        this.bmailbox = bmailbox;
+    }
+
+    public String getDuty() {
+        return duty;
+    }
+
+    public void setDuty(String duty) {
+        this.duty = duty;
+    }
+
+    public String getKhly() {
+        return khly;
+    }
+
+    public void setKhly(String khly) {
+        this.khly = khly;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public Integer getBid() {
         return bid;
@@ -219,23 +298,29 @@ public class Business implements Serializable {
     @Override
     public String toString() {
         return "Business{" +
-        "bid=" + bid +
-        ", bname=" + bname +
-        ", kname=" + kname +
-        ", bsshy=" + bsshy +
-        ", psheng=" + psheng +
-        ", pshi=" + pshi +
-        ", pqu=" + pqu +
-        ", bsite=" + bsite +
-        ", predictsum=" + predictsum +
-        ", blxr=" + blxr +
-        ", cyr=" + cyr +
-        ", fzr=" + fzr +
-        ", gzr=" + gzr +
-        ", ywxq=" + ywxq +
-        ", syzt=" + syzt +
-        ", xgfj=" + xgfj +
-        ", sjssbm=" + sjssbm +
-        "}";
+                "bid=" + bid +
+                ", bname='" + bname + '\'' +
+                ", kname='" + kname + '\'' +
+                ", bsshy='" + bsshy + '\'' +
+                ", psheng='" + psheng + '\'' +
+                ", pshi='" + pshi + '\'' +
+                ", pqu='" + pqu + '\'' +
+                ", bsite='" + bsite + '\'' +
+                ", predictsum=" + predictsum +
+                ", blxr='" + blxr + '\'' +
+                ", cyr='" + cyr + '\'' +
+                ", fzr='" + fzr + '\'' +
+                ", gzr='" + gzr + '\'' +
+                ", ywxq='" + ywxq + '\'' +
+                ", syzt='" + syzt + '\'' +
+                ", xgfj='" + xgfj + '\'' +
+                ", sjssbm='" + sjssbm + '\'' +
+                ", date='" + date + '\'' +
+                ", khly='" + khly + '\'' +
+                ", duty='" + duty + '\'' +
+                ", bphone=" + bphone +
+                ", bmailbox='" + bmailbox + '\'' +
+                ", zdate='" + zdate + '\'' +
+                '}';
     }
 }

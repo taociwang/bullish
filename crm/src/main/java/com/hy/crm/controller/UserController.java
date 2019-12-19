@@ -49,6 +49,16 @@ public class UserController {
         return i;
     }
 
+    /*
+    *
+    * 修改用户密码
+    * */
+    public String updateuser(){
+        return "";
+    }
+
+
+
     /**
      * 退出登录
      */

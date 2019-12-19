@@ -2,6 +2,10 @@ package com.hy.crm.mapper;
 
 import com.hy.crm.entity.Data;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +15,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author wangsq
  * @since 2019-12-04
  */
+@Mapper
 public interface DataMapper extends BaseMapper<Data> {
+    //查询所有班级
+    @Select("select * from data")
+    public List<Data> queryData();
 
 }

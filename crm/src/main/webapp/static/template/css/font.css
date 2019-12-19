@@ -4,7 +4,7 @@
   src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
   url('../fonts/iconfont.woff') format('woff'),
   url('../fonts/iconfont.ttf') format('truetype'),
-  url('../fonts/iconfont.svg#iconfont') format('svg');
+  url('//fonts/iconfont.svg#iconfont') format('svg');
 }
 .iconfont{
   font-family:"iconfont" !important;

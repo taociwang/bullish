@@ -1,6 +1,9 @@
 package com.hy.crm.controller;
 
 
+import com.hy.crm.service.impl.DataServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -16,5 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/crm/data")
 public class DataController {
+    @Autowired
+    private DataServiceImpl dataService;
+    @RequestMapping(value = "/toadd.do")
+    public String toadd(Model model){
+        model.addAttribute("datalist",dataService.queryData());
+        return "clien/add";
+    }
 
 }

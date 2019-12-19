@@ -22,7 +22,7 @@
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="characterEncoding" value="utf-8"></property>
         <property name="templateMode" value="HTML5"></property>
-        <property name="prefix" value="/emp_template/"></property>
+        <property name="prefix" value="/"></property>
         <property name="cacheable" value="false"></property>
         <property name="suffix" value=".html"></property>
         <property name="order" value="0"></property>
@@ -69,16 +69,16 @@
     </bean>
 
     <!-- 配置SpringMVC的异常解析器 -->
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+   <!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <!-- 发生授权异常时，跳到指定页 -->
+                &lt;!&ndash; 发生授权异常时，跳到指定页 &ndash;&gt;
                 <prop  key="org.apache.shiro.authz.UnauthorizedException">/error</prop>
 
-                <!--SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException-->
-                <!--遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/error_fileupload.jsp页面-->
-                <!-- <propkey="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/error_fileupload</prop>-->
+                &lt;!&ndash;SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException&ndash;&gt;
+                &lt;!&ndash;遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/error_fileupload.jsp页面&ndash;&gt;
+                &lt;!&ndash; <propkey="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/error_fileupload</prop>&ndash;&gt;
             </props>
         </property>
-    </bean>
+    </bean>-->
 </beans>

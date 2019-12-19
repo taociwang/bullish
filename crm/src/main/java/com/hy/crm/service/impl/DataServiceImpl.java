@@ -4,7 +4,10 @@ import com.hy.crm.entity.Data;
 import com.hy.crm.mapper.DataMapper;
 import com.hy.crm.service.IDataService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements IDataService {
+    @Autowired
+    private DataMapper dataMapper;
+    public List<Data> queryData(){
+        return dataMapper.queryData();
+    }
 
 }
