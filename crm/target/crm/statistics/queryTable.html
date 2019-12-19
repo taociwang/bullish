@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="utf-8">
     <title>Layui</title>
@@ -33,19 +33,19 @@
                 <div class="layui-card-body">
                     <div  class="divcss5-b">
                         <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/statistics/query.html">我的统计</a><br>
-                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/weekStatistics.do">本周统计</a><br>
+                        <a href="/emp/download.do">本周统计</a><br>
                         <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/monthStatistics.do">本月统计</a><br>
+                        <a href="/emp/download.do">本月统计</a><br>
                         <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/quarterStatistics.do">本季度统计</a><br>
+                        <a href="/emp/download.do">本季度统计</a><br>
                         <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/statistics/funnel.html">商机销售漏斗</a><br>
-                        <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/industryStatistics.do">行业分布</a><br>
+                        <a href="/emp/download.do">本年度统计</a><br>
                         <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
-                        <a href="/sourceStatistics.do">商机来源</a><br>
+                        <a href="/emp/download.do">商机销售漏斗</a><br>
+                        <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/emp/download.do">行业分布</a><br>
+                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/emp/download.do">商机来源</a><br>
                     </div>
                     <br><br><br><br><br><br>
                 </div>
@@ -54,24 +54,7 @@
         <div class="layui-col-md10">
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <table border="1"  class="layui-table">
-                        <thead>
-                        <tr>
-                            <td rowspan="2">姓名</td><td colspan="2">商机数</td><td colspan="2">成交数</td ><td colspan="2">跟单数</td><td colspan="2">合同数</td>
-                        </tr>
-                        <tr>
-                            <td>本周</td><td>上周</td><td>本周</td><td>上周</td><td>本周</td><td>上周</td><td>本周</td><td>上周</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td th:text="${statistics.username}">
-                            <td th:text="${statistics.bus_count}"><td th:text="${statistics.bus_last_coutn}"><td th:text="${statistics.succ_count}"><td th:text="${statistics.succ_last_coutn}">
-                            <td th:text="${statistics.doc_count}"><td th:text="${statistics.doc_last_coutn}"><td th:text="${statistics.con_count}"><td th:text="${statistics.con_last_coutn}">
-                        </tr>
-                        </tbody>
-                    </table>
-                    <!--<table class="layui-hide" id="test" lay-filter="test"></table>-->
+                    <table class="layui-hide" id="test" lay-filter="test"></table>
                 </div>
             </div>
         </div>
@@ -80,6 +63,16 @@
         </div>
     </div>
 </div>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+    </div>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
 
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
@@ -93,6 +86,31 @@
         //监听折叠
         element.on('collapse(test)', function(data){
             layer.msg('展开状态：'+ data.show);
+        });
+        //table 渲染
+        table.render({
+            elem: '#test'
+            ,url:'/crm/after-sale/query.do'
+            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            ,defaultToolbar: [ ]
+            ,title: '用户数据表'
+            ,cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                ,{field:'ename', title:'主题', width:120, templet:'<div>{{ d.LAY_INDEX }}</div>'}
+                ,{field:'serve_type', title:'服务类型', width:150, edit: 'text'}
+                ,{field:'state_time', title:'开始时间', width:150, templet: function(d){
+                        if (d.state_time == null)
+                        {
+                            return "";
+                        }
+                        return util.toDateString(d.state_time, "yyyy-MM-dd");
+                    }}
+                ,{field:'serve_per', title:'服务人员', width:150}
+                ,{field:'', title:'服务评分', width:150}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+            ]]
+            ,page: true
+            ,limit:3
         });
     });
 </script>

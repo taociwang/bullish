@@ -73,7 +73,7 @@ public class StatisticsService {
     public StatisticsBo week_statistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.weekByUId(userid));
         statistics.setBus_last_coutn(businessMapper.lastWeekByUserid(userid));
         statistics.setCon_count(contractMapper.weekByUserid(userid));
@@ -92,7 +92,7 @@ public class StatisticsService {
     public StatisticsBo monthStatistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.monthByUserid(userid));
         statistics.setBus_last_coutn(businessMapper.lastMonthByUserid(userid));
         statistics.setCon_count(contractMapper.monthByUserid(userid));
@@ -111,7 +111,7 @@ public class StatisticsService {
     public StatisticsBo quarterStatistics(User user){
         StatisticsBo statistics=new StatisticsBo();
         statistics.setUsername(user.getUsername());
-        String userid=user.getId();
+        String userid=user.getId()+"";
         statistics.setBus_count(businessMapper.quarterByUserid(userid));
         statistics.setBus_last_coutn(businessMapper.lastQuarterByUserid(userid));
         statistics.setCon_count(contractMapper.quarterByUserid(userid));
@@ -141,47 +141,50 @@ public class StatisticsService {
     }
 
     /**
-     * 根据商机阶段分类 查询商机数 总金额 升序
-     * @return
+     * 所有商机
      */
     public List<TypeStatisticsBo> funnel(){
         List<TypeStatisticsBo> list=businessMapper.funnel();
-        TypeStatisticsBo bo=businessMapper.len();
-        bo.setTypeName("初次沟通");
-        list.add(bo);
+        TypeStatisticsBo bo=businessMapper.funnelCount();
+        bo.setTypeName("所有商机");
+        return list;
+    }
+    /**
+     * 本年度商机
+     */
+    public List<TypeStatisticsBo> yearFunnel(){
+        List<TypeStatisticsBo> list=businessMapper.yearFunnel();
+        TypeStatisticsBo bo=businessMapper.yearFunnelCount();
+        bo.setTypeName("所有商机");
         return list;
     }
 
     /**
-     * 根据商机阶段分类 查询商机数 总金额 升序 年度
-     * @return
-     */
-    public List<TypeStatisticsBo> yearFunnel(){
-        return  businessMapper.yearFunnel();
-    }
-
-    /**
-     * 根据商机阶段分类 查询商机数 总金额 升序 上年度
-     * @return
+     * 上年度商机
      */
     public List<TypeStatisticsBo> lastYearFunnel(){
-        return  businessMapper.lastYearFunnel();
+        List<TypeStatisticsBo> list=businessMapper.lastYearFunnel();
+        TypeStatisticsBo bo=businessMapper.lastYearFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
     }
 
     /**
-     * 根据商机阶段分类 查询商机数 总金额 升序 季度
-     * @return
+     * 本季度商机
      */
     public List<TypeStatisticsBo> quarterFunnel(){
-        return  businessMapper.quarterFunnel();
+        List<TypeStatisticsBo> list=businessMapper.quarterFunnel();
+        TypeStatisticsBo bo=businessMapper.quarterFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
     }
-
     /**
-     * 根据商机阶段分类 查询商机数 总金额 升序 上季度
-     * @return
+     * 上季度商机
      */
     public List<TypeStatisticsBo> lastQuarterFunnel(){
-        return  businessMapper.quarterFunnel();
+        List<TypeStatisticsBo> list=businessMapper.lastQuarterFunnel();
+        TypeStatisticsBo bo=businessMapper.lastQuarterFunnelCount();
+        bo.setTypeName("所有商机");
+        return list;
     }
-
 }
