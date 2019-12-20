@@ -1,5 +1,8 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -14,6 +17,7 @@ public class Clien implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "cid",type = IdType.AUTO)
     private Integer cid;
 
     /**
@@ -122,6 +126,49 @@ public class Clien implements Serializable {
      * 税号
      */
     private Integer shuihao;
+
+    /*
+     * 拼音
+     * */
+    private String spell;
+
+    /*
+     * 客户来源
+     * */
+    private String khly;
+
+    /*
+     * 银行电话
+     * */
+    private Integer yhphone;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getSpell() {
+        return spell;
+    }
+
+    public void setSpell(String spell) {
+        this.spell = spell;
+    }
+
+    public String getKhly() {
+        return khly;
+    }
+
+    public void setKhly(String khly) {
+        this.khly = khly;
+    }
+
+    public Integer getYhphone() {
+        return yhphone;
+    }
+
+    public void setYhphone(Integer yhphone) {
+        this.yhphone = yhphone;
+    }
 
     public Integer getCid() {
         return cid;

@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -14,6 +18,7 @@ public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "bid",type = IdType.AUTO)
     private Integer bid;
 
     /**
@@ -108,6 +113,37 @@ public class Business implements Serializable {
      * 用户id
      */
     private String userid;
+
+    /*
+     * 最后跟单时间
+     * */
+    private String zdate;
+
+    /*
+     * 邮箱
+     * */
+    private String bmailbox;
+
+    /*
+     * 职务
+     * */
+    private String duty;
+    /*
+     * 电话
+     * */
+    private Integer bphone;
+
+    /*
+     * 客户来源
+     * */
+    private String khly;
+
+    /*
+     * 商机阶段
+     *
+     * */
+    @TableField(exist = false)
+    private Data data;
 
     public String getUserid() {
         return userid;
