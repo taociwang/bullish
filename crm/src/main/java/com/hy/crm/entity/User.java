@@ -2,6 +2,7 @@ package com.hy.crm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
@@ -13,12 +14,17 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName("user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @TableId(type = IdType.AUTO )
     private Integer id;
 
+    /*
+    * 头像
+    * */
+    private String head;
     /**
      * 用户名称
      */
@@ -34,10 +40,20 @@ public class User implements Serializable {
      */
     private String phone;
 
+
+
     /**
      * 状态 0不可在登入，1可登录
      */
     private Integer state;
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
+    }
 
     public String getUsername() {
         return username;
@@ -79,10 +95,12 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-        "username=" + username +
-        ", password=" + password +
-        ", phone=" + phone +
-        ", state=" + state +
-        "}";
+                "head='" + head + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", state=" + state +
+                ", id=" + id +
+                '}';
     }
 }

@@ -22,6 +22,7 @@ import java.util.List;
 public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements IDataService {
     @Autowired
     private DataMapper dataMapper;
+<<<<<<< HEAD
 
     /**
      * 根据类别id查询所有类别
@@ -32,6 +33,10 @@ public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements ID
         QueryWrapper wrapper=new QueryWrapper();
         wrapper.eq("typeid",typeid);
         return dataMapper.selectList(wrapper);
+=======
+    public List<Data> queryData(){
+        return dataMapper.queryData();
+>>>>>>> 170e2f08efdc6a18be8b9b89885ba2ba244e29f1
     }
 
 }

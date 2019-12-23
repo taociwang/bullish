@@ -1,13 +1,16 @@
 package com.hy.crm.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hy.crm.entity.User;
 import com.hy.crm.service.IUserService;
 import com.hy.crm.service.impl.UserServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +31,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/crm/user")
 public class UserController {
+    @Autowired
+    private UserServiceImpl userService;
 
     /**
      * 登入
@@ -49,6 +54,31 @@ public class UserController {
         return i;
     }
 
+
+    /*
+     * 注册
+     * */
+    @RequestMapping("/user_add.do")
+    @ResponseBody
+    public String user_add(User user){
+        String hashAlgorithmName = "MD5";//加密方式
+        Object credentials = user.getPassword();//要加密的密码
+        Object salt = ByteSource.Util.bytes(user.getUsername());//加的盐
+        int hashIterations = 1000;//加密次数
+        Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
+        user.setPassword(result.toString());
+        boolean jia = userService.add(user);
+        Integer id = userService.getIdByName(user.getUsername());
+        /*if (jia){
+            System.out.println("============================================================================="+uid);
+            *//*Login_Role login_role = new Login_Role();
+            login_role.setRid(5);
+            login_role.setUid(uid);
+            login_roleService.saveOrUpdate(login_role);*//*
+        }*/
+        return "/login";
+    }
+
     /**
      * 退出登录
      */
@@ -57,4 +87,14 @@ public class UserController {
         request.getSession().invalidate();
         return "redirect:/login.html";
     }
+/*
+* 验证用户名是否存在
+* */
+    @RequestMapping("/username.do")
+    @ResponseBody
+    public User username(String username){
+         return userService.getOne(new QueryWrapper<User>().eq("username",username));
+    }
+
+
 }

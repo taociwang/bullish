@@ -1,5 +1,10 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -10,10 +15,11 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName(value = "business")
 public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId(value = "bid",type = IdType.AUTO)
     private Integer bid;
 
     /**
@@ -116,6 +122,90 @@ public class Business implements Serializable {
     public void setUserid(String userid) {
         this.userid = userid;
     }
+    public Integer getClienid() {
+        return clienid;
+    }
+
+    public void setClienid(Integer clienid) {
+        this.clienid = clienid;
+    }
+    /*
+    * 客户来源
+    * */
+    private String khly;
+    /*
+    * 职务
+    * */
+    private String duty;
+    /*
+    * 电话
+    * */
+    private Integer bphone;
+
+    /*
+    * 邮箱
+    * */
+    private String bmailbox;
+
+    /*
+    * 最后跟单时间
+    * */
+    private String zdate;
+
+    /*
+    * 商机阶段
+    *
+    * */
+    @TableField(exist = false)
+    private Data data;
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
+
+    public String getZdate() {
+        return zdate;
+    }
+
+    public void setZdate(String zdate) {
+        this.zdate = zdate;
+    }
+
+    public Integer getBphone() {
+        return bphone;
+    }
+
+    public void setBphone(Integer bphone) {
+        this.bphone = bphone;
+    }
+
+    public String getBmailbox() {
+        return bmailbox;
+    }
+
+    public void setBmailbox(String bmailbox) {
+        this.bmailbox = bmailbox;
+    }
+
+    public String getDuty() {
+        return duty;
+    }
+
+    public void setDuty(String duty) {
+        this.duty = duty;
+    }
+
+    public String getKhly() {
+        return khly;
+    }
+
+    public void setKhly(String khly) {
+        this.khly = khly;
+    }
 
     public String getDate() {
         return date;
@@ -123,14 +213,6 @@ public class Business implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public Integer getClienid() {
-        return clienid;
-    }
-
-    public void setClienid(Integer clienid) {
-        this.clienid = clienid;
     }
 
     public Integer getBid() {
@@ -256,23 +338,29 @@ public class Business implements Serializable {
     @Override
     public String toString() {
         return "Business{" +
-        "bid=" + bid +
-        ", bname=" + bname +
-        ", kname=" + kname +
-        ", bsshy=" + bsshy +
-        ", psheng=" + psheng +
-        ", pshi=" + pshi +
-        ", pqu=" + pqu +
-        ", bsite=" + bsite +
-        ", predictsum=" + predictsum +
-        ", blxr=" + blxr +
-        ", cyr=" + cyr +
-        ", fzr=" + fzr +
-        ", gzr=" + gzr +
-        ", ywxq=" + ywxq +
-        ", syzt=" + syzt +
-        ", xgfj=" + xgfj +
-        ", sjssbm=" + sjssbm +
-        "}";
+                "bid=" + bid +
+                ", bname='" + bname + '\'' +
+                ", kname='" + kname + '\'' +
+                ", bsshy='" + bsshy + '\'' +
+                ", psheng='" + psheng + '\'' +
+                ", pshi='" + pshi + '\'' +
+                ", pqu='" + pqu + '\'' +
+                ", bsite='" + bsite + '\'' +
+                ", predictsum=" + predictsum +
+                ", blxr='" + blxr + '\'' +
+                ", cyr='" + cyr + '\'' +
+                ", fzr='" + fzr + '\'' +
+                ", gzr='" + gzr + '\'' +
+                ", ywxq='" + ywxq + '\'' +
+                ", syzt='" + syzt + '\'' +
+                ", xgfj='" + xgfj + '\'' +
+                ", sjssbm='" + sjssbm + '\'' +
+                ", date='" + date + '\'' +
+                ", khly='" + khly + '\'' +
+                ", duty='" + duty + '\'' +
+                ", bphone=" + bphone +
+                ", bmailbox='" + bmailbox + '\'' +
+                ", zdate='" + zdate + '\'' +
+                '}';
     }
 }
