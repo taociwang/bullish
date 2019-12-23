@@ -3,7 +3,7 @@ package com.hy.crm.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.github.pagehelper.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hy.crm.bo.ClienBo;
@@ -50,8 +50,8 @@ public class ClienController {
     @Autowired
     private ClienBoService clienBoService;
     /*
-    * 查询
-    * */
+     * 查询
+     * */
 /*    @RequestMapping("/queryAll.do")
     @ResponseBody
     public LayuiData queryAll( Clien clien, Integer page, Integer limit){
@@ -70,13 +70,13 @@ public class ClienController {
     @RequestMapping("/queryAllbo.do")
     @ResponseBody
     public LayuiDataBo queryAllbo(Integer page, Integer limit, String type, String value, String typeid){
-        Page page1 = PageHelper.startPage(page ,limit);
-        List<ClienBo> list = clienBoService.list(value,type,typeid);
-        PageInfo<ClienBo> pageInfo = new PageInfo<>(list);
+        IPage iPage = new Page(page,limit);
+        List<ClienBo> list = clienBoService.list(iPage,value,type,typeid);
+        //PageInfo<ClienBo> pageInfo = new PageInfo<>(list);
         LayuiDataBo layuiDataBo = new LayuiDataBo();
         layuiDataBo.setCode(0);
         layuiDataBo.setMsg("");
-        Long l = pageInfo.getTotal();
+        Long l = iPage.getTotal();
         layuiDataBo.setCount(list.size());
         layuiDataBo.setData(list);
         return layuiDataBo;

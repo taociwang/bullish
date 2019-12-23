@@ -1,6 +1,7 @@
 package com.hy.crm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -103,29 +104,44 @@ public class Business implements Serializable {
     /*
     * 预计时间
     * */
-    public String date;
+    private String date;
     /*
     * 客户来源
     * */
-    public String khly;
+    private String khly;
     /*
     * 职务
     * */
-    public String duty;
+    private String duty;
     /*
     * 电话
     * */
-    public Integer bphone;
+    private Integer bphone;
 
     /*
     * 邮箱
     * */
-    public String bmailbox;
+    private String bmailbox;
 
     /*
     * 最后跟单时间
     * */
-    public String zdate;
+    private String zdate;
+
+    /*
+    * 商机阶段
+    *
+    * */
+    @TableField(exist = false)
+    private Data data;
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
 
     public String getZdate() {
         return zdate;

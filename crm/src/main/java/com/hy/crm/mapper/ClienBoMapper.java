@@ -1,6 +1,7 @@
 package com.hy.crm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.hy.crm.bo.ClienBo;
 import com.hy.crm.entity.Clien;
 import com.hy.crm.mapperSql.StudentSql;
@@ -22,9 +23,9 @@ public interface ClienBoMapper extends BaseMapper<ClienBo>{
     public Integer sum(Integer cid);
 
     @SelectProvider(type = StudentSql.class,method = "query")
-    public List<Clien> queryCli(String value, String type);
+    public List<Clien> queryCli(String value, String type,IPage iPage);
     @SelectProvider(type = StudentSql.class,method = "querynoe")
-    public  List<Clien> querynoe(String typeid);
+    public  List<Clien> querynoe(String typeid,IPage iPage);
 
 
 

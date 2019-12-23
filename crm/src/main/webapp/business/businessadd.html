@@ -43,7 +43,7 @@
         <div class="layui-input-block">
             <select name="khly" lay-filter="aihao">
                 <option>请选择</option>
-                <option  th:each="dat:${da2}" th:value="${dat.typeid}" th:text="${dat.type_name}" th:id="${dat.did}" id="${dat.did}"></option>
+                <option  th:each="dat:${da2}" th:value="${dat.type_name}" th:text="${dat.type_name}" th:id="${dat.did}" id="${dat.did}"></option>
             </select>
         </div>
     </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="layui-inline">
-        <label class="layui-form-label">验证日期</label>
+        <label class="layui-form-label">日期</label>
         <div class="layui-input-inline">
             <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
         </div>
@@ -102,14 +102,6 @@
         </div>
     </div>
     <br>
-    <br>
-
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">普通文本域</label>
-        <div class="layui-input-block">
-            <textarea name="shuoming" placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-    </div>
     <div class="layui-input-inline">
         <label class="layui-form-label">上传附件</label>
         <div class="layui-input-block">
@@ -198,25 +190,25 @@
 
             alert(JSON.stringify(data));
         });*/
-    /*    var uploadInst = upload.render({
-            elem: '#accessory' //绑定元素
-            , url: './excel.do' //上传接口
-            , accept: 'file' //限制上传为文件
-            , done: function (res) {
-                if (res == '1') {
-                    layer.msg("导入成功", {icon: 6});
-                } else {
-                    layer.msg("导入失败", {icon: 5});
+        /*    var uploadInst = upload.render({
+                elem: '#accessory' //绑定元素
+                , url: './excel.do' //上传接口
+                , accept: 'file' //限制上传为文件
+                , done: function (res) {
+                    if (res == '1') {
+                        layer.msg("导入成功", {icon: 6});
+                    } else {
+                        layer.msg("导入失败", {icon: 5});
+                    }
+                    table.reload("test", {});
+                    //上传完毕回调
                 }
-                table.reload("test", {});
-                //上传完毕回调
-            }
-            , error: function () {
-                //请求异常回调
-                layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
-                table.reload("test", {});
-            }
-        });*/
+                , error: function () {
+                    //请求异常回调
+                    layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
+                    table.reload("test", {});
+                }
+            });*/
 
         form.on('select(clien)', function(data){
             console.log("___________________",data.value)

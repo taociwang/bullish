@@ -32,10 +32,10 @@ public class ClienBoService extends ServiceImpl<ClienBoMapper, ClienBo> {
     private BusinessMapper businessMapper;
     @Autowired
     private ClienBoMapper clienBoMapper;
-     public List<ClienBo> list(String value, String type, String typeid){
+     public List<ClienBo> list(IPage ipage, String value, String type, String typeid){
 
          //拿到所有客户
-         List<Clien> clienlist=clienService.queryCli(value, type, typeid);
+         List<Clien> clienlist=clienService.queryCli(ipage,value, type, typeid);
          //new客户的Bo
          List<ClienBo> clienBos=new ArrayList<>();
          for(Clien clien:clienlist){

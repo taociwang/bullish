@@ -105,69 +105,69 @@
             </div>
         </div>
 
-    <div class="layui-form-item">
+        <div class="layui-form-item">
 
-        <div class="layui-inline">
-            <label class="layui-form-label">商机所属部门</label>
-            <div class="layui-input-inline">
-                <input type="text" name="sjssbm"  th:value="销售部" placeholder="请输入商机所属部门" autocomplete="off" class="layui-input">
+            <div class="layui-inline">
+                <label class="layui-form-label">商机所属部门</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="sjssbm"  th:value="${buslist.sjssbm}" placeholder="请输入商机所属部门" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">商机负责人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="fzr" th:value="${buslist.fzr}" placeholder="请输入商机负责人"  autocomplete="off" class="layui-input" >
+                </div>
             </div>
         </div>
 
-        <div class="layui-inline">
-            <label class="layui-form-label">商机负责人</label>
-            <div class="layui-input-inline">
-                <input type="text" name="fzr" th:value="李君" placeholder="请输入商机负责人"  autocomplete="off" class="layui-input" >
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">商机参与人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="cyr" th:value="${buslist.cyr}" placeholder="请输入商机参与人" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">商机关注人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="gzr" th:value="${buslist.gzr}" placeholder="请输商机关注人" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <!-- <div class="layui-inline">
+                 <label class="layui-form-label">商机阶段</label>
+                 <div class="layui-input-inline">
+                     <select name="bstage" lay-filter="">
+                         <option value="">请选择</option>
+                         <option value="商务谈判" th:selected="${buslist.bstage=='商务谈判'}">商务谈判</option>
+                         <option value="成交" th:selected="${buslist.bstage=='成交'}">成交</option>
+                         <option value="丢单" th:selected="${buslist.bstage=='丢单'}">丢单</option>
+                         <option value="竞争或投标" th:selected="${buslist.bstage=='竞争或投标'}">竞争或投标</option>
+                         <option value="方案和报价" th:selected="${buslist.bstage=='方案和报价'}">方案和报价</option>
+                         <option value="初期沟通" th:selected="${buslist.bstage=='初期沟通'}">初期沟通</option>
+                         <option value="搁置" th:selected="${buslist.bstage=='搁置'}">搁置</option>
+                     </select>
+                 </div>
+             </div>-->
+        </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">主要业务需求</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容"  class="layui-textarea" name="ywxq" th:value="${buslist.ywxq}"></textarea>
             </div>
         </div>
-    </div>
 
-    <div class="layui-form-item">
-        <div class="layui-inline">
-            <label class="layui-form-label">商机参与人</label>
-            <div class="layui-input-inline">
-                <input type="text" name="cyr" th:value="${buslist.cyr}" placeholder="请输入商机参与人" autocomplete="off" class="layui-input">
+
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
             </div>
         </div>
-
-        <div class="layui-inline">
-            <label class="layui-form-label">商机关注人</label>
-            <div class="layui-input-inline">
-                <input type="text" name="gzr" th:value="${buslist.gzr}" placeholder="请输商机关注人" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-       <!-- <div class="layui-inline">
-            <label class="layui-form-label">商机阶段</label>
-            <div class="layui-input-inline">
-                <select name="bstage" lay-filter="">
-                    <option value="">请选择</option>
-                    <option value="商务谈判" th:selected="${buslist.bstage=='商务谈判'}">商务谈判</option>
-                    <option value="成交" th:selected="${buslist.bstage=='成交'}">成交</option>
-                    <option value="丢单" th:selected="${buslist.bstage=='丢单'}">丢单</option>
-                    <option value="竞争或投标" th:selected="${buslist.bstage=='竞争或投标'}">竞争或投标</option>
-                    <option value="方案和报价" th:selected="${buslist.bstage=='方案和报价'}">方案和报价</option>
-                    <option value="初期沟通" th:selected="${buslist.bstage=='初期沟通'}">初期沟通</option>
-                    <option value="搁置" th:selected="${buslist.bstage=='搁置'}">搁置</option>
-                </select>
-            </div>
-        </div>-->
-    </div>
-
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">主要业务需求</label>
-        <div class="layui-input-block">
-            <textarea placeholder="请输入内容"  class="layui-textarea" name="ywxq" th:value="${buslist.ywxq}"></textarea>
-        </div>
-    </div>
-
-
-
-    <div class="layui-form-item">
-        <div class="layui-input-block">
-            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-        </div>
-    </div>
     </div>
 </form>
 

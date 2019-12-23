@@ -20,7 +20,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">客户名称</label>
         <div class="layui-input-block">
-            <input type="text" name="uname" lay-verify="title"  autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="uname"lay-verify="required" lay-reqtext="用户名是必填项，岂能为空？" autocomplete="off" placeholder="请输入客户" class="layui-input">
         </div>
     </div>
 
@@ -111,16 +111,16 @@
     <br>
     <br>
     <div class="layui-input-inline">
-    <label class="layui-form-label">部门</label>
-    <div class="layui-input-block">
-        <input type="text" name="bm" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
+        <label class="layui-form-label">部门</label>
+        <div class="layui-input-block">
+            <input type="text" name="bm" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
     </div>
     <div class="layui-input-inline">
-    <label class="layui-form-label">职位</label>
-    <div class="layui-input-block">
-        <input type="text" name="part" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
+        <label class="layui-form-label">职位</label>
+        <div class="layui-input-block">
+            <input type="text" name="part" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
     </div>
     <div class="layui-input-inline">
         <label class="layui-form-label">商机阶段</label>
@@ -147,11 +147,11 @@
     <br>
     <br>
     <div class="layui-input-inline">
-    <label class="layui-form-label">QQ邮箱</label>
-    <div class="layui-input-block">
-        <input type="text" name="mailbox" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
-</div><div class="layui-input-inline">
+        <label class="layui-form-label">QQ邮箱</label>
+        <div class="layui-input-block">
+            <input type="text" name="mailbox" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div><div class="layui-input-inline">
     <label class="layui-form-label">法人代表</label>
     <div class="layui-input-block">
         <input type="text" name="frdb" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
@@ -160,10 +160,10 @@
     <br>
     <br>
     <div class="layui-input-inline">
-    <label class="layui-form-label">注册资本</label>
-    <div class="layui-input-block">
-        <input type="text" name="zczb" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
+        <label class="layui-form-label">注册资本</label>
+        <div class="layui-input-block">
+            <input type="text" name="zczb" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
     </div>
     <br>
     <br>
@@ -177,16 +177,16 @@
         <legend>财务信息</legend>
     </fieldset>
     <div class="layui-input-inline">
-    <label class="layui-form-label">银行账户</label>
-    <div class="layui-input-block">
-        <input type="text" name="yhzh" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
+        <label class="layui-form-label">银行账户</label>
+        <div class="layui-input-block">
+            <input type="text" name="yhzh" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
     </div>
     <div class="layui-input-inline">
-    <label class="layui-form-label">开户名称</label>
-    <div class="layui-input-block">
-        <input type="text" name="khmc" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-    </div>
+        <label class="layui-form-label">开户名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="khmc" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
     </div>
     <br>
     <br>
@@ -238,20 +238,20 @@
         form.on('submit(demo1)', function(data){
             parent.layer.close(parent.layer.getFrameIndex(window.name));
         });
-       /* form.verify({
-            title: function(value){
-                if(value.length > 5){
-                    return '命名不规范';
-                }
-            }
-            /!*,age: [
-                /^[\S]{6,12}$/
-                ,'年龄必须是数字'
-            ]*!/
-            ,content: function(value){
-                layedit.sync(editIndex);
-            }
-        });*/
+        /* form.verify({
+             title: function(value){
+                 if(value.length > 5){
+                     return '命名不规范';
+                 }
+             }
+             /!*,age: [
+                 /^[\S]{6,12}$/
+                 ,'年龄必须是数字'
+             ]*!/
+             ,content: function(value){
+                 layedit.sync(editIndex);
+             }
+         });*/
         //日期
         laydate.render({
             elem: '#date'

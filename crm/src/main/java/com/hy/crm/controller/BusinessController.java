@@ -12,6 +12,8 @@ import com.hy.crm.entity.Data;
 import com.hy.crm.service.impl.BusinessServiceImpl;
 import com.hy.crm.service.impl.ClienServiceImpl;
 import com.hy.crm.service.impl.DataServiceImpl;
+import com.hy.crm.service.impl.UserAndBusinessServicelmpl;
+import com.hy.crm.util.LayuiData;
 import com.hy.crm.util.LayuiDatabus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,19 +43,43 @@ public class BusinessController {
     private DataServiceImpl dataService;
     @Autowired
     private ClienServiceImpl clienService;
+    @Autowired
+    private UserAndBusinessServicelmpl userAndBusinessServicelmpl;
     @RequestMapping("/queryAllbus.do")
     @ResponseBody
     public LayuiDatabus queryAllbus(Business business, Integer page, Integer limit){
-        Page page1 = PageHelper.startPage(page , limit);
+        /*Page page1 = PageHelper.startPage(page , limit);*/
         LayuiDatabus layuiDatabus = new LayuiDatabus();
-        List<Business> businesses = businessService.queryBusin(business.getBname(),business.getSyzt(),business.getPredictsum(),business.getFzr(),business.getSjssbm(),business.getDate());
-        PageInfo<Business> pageInfo = new PageInfo<>(businesses);
+        /*List<Business> businesses = businessService.queryBusin(business.getBname(),business.getSyzt(),business.getPredictsum(),business.getFzr(),business.getSjssbm(),business.getDate());*/
+        IPage<Business> iPage = businessService.queryBusin(page,limit,business.getBname(),business.getSyzt(),business.getPredictsum(),business.getFzr(),business.getSjssbm(),business.getDate());
+        /*PageInfo<Business> pageInfo = new PageInfo<>(businesses);*/
         layuiDatabus.setCode(0);
         layuiDatabus.setMsg("");
-        Long l = pageInfo.getTotal();
+        /*Long l = pageInfo.getTotal();*/
+        Long l = iPage.getTotal();
         layuiDatabus.setCount(l.intValue());
-        layuiDatabus.setData(businesses);
+        /*layuiDatabus.setData(businesses);*/
+        layuiDatabus.setData(iPage.getRecords());
         System.out.println(layuiDatabus);
+        return layuiDatabus;
+    }
+
+    /**
+     * 查询我的商机
+     *
+     * @param
+     * @return
+     */
+    @RequestMapping("/MyBusAll.do")
+    @ResponseBody
+    public LayuiDatabus MyBusAll(Integer page, Integer limit, Business business ,String id) {
+        LayuiDatabus layuiDatabus = new LayuiDatabus();
+        IPage<Business> iPage = userAndBusinessServicelmpl.queryUserbus(page,limit,business,id);
+        layuiDatabus.setCode(0);
+        layuiDatabus.setMsg("");
+        Long l = iPage.getTotal();
+        layuiDatabus.setCount(l.intValue());
+        layuiDatabus.setData(iPage.getRecords());
         return layuiDatabus;
     }
 
@@ -88,8 +114,8 @@ public class BusinessController {
     }
 
     /*
-    * 去修改商机
-    * */
+     * 去修改商机
+     * */
     @RequestMapping("/toupdatebus.do")
     public String toupdatebus(Model model, Integer bid){
         //客户来源

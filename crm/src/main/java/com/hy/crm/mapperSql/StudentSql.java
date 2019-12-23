@@ -4,10 +4,36 @@ import com.github.pagehelper.util.StringUtil;
 import com.hy.crm.entity.Business;
 
 public class StudentSql {
+
+    //查询我的商机动态sql
+    public String MyBusAll(Business business, String id) {
+        StringBuffer sql = new StringBuffer("select b.* from business b,userandbusiness ub, user u where ub.id=u.id and ub.bid=b.bid and u.id='"+id+"'");
+        if (null != business) {
+            if (null != business.getSyzt() && !"".equals(business.getSyzt())) {
+                sql.append(" and b.Syzt like '%" + business.getSyzt() + "%'");
+            } else if (null != business.getBname() && !"".equals(business.getBname())) {
+                sql.append(" and b.bname like '%" + business.getBname() + "%'");
+            } else if (null != business.getPredictsum() && !"".equals(business.getPredictsum())) {
+                sql.append(" and b.predictsum like '%" + business.getPredictsum() + "%'");
+            } else if (null != business.getFzr() && !"".equals(business.getFzr())) {
+                sql.append(" and b.fzr like '%" + business.getFzr() + "%'");
+            }/* else if (null != business.getBdeptid() && !"".equals(business.getBdeptid())) {
+                sql.append(" and b.bdeptid like '%" + business.getBdeptid() + "%'");
+            } else if (null != business.getBsettlementdate() && !"".equals(business.getBsettlementdate())) {
+                sql.append(" and b.bsettlementdate like '%" + business.getBsettlementdate() + "%'");
+            }*/
+        }
+        return sql.toString();
+
+    }
+
+    /*
+     * 所有商机
+     * */
     public String select(String bname, String syzt, Integer predictsum, String fzr, String sjssbm, String date) {
-        StringBuffer sql = new StringBuffer("select * from business where 1=1 ");
+        StringBuffer sql = new StringBuffer("select * from business b left join data a on a.typeid = b.syzt where  1=1 ");
         if (bname != null && !"".equals(bname)) {
-            sql.append(" and bname like '%" + bname + "%'");
+            sql.append(" and  bname like '%" + bname + "%'");
         }
         if (syzt != null && !"".equals(syzt)) {
             sql.append(" and syzt like '%" + syzt + "%'");
@@ -21,9 +47,9 @@ public class StudentSql {
         if (predictsum != null && !"".equals(predictsum)) {
             sql.append(" and predictsum ="+predictsum+" ");
         }
-        if (!StringUtil.isEmpty(date)) {
+       /* if (!StringUtil.isEmpty(date)) {
             sql.append(" and date=#{date}");
-        }
+        }*/
         return sql.toString();
     }
 

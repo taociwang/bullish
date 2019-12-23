@@ -1,5 +1,6 @@
 package com.hy.crm.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;
 import com.hy.crm.entity.Clien;
 import com.hy.crm.mapper.ClienBoMapper;
@@ -27,19 +28,19 @@ public class ClienServiceImpl extends ServiceImpl<ClienMapper, Clien> implements
     @Autowired
     private ClienBoMapper clienBoMapper;
 
-    public List<Clien> queryCli(String value, String type, String typeid){
+    public List<Clien> queryCli(IPage iPage,String value, String type, String typeid){
         List<Clien> list=new ArrayList<>();
         if (value!=null && type!=null){
-            list= clienBoMapper.queryCli(value, type);
+            list= clienBoMapper.queryCli(value, type,iPage);
         }else if (null !=typeid){
-            list= clienBoMapper.querynoe(typeid);
+            list= clienBoMapper.querynoe(typeid,iPage);
         } else if (value ==null && type ==null){
-           list = clienBoMapper.queryCli(value, type);
+           list = clienBoMapper.queryCli(value, type,iPage);
         } else if (typeid ==null){
-            list= clienBoMapper.querynoe(typeid);
+            list= clienBoMapper.querynoe(typeid,iPage);
         }else if(value!=null&&type==null){
             String s=value=null;
-            list = clienBoMapper.queryCli(s, type);
+            list = clienBoMapper.queryCli(s, type,iPage);
         }
         return list;
     }
