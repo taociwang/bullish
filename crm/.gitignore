@@ -1,0 +1,5 @@
+#过滤target文件
+/target/
+#过滤.idea文件
+/.idea/
+.idea
