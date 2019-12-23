@@ -102,6 +102,43 @@ public class Business implements Serializable {
      * 商机所属部门
      */
     private String sjssbm;
+    /**
+     * 日期
+     */
+    private String date;
+    /**
+     * 客户外键id
+     */
+    private Integer clienid;
+
+    /**
+     * 用户id
+     */
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Integer getClienid() {
+        return clienid;
+    }
+
+    public void setClienid(Integer clienid) {
+        this.clienid = clienid;
+    }
 
     /*
     * 预计时间

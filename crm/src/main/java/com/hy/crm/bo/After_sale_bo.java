@@ -1,21 +1,25 @@
-package com.hy.crm.entity;
+package com.hy.crm.bo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.hy.crm.entity.Clien;
+import com.hy.crm.entity.Contract;
+import com.hy.crm.entity.Data;
 
 import java.io.Serializable;
 
-/**
- * <p>
- * 售后
- * </p>
- *
- * @author wangsq
- * @since 2019-12-04
- */
-public class After_sale implements Serializable {
-
+@TableName("after_sale")
+public class After_sale_bo implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    @TableField(exist = false)
+    private Clien clien;
+    @TableField(exist = false)
+    private Contract contract;
+    @TableField(exist = false)
+    private Data data;
 
     @TableId(type = IdType.UUID)
     private String id;
@@ -89,19 +93,6 @@ public class After_sale implements Serializable {
      * 服务评分
      */
     private Integer serve_grade;
-
-    /**
-     * 用户id
-     */
-    private String userid;
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
 
     public Integer getServe_grade() {
         return serve_grade;
@@ -208,32 +199,27 @@ public class After_sale implements Serializable {
         this.accessory = accessory;
     }
 
-    public String getId() {
-        return id;
+    public Clien getClien() {
+        return clien;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setClien(Clien clien) {
+        this.clien = clien;
     }
 
-    @Override
-    public String toString() {
-        return "After_sale{" +
-                "id='" + id + '\'' +
-                ", theme='" + theme + '\'' +
-                ", clientid='" + clientid + '\'' +
-                ", contractid=" + contractid +
-                ", phone='" + phone + '\'' +
-                ", contact='" + contact + '\'' +
-                ", serve_type='" + serve_type + '\'' +
-                ", state_time='" + state_time + '\'' +
-                ", end_time='" + end_time + '\'' +
-                ", serve_content='" + serve_content + '\'' +
-                ", contarc_tfeedback='" + contarc_tfeedback + '\'' +
-                ", serve_per='" + serve_per + '\'' +
-                ", accessory='" + accessory + '\'' +
-                ", status='" + status + '\'' +
-                ", serve_grade=" + serve_grade +
-                '}';
+    public Contract getContract() {
+        return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
     }
 }

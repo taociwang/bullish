@@ -1,7 +1,11 @@
 package com.hy.crm.mapper;
 
+import com.hy.crm.bo.TypeStatisticsBo;
 import com.hy.crm.entity.Data;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,16 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface DataMapper extends BaseMapper<Data> {
 
+    /**
+     * 根据客户行业分布 统计成交数、成交总金额
+     */
+    @Select("select  d.type_name typeName, count(*) count ,sum(con.contract_money) sum  from clien c,contract con ,data d where  con.clienid=c.cid and d.did=c.sshy GROUP BY c.sshy")
+    public List<TypeStatisticsBo> industryStatistics();
+
+    /**
+     * 根据客户来源 统计成交数、成交总金额
+     * @return
+     */
+    @Select("select d.type_name typeName, count(*) count ,sum(con.contract_money) sum  from clien c,contract con ,data d where  con.clienid=c.cid and d.did=c.khly GROUP BY c.khly")
+    public List<TypeStatisticsBo> sourecStatistics();
 }

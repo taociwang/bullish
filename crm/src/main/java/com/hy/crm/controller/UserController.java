@@ -39,7 +39,7 @@ public class UserController {
      */
     @RequestMapping("/login.do")
     @ResponseBody
-    public int login(User user, Model model, HttpServletRequest request){
+    public int login(User user, HttpServletRequest request){
         //将用户名存入shiro usernamePasswordToken;
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
         //获取主体对象

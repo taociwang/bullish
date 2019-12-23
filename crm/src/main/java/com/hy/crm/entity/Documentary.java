@@ -54,6 +54,32 @@ public class Documentary implements Serializable {
      */
     private String deId;
 
+    /**
+     * 文本框死值
+     */
+    private String classify;
+
+    /**
+     * 用户id
+     */
+    private String userid;
+
+    public String getClassify() {
+        return classify;
+    }
+
+    public void setClassify(String classify) {
+        this.classify = classify;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
     public Integer getDocid() {
         return docid;
     }

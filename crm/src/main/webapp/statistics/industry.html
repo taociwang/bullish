@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        .divcss5-a{ line-height:22px}/* css 注释说明：设置行距行高22px */
+        .divcss5-b{ line-height:40px}/* 设置行距行高22px */
+        a:link {
+            color:#1E9FFF;
+        }
+        a:hover {
+            color:black;
+            text-decoration:none;
+        }
+
+        #graph{
+            /*边框*/
+            /*border:3px solid  #b7c0cc;*/
+            width: 700px;
+            height: 360PX;
+
+        }
+
+        #pie{
+            /*边框*/
+            /*border:3px solid  #b7c0cc;*/
+            width: 700px;
+            height: 360PX;
+
+        }
+    </style>
+</head>
+<body >
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>统计分析</legend>
+</fieldset>
+
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md2">
+            <div class="layui-card">
+                <div class="layui-card-header"><b>分类</b></div>
+                <div class="layui-card-body">
+                    <div  class="divcss5-b">
+                        <a href="/statistics/query.html">我的统计</a><br>
+                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/week_statistics.do">本周统计</a><br>
+                        <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/monthStatistics.do">本月统计</a><br>
+                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/quarterStatistics.do">本季度统计</a><br>
+                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/statistics/funnel.html">商机销售漏斗</a><br>
+                        <img class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/industryStatistics.do">行业分布</a><br>
+                        <img  class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=7d4f9606a0b066bc039aba0635526beb861e54be091b943188e4da522c942e6b"/>
+                        <a href="/sourceStatistics.do">商机来源</a><br>
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md10">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table border="1"  class="layui-table">
+                        <thead>
+                        <tr>
+                            <td >行业分布</td><td >成交数</td><td >成交总金额</td >
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="industry:${industryStatisticsList}">
+                            <td th:text="${industry.typeName}">
+                            <td th:text="${industry.count}">
+                            <td th:text="${industry.sum}">
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="layui-btn-container">
+                        <button onclick="cl_histogram()" type="button" class="layui-btn">成交数 柱形图</button>
+                        <button onclick="cl_histogram2()" type="button" class="layui-btn">金额 柱形图</button>
+                        <button onclick="cl_pie()" type="button" class="layui-btn">成交数 饼图</button>
+                        <button onclick="cl_pie2()" type="button" class="layui-btn">金额 饼图</button>
+                    </div>
+                    <div id="graph" ></div>
+                    <div id="pie" ></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md9">
+
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/jquery-3.3.1.js" charset="utf-8"></script>
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script src="/static/js/echarts.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('graph'));
+    // 显示标题，图例和空的坐标轴
+    myChart.setOption({
+        title: {
+            text: '行业分布统计柱形图'
+        },
+        color: ['#3398DB'],
+        tooltip: {},
+        legend: {
+            data:['行业类别']
+        },
+        xAxis: {
+            data: []
+        },
+        yAxis: {},
+        series: [{
+            name: '行业类别',
+            type: 'bar',
+            data: []
+        }]
+    });
+
+    myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
+
+    var names=[];    //类别数组（实际用来盛放X轴坐标值）
+    var nums=[];
+    var moneys=[];//y轴 成交数量数组（实际用来盛放Y坐标值）
+    var pie=[];  //y轴 成交数组（实际用来盛放Y坐标值）
+    var pie2=[];
+
+    $.ajax({
+        type : "post",
+        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url : "/industry.do",    //请求发送到TestServlet处
+        data : {},
+        dataType : "json",        //返回数据形式为json
+        success : function(result) {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            if (result) {
+                for(var i=0;i<result.length;i++){
+                    names.push(result[i].typeName);    //挨个取出类别并填入类别数组
+                    nums.push(result[i].count);    //挨个取出销量并填入销量数组
+                    moneys.push(result[i].sum);
+                }
+                for(var i=0;i<result.length;i++){
+                    var obj=new Object();
+                    var obj2=new Object();
+                    obj.name=result[i].typeName;
+                    obj.value=result[i].count;
+                    obj2.name=result[i].typeName;//挨个取出金额并填入销量数组
+                    obj2.value=result[i].sum;
+                    pie[i]=obj;
+                    pie2[i]=obj2;
+                }
+                myChart.hideLoading();    //隐藏加载动画
+                myChart.setOption({        //加载数据图表
+                    xAxis: {
+                        data: names
+                    },
+                    series: [{
+                        // 根据名字对应到相应的系列
+                        name: '成交数量',
+                        data: nums
+                    }]
+                });
+            }
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+    })
+
+    var cl_histogram=function () {
+        document.getElementById('graph').style.display="block";
+        document.getElementById('pie').style.display="none";
+        myChart.hideLoading();    //隐藏加载动画
+        myChart.setOption({        //加载数据图表
+            xAxis: {
+                data: names
+            },
+            series: [{
+                // 根据名字对应到相应的系列
+                name: '成交数量',
+                data: nums
+            }]
+        });
+    }
+
+    var cl_histogram2=function () {
+        document.getElementById('pie').style.display="none";
+        document.getElementById('graph').style.display="block";
+        myChart.hideLoading();    //隐藏加载动画
+        myChart.setOption({        //加载数据图表
+            xAxis: {
+                data: names
+            },
+            series: [{
+                // 根据名字对应到相应的系列
+                name: '成交数量',
+                data: moneys
+            }]
+        });
+    }
+
+    var echartsPie = echarts.init(document.getElementById('pie'));
+    var cl_pie=function () {
+        document.getElementById('graph').style.display="none";
+        document.getElementById('pie').style.display="block";
+        echartsPie.setOption({
+            title : {
+                text: '行业分布 成交数量 （单）',
+                subtext: '饼图',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{b} <br/>{c} : {d} %"      //a 系列名称，b 数据项名称，c 数值，d 百分比
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:names
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true,
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:'点击量',
+                    type:'pie',
+                    radius : '55%',//饼图的半径大小
+                    center: ['50%', '60%'],//饼图的位置
+                    //饼图显示数据
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: '{b}: {c}({d}%)'
+                        }
+                    },
+                    data:pie
+                }
+            ]
+        })
+    }
+
+    var cl_pie2=function () {
+        document.getElementById('graph').style.display="none";
+        document.getElementById('pie').style.display="block";
+        echartsPie.setOption({
+            title : {
+                text: '行业分布 成交金额（元）',
+                subtext: '饼图',
+                x:'center'
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:names
+            },
+            series : [
+                {
+                    name:'点击量',
+                    type:'pie',
+                    radius : '55%',//饼图的半径大小
+                    center: ['50%', '60%'],//饼图的位置
+                    data:pie2
+                }
+            ]
+        })
+    }
+</script>
+
+<script>
+    layui.use(['element', 'layer','table','util'], function(){
+        var element = layui.element;
+        var layer = layui.layer;
+        var table = layui.table;
+        var util = layui.util;
+
+        //监听折叠
+        element.on('collapse(test)', function(data){
+            layer.msg('展开状态：'+ data.show);
+        });
+    });
+</script>
+
+</body>
+</html>
