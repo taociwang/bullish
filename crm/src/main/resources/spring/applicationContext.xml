@@ -48,11 +48,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <property name="plugins">
             <array>
                 <bean id="paginationInterceptor" class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor"/>
-                <bean class="com.github.pagehelper.PageInterceptor">
+                <!--<bean class="com.github.pagehelper.PageInterceptor">
                     <property name="properties">
                         <value>property-key=property-value</value>
                     </property>
-                </bean>
+                </bean>-->
             </array>
 
         </property>

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>添加商机</legend>
+</fieldset>
+
+<form class="layui-form" action="/crm/business/add.do" lay-filter="example">
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="bname" lay-verify="title"  autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>客户信息</legend>
+    </fieldset>
+
+    <div class="layui-input-inline">
+        <label class="layui-form-label">客户名称</label>
+        <div class="layui-input-block">
+            <select name="clienid" lay-filter="clien" id="clien" >
+                <option>请选择</option>
+                <option  th:each="clien:${clienlist}" th:value="${clien.cid}" th:text="${clien.uname}" ></option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">所属行业</label>
+        <div class="layui-input-block">
+            <select name="khly" lay-filter="aihao">
+                <option>请选择</option>
+                <option  th:each="dat:${da2}" th:value="${dat.type_name}" th:text="${dat.type_name}" th:id="${dat.did}" id="${dat.did}"></option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="layui-inline">
+        <label class="layui-form-label">详细地址</label>
+        <div class="layui-input-inline">
+            <input type="text" id="city" name="bsite"  placeholder="请输入详细地址" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>商机信息</legend>
+    </fieldset>
+    <br>
+    <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">预计成交金额</label>
+        <div class="layui-input-block">
+            <input type="text" name="predictsum" lay-verify="title"  autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label">验证日期</label>
+        <div class="layui-input-inline">
+            <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">联系人</label>
+        <div class="layui-input-block">
+            <input type="text" name="lxr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="bphone" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">QQ邮箱</label>
+        <div class="layui-input-block">
+            <input type="text" name="bmailbox" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">职位</label>
+        <div class="layui-input-block">
+            <input type="text" name="duty" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">普通文本域</label>
+        <div class="layui-input-block">
+            <textarea name="shuoming" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">上传附件</label>
+        <div class="layui-input-block">
+            <input type="file" name="file" id="test20">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机所属部门</label>
+        <div class="layui-input-block">
+            <input type="text" name="sjssbm" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机负责人</label>
+        <div class="layui-input-block">
+            <input type="text" name="fzr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机参与人</label>
+        <div class="layui-input-block">
+            <input type="text" name="cyr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机关注人</label>
+        <div class="layui-input-block">
+            <input type="text" name="gzr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="layui-input-inline">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+        </div>
+    </div>
+</form>
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            parent.layer.close(parent.layer.getFrameIndex(window.name));
+        });
+        /* form.verify({
+             title: function(value){
+                 if(value.length > 5){
+                     return '命名不规范';
+                 }
+             }
+             /!*,age: [
+                 /^[\S]{6,12}$/
+                 ,'年龄必须是数字'
+             ]*!/
+             ,content: function(value){
+                 layedit.sync(editIndex);
+             }
+         });*/
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //表单取值
+        /*layui.$('#LAY-component-form-getval').on('click', function(){
+            var data = form.val('example');
+
+            alert(JSON.stringify(data));
+        });*/
+    /*    var uploadInst = upload.render({
+            elem: '#accessory' //绑定元素
+            , url: './excel.do' //上传接口
+            , accept: 'file' //限制上传为文件
+            , done: function (res) {
+                if (res == '1') {
+                    layer.msg("导入成功", {icon: 6});
+                } else {
+                    layer.msg("导入失败", {icon: 5});
+                }
+                table.reload("test", {});
+                //上传完毕回调
+            }
+            , error: function () {
+                //请求异常回调
+                layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
+                table.reload("test", {});
+            }
+        });*/
+
+        form.on('select(clien)', function(data){
+            console.log("___________________",data.value)
+            $.ajax({
+                type:"post",
+                url:"/crm/business/clien.do",
+                data:{
+                    cid:data.value
+                },
+                success: function (data) {
+                    window.document.getElementById(data.sshy).selected=true;
+                    form.render('select');
+                    window.document.getElementById("city").value=data.site;
+
+
+                }
+            });
+        });
+
+
+
+    });
+</script>
