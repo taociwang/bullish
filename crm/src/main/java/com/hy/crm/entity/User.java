@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -37,10 +41,6 @@ public class User implements Serializable {
      */
     private Integer state;
 
-
-    @TableId(value = "id",type = IdType.AUTO)
-    private Integer id;
-
     public Integer getId() {
         return id;
     }
@@ -48,14 +48,6 @@ public class User implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-   /* public String getHead() {
-        return head;
-    }
-
-    public void setHead(String head) {
-        this.head = head;
-    }*/
 
     public String getUsername() {
         return username;
@@ -86,13 +78,6 @@ public class User implements Serializable {
         this.state = state;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     @Override
     public String toString() {

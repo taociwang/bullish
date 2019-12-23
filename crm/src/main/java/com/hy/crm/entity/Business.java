@@ -21,6 +21,7 @@ public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "bid",type = IdType.AUTO)
     private Integer bid;
 
     /**
@@ -102,10 +103,7 @@ public class Business implements Serializable {
      * 商机所属部门
      */
     private String sjssbm;
-    /**
-     * 日期
-     */
-    private String date;
+
     /**
      * 客户外键id
      */
@@ -116,21 +114,47 @@ public class Business implements Serializable {
      */
     private String userid;
 
+    /*
+     * 最后跟单时间
+     * */
+    private String zdate;
+
+    /*
+     * 邮箱
+     * */
+    private String bmailbox;
+
+    /*
+     * 职务
+     * */
+    private String duty;
+    /*
+     * 电话
+     * */
+    private Integer bphone;
+
+    /*
+     * 客户来源
+     * */
+    private String khly;
+
+    /*
+     * 商机阶段
+     *
+     * */
     public String getUserid() {
         return userid;
     }
+
+    private String date;
+    @TableField(exist = false)
+    private Data data;
 
     public void setUserid(String userid) {
         this.userid = userid;
     }
 
-    public String getDate() {
-        return date;
-    }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public Integer getClienid() {
         return clienid;
@@ -140,39 +164,13 @@ public class Business implements Serializable {
         this.clienid = clienid;
     }
 
-    /*
-    * 预计时间
-    * */
-    private String date;
-    /*
-    * 客户来源
-    * */
-    private String khly;
-    /*
-    * 职务
-    * */
-    private String duty;
-    /*
-    * 电话
-    * */
-    private Integer bphone;
+    public String getDate() {
+        return date;
+    }
 
-    /*
-    * 邮箱
-    * */
-    private String bmailbox;
-
-    /*
-    * 最后跟单时间
-    * */
-    private String zdate;
-
-    /*
-    * 商机阶段
-    *
-    * */
-    @TableField(exist = false)
-    private Data data;
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public Data getData() {
         return data;
@@ -222,13 +220,6 @@ public class Business implements Serializable {
         this.khly = khly;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 
 
     public Integer getBid() {
