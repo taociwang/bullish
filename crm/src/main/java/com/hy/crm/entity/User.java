@@ -1,6 +1,7 @@
 package com.hy.crm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -24,6 +25,7 @@ public class User implements Serializable {
     /*
     * 头像
     * */
+    @TableField(exist = false)
     private String head;
     /**
      * 用户名称

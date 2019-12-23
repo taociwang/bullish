@@ -19,6 +19,7 @@ import java.io.Serializable;
 public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @TableId(value = "bid",type = IdType.AUTO)
     private Integer bid;
 
@@ -140,7 +141,7 @@ public class Business implements Serializable {
     /*
     * 电话
     * */
-    private Integer bphone;
+    private String bphone;
 
     /*
     * 邮箱
@@ -152,12 +153,22 @@ public class Business implements Serializable {
     * */
     private String zdate;
 
+    private String shuoming;
+
     /*
     * 商机阶段
     *
     * */
     @TableField(exist = false)
     private Data data;
+
+    public String getShuoming() {
+        return shuoming;
+    }
+
+    public void setShuoming(String shuoming) {
+        this.shuoming = shuoming;
+    }
 
     public Data getData() {
         return data;
@@ -175,11 +186,11 @@ public class Business implements Serializable {
         this.zdate = zdate;
     }
 
-    public Integer getBphone() {
+    public String getBphone() {
         return bphone;
     }
 
-    public void setBphone(Integer bphone) {
+    public void setBphone(String bphone) {
         this.bphone = bphone;
     }
 

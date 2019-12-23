@@ -26,6 +26,8 @@ import java.util.List;
 public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> implements IBusinessService {
     @Autowired
     private BusinessMapper businessMapper;
+    @Autowired
+    private UserServiceImpl userService;
     public IPage<Business> queryBusin(Integer pagenum,Integer limit, String bname,String syzt,Integer predictsum,String fzr,String sjssbm,String time){
         Page<Business> p = new Page<Business>(pagenum,limit);
         //IPage iPage=p;
@@ -37,6 +39,10 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
     public List<Business> querycli(Integer cid){
         List<Business> list = businessMapper.queryClien(cid);
         return list;
+    }
+    public void insert(Business business){
+        business.setUserid(userService.getCurrUid());
+        businessMapper.insert(business);
     }
 
 

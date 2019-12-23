@@ -90,8 +90,8 @@ public class BusinessController {
     @RequestMapping("/add.do")
     public String add(Business business){
         System.out.println(business.toString());
-        businessService.save(business);
-        return "redirect:/business/business.html";
+        businessService.insert(business);
+        return "redirect:/business/wobusiness.html";
     }
 
 
@@ -99,7 +99,7 @@ public class BusinessController {
      * 去添加
      */
     @RequestMapping(value = "/toadd.do")
-    public String toadd(Model model,Clien clien,Integer cid){
+    public String toadd(Model model,Clien clien){
         //客户类型
         model.addAttribute("da",dataService.list(new QueryWrapper<Data>().eq("typeid",1)));
         //客户来源
