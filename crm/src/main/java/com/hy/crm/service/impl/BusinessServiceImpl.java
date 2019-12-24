@@ -46,4 +46,5 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
         business.setUserid(userService.getCurrUid());
         businessMapper.insert(business);
     }
+
 }

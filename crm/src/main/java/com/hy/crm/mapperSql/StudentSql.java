@@ -7,7 +7,7 @@ public class StudentSql {
 
     //查询我的商机动态sql
     public String MyBusAll(Business business, String id) {
-        StringBuffer sql = new StringBuffer("select b.* from business b,userandbusiness ub, user u where ub.id=u.id and ub.bid=b.bid and u.id='"+id+"'");
+        StringBuffer sql = new StringBuffer("select * from business where userid='"+id+"'");
         if (null != business) {
             if (null != business.getSyzt() && !"".equals(business.getSyzt())) {
                 sql.append(" and b.Syzt like '%" + business.getSyzt() + "%'");

@@ -17,11 +17,11 @@
     <legend>添加商机</legend>
 </fieldset>
 
-<form class="layui-form" action="/crm/business/add.do" lay-filter="example">
+<form class="layui-form" action="/crm/business/add.do" lay-filter="example" method="post">
     <div class="layui-input-inline">
         <label class="layui-form-label">商机名称</label>
         <div class="layui-input-block">
-            <input type="text" name="bname" lay-verify="title"  autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="bname" lay-verify="required" lay-reqtext="商业机密，岂能为空？" autocomplete="off" placeholder="请输入商机" class="layui-input">
         </div>
     </div>
 
@@ -41,7 +41,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">所属行业</label>
         <div class="layui-input-block">
-            <select name="khly" lay-filter="aihao">
+            <select name="bsshy" lay-filter="aihao">
                 <option>请选择</option>
                 <option  th:each="dat:${da2}" th:value="${dat.type_name}" th:text="${dat.type_name}" th:id="${dat.did}" id="${dat.did}"></option>
             </select>
@@ -78,13 +78,13 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="lxr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="blxr" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input">
         </div>
     </div>
     <div class="layui-input-inline">
         <label class="layui-form-label">电话</label>
         <div class="layui-input-block">
-            <input type="text" name="bphone" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="bphone"  autocomplete="off" placeholder="请输入手机号" class="layui-input" lay-verify="required|phone">
         </div>
     </div>
     <br>
@@ -92,20 +92,24 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">QQ邮箱</label>
         <div class="layui-input-block">
-            <input type="text" name="bmailbox" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="bmailbox" lay-verify="email" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
         </div>
     </div>
     <div class="layui-input-inline">
         <label class="layui-form-label">职位</label>
         <div class="layui-input-block">
-            <input type="text" name="duty" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="duty" lay-verify="required" lay-reqtext="个人信息不可为空" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
     <br>
     <br>
 
     <div class="layui-form-item layui-form-text">
+<<<<<<< HEAD
         <label class="layui-form-label">普通文本域</label>
+=======
+        <label class="layui-form-label">附加说明</label>
+>>>>>>> eed753232ae201273381ded23935166d7d1c54c1
         <div class="layui-input-block">
             <textarea name="shuoming" placeholder="请输入内容" class="layui-textarea"></textarea>
         </div>
@@ -113,7 +117,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">上传附件</label>
         <div class="layui-input-block">
-            <input type="file" name="file" id="test20">
+            <input type="file" name="xgfj" id="test20">
         </div>
     </div>
     <br>
@@ -217,6 +221,25 @@
                 table.reload("test", {});
             }
         });*/
+        /*    var uploadInst = upload.render({
+                elem: '#accessory' //绑定元素
+                , url: './excel.do' //上传接口
+                , accept: 'file' //限制上传为文件
+                , done: function (res) {
+                    if (res == '1') {
+                        layer.msg("导入成功", {icon: 6});
+                    } else {
+                        layer.msg("导入失败", {icon: 5});
+                    }
+                    table.reload("test", {});
+                    //上传完毕回调
+                }
+                , error: function () {
+                    //请求异常回调
+                    layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
+                    table.reload("test", {});
+                }
+            });*/
         /*    var uploadInst = upload.render({
                 elem: '#accessory' //绑定元素
                 , url: './excel.do' //上传接口
