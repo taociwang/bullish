@@ -1,0 +1,7 @@
+﻿#过滤target文件
+/target/
+#过滤.idea文件#忽略
+.idea
+/.idea/
+#忽略.ml
+crm.iml/
