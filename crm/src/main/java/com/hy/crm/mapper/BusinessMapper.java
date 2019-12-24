@@ -9,6 +9,20 @@ import com.hy.crm.mapperSql.StudentSql;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.github.pagehelper.Page;
+import com.hy.crm.entity.Business;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hy.crm.entity.Clien;
+import com.hy.crm.mapperSql.StudentSql;
+import jdk.nashorn.internal.runtime.linker.LinkerCallSite;
+import org.apache.ibatis.annotations.Mapper;
+
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
+
+
 import java.util.List;
 
 /**
@@ -19,8 +33,8 @@ import java.util.List;
  * @author wangsq
  * @since 2019-12-04
  */
+@Mapper
 public interface BusinessMapper extends BaseMapper<Business> {
-
     /*@Select("select count(*) from business where bid=#{bid}")
     public List<Business> queryid();*/
 
@@ -40,11 +54,9 @@ public interface BusinessMapper extends BaseMapper<Business> {
 
 
     @SelectProvider(type = StudentSql.class,method = "select")
-    public List<Business> queryBus (String bname, String syzt, Integer predictsum, String fzr, String sjssbm , String time, IPage page );
+    public List<Business> queryBus (String bname, String syzt,Integer predictsum,  String fzr, String sjssbm , String time,IPage page );
 
     //public List<Business> queryBus (@Param("bname") String bname, @Param("syzt") String syzt, @Param("predictsum") Integer predictsum, @Param("fzr") String fzr, @Param("sjssbm")String sjssbm , @Param("time") String time,IPage page );
-
-
 
 
     /**

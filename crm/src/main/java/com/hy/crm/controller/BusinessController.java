@@ -1,7 +1,6 @@
 package com.hy.crm.controller;
 
 
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;
@@ -23,6 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.naming.CompositeName;
+import java.util.List;
 
 /**
  * <p>
@@ -32,10 +35,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author wangsq
  * @since 2019-12-04
  */
-@RestController
+@Controller
 @RequestMapping("/crm/business")
 public class BusinessController {
-
     @Autowired
     private BusinessServiceImpl businessService;
     @Autowired
@@ -89,9 +91,10 @@ public class BusinessController {
     @RequestMapping("/add.do")
     public String add(Business business){
         System.out.println(business.toString());
-        businessService.save(business);
-        return "redirect:/business/business.html";
+        businessService.insert(business);
+        return "redirect:/business/wobusiness.html";
     }
+
 
 
     /**
@@ -113,8 +116,8 @@ public class BusinessController {
     }
 
     /*
-    * 去修改商机
-    * */
+     * 去修改商机
+     * */
     @RequestMapping("/toupdatebus.do")
     public String toupdatebus(Model model, Integer bid){
         //客户来源
@@ -140,8 +143,4 @@ public class BusinessController {
         return clienService.getById(cid);
 
     }
-
-
-
-
 }

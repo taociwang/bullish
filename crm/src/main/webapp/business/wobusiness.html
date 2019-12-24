@@ -75,9 +75,9 @@
                                     </div>
                                 </div>
                                 <div class="layui-inline">
-                                <label class="layui-form-label">商机负责人</label>
+                                    <label class="layui-form-label">商机负责人</label>
                                     <div class="layui-input-inline">
-                                       <input name="fzr" class="layui-input" type="text" placeholder="请输入姓名" autocomplete="off" lay-verify="title">
+                                        <input name="fzr" class="layui-input" type="text" placeholder="请输入姓名" autocomplete="off" lay-verify="title">
                                     </div>
                                 </div>
                                 <div class="layui-inline">
@@ -154,7 +154,7 @@
             , title: '用户数据表'
             , cols: [[
                 //{type: 'checkbox', fixed: 'left'}
-                 {field: 'bname', title: '商机名称', width: 150, event:'detail',templet:'#titleTpl'}
+                {field: 'bname', title: '商机名称', width: 150, event:'detail',templet:'#titleTpl'}
                 , {field: 'syzt', title: '商机阶段', width: 150, sort: true,}
                 , {field: 'predictsum', title: '预计成交金额', width: 150, sort: true}
                 , {field: 'fzr', title: '商机负责人', width: 150, sort: true}
@@ -201,13 +201,13 @@
             }
         });
 
-       /* table.on('toolbar(test)', function (obj) {
-            var layEvent = obj.event;
-            if (layEvent === "reflush") {
-                console.log("-----------");
-                table.reload('test', {});
-            }
-        })*/
+        /* table.on('toolbar(test)', function (obj) {
+             var layEvent = obj.event;
+             if (layEvent === "reflush") {
+                 console.log("-----------");
+                 table.reload('test', {});
+             }
+         })*/
         /*//日期
         laydate.render({
             elem: '#date'

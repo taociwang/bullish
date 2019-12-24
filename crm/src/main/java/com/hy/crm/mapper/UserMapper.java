@@ -30,5 +30,4 @@ public interface UserMapper extends BaseMapper<User> {
     Integer getIdByName(String username);
 
 
-
 }

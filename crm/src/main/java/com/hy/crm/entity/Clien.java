@@ -2,6 +2,7 @@ package com.hy.crm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName(value = "clien")
 public class Clien implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -154,6 +156,14 @@ public class Clien implements Serializable {
         this.spell = spell;
     }
 
+    /* 客户分类
+    * */
+    private String typeid;
+
+
+
+
+
     public String getKhly() {
         return khly;
     }
@@ -168,6 +178,13 @@ public class Clien implements Serializable {
 
     public void setYhphone(Integer yhphone) {
         this.yhphone = yhphone;
+    }
+    public String getTypeid() {
+        return typeid;
+    }
+
+    public void setTypeid(String typeid) {
+        this.typeid = typeid;
     }
 
     public Integer getCid() {
@@ -335,29 +352,33 @@ public class Clien implements Serializable {
     @Override
     public String toString() {
         return "Clien{" +
-        "cid=" + cid +
-        ", uname=" + uname +
-        ", lxr=" + lxr +
-        ", bm=" + bm +
-        ", phone=" + phone +
-        ", sshy=" + sshy +
-        ", sheng=" + sheng +
-        ", shi=" + shi +
-        ", qu=" + qu +
-        ", site=" + site +
-        ", mailbox=" + mailbox +
-        ", yzbm=" + yzbm +
-        ", zczb=" + zczb +
-        ", frdb=" + frdb +
-        ", part=" + part +
-        ", bgdh=" + bgdh +
-        ", cz=" + cz +
-        ", shuoming=" + shuoming +
-        ", yhzh=" + yhzh +
-        ", khmc=" + khmc +
-        ", khyh=" + khyh +
-        ", yhdz=" + yhdz +
-        ", shuihao=" + shuihao +
-        "}";
+                "cid=" + cid +
+                ", uname='" + uname + '\'' +
+                ", lxr='" + lxr + '\'' +
+                ", bm='" + bm + '\'' +
+                ", phone=" + phone +
+                ", sshy='" + sshy + '\'' +
+                ", sheng='" + sheng + '\'' +
+                ", shi='" + shi + '\'' +
+                ", qu='" + qu + '\'' +
+                ", site='" + site + '\'' +
+                ", mailbox='" + mailbox + '\'' +
+                ", yzbm='" + yzbm + '\'' +
+                ", zczb=" + zczb +
+                ", frdb='" + frdb + '\'' +
+                ", part='" + part + '\'' +
+                ", bgdh=" + bgdh +
+                ", cz='" + cz + '\'' +
+                ", shuoming='" + shuoming + '\'' +
+                ", yhzh=" + yhzh +
+                ", khmc='" + khmc + '\'' +
+                ", khyh='" + khyh + '\'' +
+                ", yhdz='" + yhdz + '\'' +
+                ", shuihao=" + shuihao +
+                ", typeid=" + typeid +
+                ", spell='" + spell + '\'' +
+                ", khly='" + khly + '\'' +
+                ", yhphone=" + yhphone +
+                '}';
     }
 }

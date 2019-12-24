@@ -21,6 +21,10 @@ public class User implements Serializable {
     @TableId(type = IdType.AUTO )
     private Integer id;
 
+    /*
+    * 头像
+    * */
+    private String head;
     /**
      * 用户名称
      */
@@ -36,6 +40,8 @@ public class User implements Serializable {
      */
     private String phone;
 
+
+
     /**
      * 状态 0不可在登入，1可登录
      */
@@ -47,6 +53,13 @@ public class User implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
     }
 
     public String getUsername() {
@@ -82,10 +95,12 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-        "username=" + username +
-        ", password=" + password +
-        ", phone=" + phone +
-        ", state=" + state +
-        "}";
+                "head='" + head + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", state=" + state +
+                ", id=" + id +
+                '}';
     }
 }

@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="layui-inline">
-        <label class="layui-form-label">验证日期</label>
+        <label class="layui-form-label">日期</label>
         <div class="layui-input-inline">
             <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
         </div>
@@ -217,6 +217,25 @@
                 table.reload("test", {});
             }
         });*/
+        /*    var uploadInst = upload.render({
+                elem: '#accessory' //绑定元素
+                , url: './excel.do' //上传接口
+                , accept: 'file' //限制上传为文件
+                , done: function (res) {
+                    if (res == '1') {
+                        layer.msg("导入成功", {icon: 6});
+                    } else {
+                        layer.msg("导入失败", {icon: 5});
+                    }
+                    table.reload("test", {});
+                    //上传完毕回调
+                }
+                , error: function () {
+                    //请求异常回调
+                    layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
+                    table.reload("test", {});
+                }
+            });*/
 
         form.on('select(clien)', function(data){
             console.log("___________________",data.value)

@@ -28,10 +28,14 @@ public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements ID
      * @param typeid
      * @return
      */
-    public List<Data> queryDataType(String typeid){
-        QueryWrapper wrapper=new QueryWrapper();
-        wrapper.eq("typeid",typeid);
+    public List<Data> queryDataType(String typeid) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("typeid", typeid);
         return dataMapper.selectList(wrapper);
     }
+    public List<Data> queryData(){
+        return dataMapper.queryData();
+    }
+
 
 }

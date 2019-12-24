@@ -29,6 +29,19 @@ public class Reply implements Serializable {
      */
     private String reply_time;
 
+    /*
+    * 回复内容
+    * */
+    private String eplycontent;
+
+    public String getEplycontent() {
+        return eplycontent;
+    }
+
+    public void setEplycontent(String eplycontent) {
+        this.eplycontent = eplycontent;
+    }
+
     public Integer getReply_id() {
         return reply_id;
     }
@@ -54,9 +67,10 @@ public class Reply implements Serializable {
     @Override
     public String toString() {
         return "Reply{" +
-        "reply_id=" + reply_id +
-        ", reply_name=" + reply_name +
-        ", reply_time=" + reply_time +
-        "}";
+                "reply_id=" + reply_id +
+                ", reply_name='" + reply_name + '\'' +
+                ", reply_time='" + reply_time + '\'' +
+                ", eplycontent='" + eplycontent + '\'' +
+                '}';
     }
 }

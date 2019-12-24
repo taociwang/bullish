@@ -17,6 +17,7 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName(value = "business")
 public class Business implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -146,15 +147,149 @@ public class Business implements Serializable {
         return userid;
     }
 
+    /**
+     * 时间
+     */
     private String date;
+
     @TableField(exist = false)
     private Data data;
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public Integer getBid() {
+        return bid;
     }
 
+    public void setBid(Integer bid) {
+        this.bid = bid;
+    }
 
+    public String getBname() {
+        return bname;
+    }
+
+    public void setBname(String bname) {
+        this.bname = bname;
+    }
+
+    public String getKname() {
+        return kname;
+    }
+
+    public void setKname(String kname) {
+        this.kname = kname;
+    }
+
+    public String getBsshy() {
+        return bsshy;
+    }
+
+    public void setBsshy(String bsshy) {
+        this.bsshy = bsshy;
+    }
+
+    public String getPsheng() {
+        return psheng;
+    }
+
+    public void setPsheng(String psheng) {
+        this.psheng = psheng;
+    }
+
+    public String getPshi() {
+        return pshi;
+    }
+
+    public void setPshi(String pshi) {
+        this.pshi = pshi;
+    }
+
+    public String getPqu() {
+        return pqu;
+    }
+
+    public void setPqu(String pqu) {
+        this.pqu = pqu;
+    }
+
+    public String getBsite() {
+        return bsite;
+    }
+
+    public void setBsite(String bsite) {
+        this.bsite = bsite;
+    }
+
+    public Integer getPredictsum() {
+        return predictsum;
+    }
+
+    public void setPredictsum(Integer predictsum) {
+        this.predictsum = predictsum;
+    }
+
+    public String getBlxr() {
+        return blxr;
+    }
+
+    public void setBlxr(String blxr) {
+        this.blxr = blxr;
+    }
+
+    public String getCyr() {
+        return cyr;
+    }
+
+    public void setCyr(String cyr) {
+        this.cyr = cyr;
+    }
+
+    public String getFzr() {
+        return fzr;
+    }
+
+    public void setFzr(String fzr) {
+        this.fzr = fzr;
+    }
+
+    public String getGzr() {
+        return gzr;
+    }
+
+    public void setGzr(String gzr) {
+        this.gzr = gzr;
+    }
+
+    public String getYwxq() {
+        return ywxq;
+    }
+
+    public void setYwxq(String ywxq) {
+        this.ywxq = ywxq;
+    }
+
+    public String getSyzt() {
+        return syzt;
+    }
+
+    public void setSyzt(String syzt) {
+        this.syzt = syzt;
+    }
+
+    public String getXgfj() {
+        return xgfj;
+    }
+
+    public void setXgfj(String xgfj) {
+        this.xgfj = xgfj;
+    }
+
+    public String getSjssbm() {
+        return sjssbm;
+    }
+
+    public void setSjssbm(String sjssbm) {
+        this.sjssbm = sjssbm;
+    }
 
     public Integer getClienid() {
         return clienid;
@@ -164,20 +299,8 @@ public class Business implements Serializable {
         this.clienid = clienid;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public Data getData() {
-        return data;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getZdate() {
@@ -186,14 +309,6 @@ public class Business implements Serializable {
 
     public void setZdate(String zdate) {
         this.zdate = zdate;
-    }
-
-    public Integer getBphone() {
-        return bphone;
-    }
-
-    public void setBphone(Integer bphone) {
-        this.bphone = bphone;
     }
 
     public String getBmailbox() {
@@ -212,6 +327,14 @@ public class Business implements Serializable {
         this.duty = duty;
     }
 
+    public Integer getBphone() {
+        return bphone;
+    }
+
+    public void setBphone(Integer bphone) {
+        this.bphone = bphone;
+    }
+
     public String getKhly() {
         return khly;
     }
@@ -220,148 +343,51 @@ public class Business implements Serializable {
         this.khly = khly;
     }
 
-
-
-    public Integer getBid() {
-        return bid;
+    public String getDate() {
+        return date;
     }
 
-    public void setBid(Integer bid) {
-        this.bid = bid;
-    }
-    public String getBname() {
-        return bname;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public void setBname(String bname) {
-        this.bname = bname;
-    }
-    public String getKname() {
-        return kname;
+    public Data getData() {
+        return data;
     }
 
-    public void setKname(String kname) {
-        this.kname = kname;
-    }
-    public String getBsshy() {
-        return bsshy;
-    }
-
-    public void setBsshy(String bsshy) {
-        this.bsshy = bsshy;
-    }
-    public String getPsheng() {
-        return psheng;
-    }
-
-    public void setPsheng(String psheng) {
-        this.psheng = psheng;
-    }
-    public String getPshi() {
-        return pshi;
-    }
-
-    public void setPshi(String pshi) {
-        this.pshi = pshi;
-    }
-    public String getPqu() {
-        return pqu;
-    }
-
-    public void setPqu(String pqu) {
-        this.pqu = pqu;
-    }
-    public String getBsite() {
-        return bsite;
-    }
-
-    public void setBsite(String bsite) {
-        this.bsite = bsite;
-    }
-    public Integer getPredictsum() {
-        return predictsum;
-    }
-
-    public void setPredictsum(Integer predictsum) {
-        this.predictsum = predictsum;
-    }
-    public String getBlxr() {
-        return blxr;
-    }
-
-    public void setBlxr(String blxr) {
-        this.blxr = blxr;
-    }
-    public String getCyr() {
-        return cyr;
-    }
-
-    public void setCyr(String cyr) {
-        this.cyr = cyr;
-    }
-    public String getFzr() {
-        return fzr;
-    }
-
-    public void setFzr(String fzr) {
-        this.fzr = fzr;
-    }
-    public String getGzr() {
-        return gzr;
-    }
-
-    public void setGzr(String gzr) {
-        this.gzr = gzr;
-    }
-    public String getYwxq() {
-        return ywxq;
-    }
-
-    public void setYwxq(String ywxq) {
-        this.ywxq = ywxq;
-    }
-    public String getSyzt() {
-        return syzt;
-    }
-
-    public void setSyzt(String syzt) {
-        this.syzt = syzt;
-    }
-    public String getXgfj() {
-        return xgfj;
-    }
-
-    public void setXgfj(String xgfj) {
-        this.xgfj = xgfj;
-    }
-    public String getSjssbm() {
-        return sjssbm;
-    }
-
-    public void setSjssbm(String sjssbm) {
-        this.sjssbm = sjssbm;
+    public void setData(Data data) {
+        this.data = data;
     }
 
     @Override
     public String toString() {
         return "Business{" +
-        "bid=" + bid +
-        ", bname=" + bname +
-        ", kname=" + kname +
-        ", bsshy=" + bsshy +
-        ", psheng=" + psheng +
-        ", pshi=" + pshi +
-        ", pqu=" + pqu +
-        ", bsite=" + bsite +
-        ", predictsum=" + predictsum +
-        ", blxr=" + blxr +
-        ", cyr=" + cyr +
-        ", fzr=" + fzr +
-        ", gzr=" + gzr +
-        ", ywxq=" + ywxq +
-        ", syzt=" + syzt +
-        ", xgfj=" + xgfj +
-        ", sjssbm=" + sjssbm +
-        "}";
+                "bid=" + bid +
+                ", bname='" + bname + '\'' +
+                ", kname='" + kname + '\'' +
+                ", bsshy='" + bsshy + '\'' +
+                ", psheng='" + psheng + '\'' +
+                ", pshi='" + pshi + '\'' +
+                ", pqu='" + pqu + '\'' +
+                ", bsite='" + bsite + '\'' +
+                ", predictsum=" + predictsum +
+                ", blxr='" + blxr + '\'' +
+                ", cyr='" + cyr + '\'' +
+                ", fzr='" + fzr + '\'' +
+                ", gzr='" + gzr + '\'' +
+                ", ywxq='" + ywxq + '\'' +
+                ", syzt='" + syzt + '\'' +
+                ", xgfj='" + xgfj + '\'' +
+                ", sjssbm='" + sjssbm + '\'' +
+                ", clienid=" + clienid +
+                ", userid='" + userid + '\'' +
+                ", zdate='" + zdate + '\'' +
+                ", bmailbox='" + bmailbox + '\'' +
+                ", duty='" + duty + '\'' +
+                ", bphone=" + bphone +
+                ", khly='" + khly + '\'' +
+                ", date='" + date + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

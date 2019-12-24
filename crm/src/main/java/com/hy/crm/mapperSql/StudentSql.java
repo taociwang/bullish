@@ -30,6 +30,9 @@ public class StudentSql {
 /*
 * 所有商机
 * */
+    /*
+     * 所有商机
+     * */
     public String select(String bname, String syzt, Integer predictsum, String fzr, String sjssbm, String date) {
         StringBuffer sql = new StringBuffer("select * from business b left join data a on a.typeid = b.syzt where  1=1 ");
         if (bname != null && !"".equals(bname)) {
