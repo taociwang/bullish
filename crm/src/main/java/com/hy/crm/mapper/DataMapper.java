@@ -1,7 +1,8 @@
 package com.hy.crm.mapper;
 
-import com.hy.crm.entity.Data;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hy.crm.entity.Data;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author wangsq
  * @since 2019-12-04
  */
+@Mapper
 public interface DataMapper extends BaseMapper<Data> {
+
 
 }
