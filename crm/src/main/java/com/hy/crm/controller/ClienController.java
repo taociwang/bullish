@@ -73,6 +73,7 @@ public class ClienController {
         IPage iPage = new Page(page,limit);
         List<ClienBo> list = clienBoService.list(iPage,value,type,typeid);
         //PageInfo<ClienBo> pageInfo = new PageInfo<>(list);
+        iPage.setRecords(list);
         LayuiDataBo layuiDataBo = new LayuiDataBo();
         layuiDataBo.setCode(0);
         layuiDataBo.setMsg("");
@@ -99,7 +100,7 @@ public class ClienController {
     @RequestMapping(value = "/toadd.do")
     public String toadd(Model model){
         model.addAttribute("da",dataService.list(new QueryWrapper<Data>().eq("typeid",1)));
-        model.addAttribute("da1",dataService.list(new QueryWrapper<Data>().eq("typeid",207)));
+        model.addAttribute("da1",dataService.list(new QueryWrapper<Data>().eq("typeid",209)));
         model.addAttribute("da2",dataService.list(new QueryWrapper<Data>().eq("typeid",607)));
         return "clien/clienadd";
     }
@@ -112,7 +113,7 @@ public class ClienController {
     public String toupdatecli(Model model, Integer cid){
         model.addAttribute("typeidlist",dataService.list(new QueryWrapper<Data>().eq("typeid",1)));
         //客户来源
-        model.addAttribute("customerSourceList",dataService.list(new QueryWrapper<Data>().eq("typeid",207)));
+        model.addAttribute("customerSourceList",dataService.list(new QueryWrapper<Data>().eq("typeid",209)));
         //所属行业
         model.addAttribute("categoryList",dataService.list(new QueryWrapper<Data>().eq("typeid",607)));
         //获取部门

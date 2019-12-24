@@ -130,6 +130,13 @@
     <a href= "/crm/business/toupdatebus.do?bid={{d.bid}}" class="layui-table-link"  target="blank" >{{d.bname}}</a>
 </script>
 
+<script type="text/html" id="getname">
+    {{#  if(d.data==null){ }}
+
+    {{#  } else { }}
+    {{d.data.type_name}}
+    {{#  } }}
+</script>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
@@ -154,7 +161,7 @@
             , cols: [[
                 //{type: 'checkbox', fixed: 'left'}
                 {field: 'bname', title: '商机名称', width: 150, event:'detail',templet:'#titleTpl'}
-                , {field: 'syzt', title: '商机阶段', width: 150, sort: true,}
+                , {field: 'type_name', title: '商机阶段', width: 150, sort: true,templet: '#getname'}
                 , {field: 'predictsum', title: '预计成交金额', width: 150, sort: true}
                 , {field: 'fzr', title: '商机负责人', width: 150, sort: true}
                 , {field: 'zdate', title: '最后跟单', width: 150, sort: true}

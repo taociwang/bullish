@@ -4,7 +4,7 @@ import com.hy.crm.bo.StatisticsBo;
 import com.hy.crm.bo.TypeStatisticsBo;
 import com.hy.crm.entity.Business;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;
@@ -13,12 +13,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hy.crm.entity.Clien;
 import com.hy.crm.mapperSql.StudentSql;
 import jdk.nashorn.internal.runtime.linker.LinkerCallSite;
-import org.apache.ibatis.annotations.Mapper;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
-
 
 import java.util.List;
 
@@ -49,7 +45,9 @@ public interface BusinessMapper extends BaseMapper<Business> {
     @Select("SELECT sum(b.predictsum) FROM business b WHERE b.clienid=#{cid}")
     public Integer sum(Integer cid);
 
-
+   @Results({
+          @Result(column = "type_name",property = "data.type_name")
+   })
     @SelectProvider(type = StudentSql.class,method = "select")
     public List<Business> queryBus (String bname, String syzt,Integer predictsum,  String fzr, String sjssbm , String time,IPage page );
 

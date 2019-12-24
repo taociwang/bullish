@@ -41,20 +41,16 @@
                 <input type="text" name="bname" th:value="${buslist.bname}"  autocomplete="off" placeholder="输入商机名词" class="layui-input" lay-verify="required" lay-reqtext="商机名不能为空">
             </div>
         </div>
-
-        <div class="layui-inline">
-            <label class="layui-form-label">*客户名称</label>
-            <div class="layui-input-inline">
-                <input type="text" name="kname" th:value="${buslist.kname}" placeholder="请输入客户名称" autocomplete="off" class="layui-input" lay-verify="required" lay-reqtext="客户名不能为空">
-            </div>
-        </div>
-
-        <div class="layui-inline">
-            <label class="layui-form-label">所属行业</label>
-            <div class="layui-input-inline">
-                <select name="trade" lay-filter="">
+        <div class="layui-input-inline">
+            <label class="layui-form-label">商机所属行业</label>
+            <div class="layui-input-block">
+                <select name="bsshy" lay-filter="">
                     <option value="">请选择</option>
-                    <option th:each="category:${categoryList}" th:value="${category.typeid}" th:selected="${buslist.khly==category.type_name}">[[${category.type_name}]]</option>
+                    <option value="IT" th:selected="${buslist.bsshy=='IT'}">IT</option>
+                    <option value="医疗" th:selected="${buslist.bsshy=='医疗'}">医疗</option>
+                    <option value="酒店" th:selected="${buslist.bsshy=='酒店'}">酒店</option>
+                    <option value="旅游业"th:selected="${buslist.bsshy=='旅游业'}">旅游业</option>
+                    <option value="教育科研"th:selected="${buslist.bsshy=='教育科研'}">教育科研</option>
                 </select>
             </div>
         </div>
@@ -76,7 +72,7 @@
             <div class="layui-input-inline">
                 <select name="bsouree" lay-filter="">
                     <option value="">请选择</option>
-                    <option th:each="customerSource:${customerSourceList}" th:value="${customerSource.type_name}" th:selected="${buslist.khly==customerSource.type_name}" >[[${customerSource.type_name}]]</option>
+                    <option th:each="getkhly:${khlylist}" th:value="${getkhly.did}" th:selected="${buslist.khly==getkhly.did}" >[[${getkhly.type_name}]]</option>
                 </select>
             </div>
         </div>
@@ -90,7 +86,14 @@
                 <input type="text" name="predictsum" th:value="${buslist.predictsum}" placeholder="请输入预计成交金额" autocomplete="off" class="layui-input">
             </div>
         </div>
-
+        <div class="layui-inline">
+            <label class="layui-form-label">*联系人</label>
+            <div class="layui-input-inline">
+                <input type="text" name="blxr" th:value="${buslist.blxr}" placeholder="请输入联系人" autocomplete="off" class="layui-input" lay-verify="required" lay-reqtext="联系人不能为空">
+            </div>
+        </div>
+        <br>
+        <br>
         <div class="layui-inline">
             <label class="layui-form-label">预计结单日期:</label>
             <div class="layui-input-inline">
@@ -98,19 +101,30 @@
             </div>
         </div>
 
-        <div class="layui-inline">
-            <label class="layui-form-label">*联系人</label>
-            <div class="layui-input-inline">
-                <input type="text" name="blxr" th:value="${buslist.blxr}" placeholder="请输入联系人" autocomplete="off" class="layui-input" lay-verify="required" lay-reqtext="联系人不能为空">
+
+
+        <div class="layui-input-inline">
+            <label class="layui-form-label">商机状态</label>
+            <div class="layui-input-block">
+                <select name="syzt" lay-filter="aihao">
+                    <option value="">请选择</option>
+                    <option th:each="syzt:${getsyzt}" th:value="${syzt.did}" th:selected="${buslist.syzt==syzt.did}" >[[${syzt.type_name}]]</option>
+                </select>
             </div>
         </div>
 
         <div class="layui-form-item">
 
-            <div class="layui-inline">
+            <div class="layui-input-inline">
                 <label class="layui-form-label">商机所属部门</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="sjssbm"  th:value="${buslist.sjssbm}" placeholder="请输入商机所属部门" autocomplete="off" class="layui-input">
+                <div class="layui-input-block">
+                    <select name="sjssbm" lay-filter="">
+                        <option value="">请选择</option>
+                        <option value="销售部" th:selected="${buslist.sjssbm=='销售部'}">销售部</option>
+                        <option value="研发部" th:selected="${buslist.sjssbm=='研发部'}">研发部</option>
+                        <option value="人事部" th:selected="${buslist.sjssbm=='人事部'}">人事部</option>
+                        <option value="市场部"th:selected="${buslist.sjssbm=='市场部'}">市场部</option>
+                    </select>
                 </div>
             </div>
 
