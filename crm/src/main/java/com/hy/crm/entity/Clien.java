@@ -18,7 +18,6 @@ import java.io.Serializable;
 public class Clien implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
     @TableId(value = "cid",type = IdType.AUTO)
     private Integer cid;
 
@@ -40,7 +39,7 @@ public class Clien implements Serializable {
     /**
      * 电话
      */
-    private Integer phone;
+    private String phone;
 
     /**
      * 所属行业
@@ -95,7 +94,7 @@ public class Clien implements Serializable {
     /**
      * 办公电话
      */
-    private Integer bgdh;
+    private String bgdh;
 
     private String cz;
 
@@ -130,39 +129,32 @@ public class Clien implements Serializable {
     private Integer shuihao;
 
     /*
-     * 拼音
-     * */
-    private String spell;
-
-    /*
-     * 客户来源
-     * */
-    private String khly;
-
-    /*
-     * 银行电话
-     * */
-    private Integer yhphone;
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public String getSpell() {
-        return spell;
-    }
-
-    public void setSpell(String spell) {
-        this.spell = spell;
-    }
-
-    /* 客户分类
+    * 客户分类
     * */
     private String typeid;
 
+    /*
+    * 拼音
+    * */
+    private String spell;
 
+    /*
+    * 客户来源
+    * */
+    private String khly;
 
+    /*
+    * 银行电话
+    * */
+    private String yhphone;
 
+    public String getYhphone() {
+        return yhphone;
+    }
+
+    public void setYhphone(String yhphone) {
+        this.yhphone = yhphone;
+    }
 
     public String getKhly() {
         return khly;
@@ -172,19 +164,20 @@ public class Clien implements Serializable {
         this.khly = khly;
     }
 
-    public Integer getYhphone() {
-        return yhphone;
-    }
-
-    public void setYhphone(Integer yhphone) {
-        this.yhphone = yhphone;
-    }
     public String getTypeid() {
         return typeid;
     }
 
     public void setTypeid(String typeid) {
         this.typeid = typeid;
+    }
+
+    public String getSpell() {
+        return spell;
+    }
+
+    public void setSpell(String spell) {
+        this.spell = spell;
     }
 
     public Integer getCid() {
@@ -215,11 +208,11 @@ public class Clien implements Serializable {
     public void setBm(String bm) {
         this.bm = bm;
     }
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public String getSshy() {
@@ -292,11 +285,11 @@ public class Clien implements Serializable {
     public void setPart(String part) {
         this.part = part;
     }
-    public Integer getBgdh() {
+    public String getBgdh() {
         return bgdh;
     }
 
-    public void setBgdh(Integer bgdh) {
+    public void setBgdh(String bgdh) {
         this.bgdh = bgdh;
     }
     public String getCz() {
