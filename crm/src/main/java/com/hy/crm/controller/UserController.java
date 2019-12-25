@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,8 +55,17 @@ public class UserController {
         return i;
     }
 
-
-
+/*
+* 获取用户名
+* */
+    @RequestMapping("/saveName.do")
+    public ModelAndView saveName(String name, HttpServletRequest request){
+        ModelAndView view=new ModelAndView();
+        User user=userService.getOne(new QueryWrapper<User>().eq("username",name));
+        request.getSession().setAttribute("user",user);
+        view.setViewName("/1.html");
+        return view;
+    }
     /*
      * 注册
      * */

@@ -91,6 +91,7 @@ public class BusinessController {
     @RequestMapping("/add.do")
     public String add(Business business){
         System.out.println(business.toString());
+        business.setXgfj(UploadController.url);
         businessService.insert(business);
         return "redirect:/business/wobusiness.html";
     }

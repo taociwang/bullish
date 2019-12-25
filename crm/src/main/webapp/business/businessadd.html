@@ -147,7 +147,9 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">上传附件</label>
         <div class="layui-input-block">
-            <input type="file" name="xgfj" id="test20">
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传附件
+            </button>
         </div>
     </div>
     <br>
@@ -240,25 +242,27 @@
 
             alert(JSON.stringify(data));
         });*/
+        //上传文件
         var uploadInst = upload.render({
-            elem: '#accessory' //绑定元素
-            , url: '/upload.do' //上传接口
-            , accept: 'file' //限制上传为文件
-            , done: function (res) {
-                if (res == '1') {
-                    layer.msg("导入成功", {icon: 6});
-                } else {
-                    layer.msg("导入失败", {icon: 5});
-                }
-                table.reload("test", {});
-                //上传完毕回调
+            elem: '#test1' //绑定元素
+            ,url: '/upload.do'//上传接口
+            ,accept: 'file'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#preShow').attr('src', result); //图片链接（base64）
+                });
             }
-            , error: function () {
+            ,done: function(res){
+                if(res==='1'||res===1){
+                    alert("上传成功");
+                }
+            }
+            ,error: function(){
                 //请求异常回调
-                layer.msg("上传失败", {icon: 5});
-                table.reload("test", {});
             }
         });
+
         /*    var uploadInst = upload.render({
                 elem: '#accessory' //绑定元素
                 , url: './excel.do' //上传接口

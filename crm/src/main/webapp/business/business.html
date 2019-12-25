@@ -109,6 +109,10 @@
                             </div>
                         </form>
                     </div>
+
+
+
+
                     <table class="layui-hide" id="test" lay-filter="test"></table>
                 </div>
             </div>
@@ -129,6 +133,7 @@
 
 <script type="text/html" id="getname">
     {{#  if(d.data==null){ }}
+
     {{#  } else { }}
     {{d.data.type_name}}
     {{#  } }}
@@ -221,18 +226,6 @@
                 ,where: {syzt:18}
             });
         });
-        /*$("#cg").click(function () {
-            table.reload("test",{
-                url: '/crm/business/queryAllbus.do'
-                ,where: {state:"成功"}
-            });
-        });
-        $("#cg").click(function () {
-            table.reload("test",{
-                url: '/crm/business/queryAllbus.do'
-                ,where: {state:"成功"}
-            });
-        });*/
 
         /* table.on('toolbar(test)', function (obj) {
              var layEvent = obj.event;
