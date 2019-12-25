@@ -34,8 +34,15 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
         Page<Business> p = new Page<Business>(pagenum,limit);
         //IPage iPage=p;
         p.setRecords(businessMapper.queryBus(bname,syzt,predictsum,fzr,sjssbm,time,p));
+
         return p;
         /*return businessMapper.queryBus(bname,syzt,predictsum,fzr,sjssbm,time);*/
+    }
+    /*
+    * 根基商机状态来查询
+    * */
+    public List<Business> querysyzt(String syzt){
+        return businessMapper.querysyzt(syzt);
     }
 
     public List<Business> querycli(Integer cid){

@@ -44,7 +44,7 @@
         <div class="layui-input-inline">
             <select name="bsouree" lay-filter="">
                 <option value="">请选择</option>
-                <option th:each="customerSource:${customerSourceList}" th:value="${customerSource.type_name}" th:selected="${clilist.khly==customerSource.type_name}" >[[${customerSource.type_name}]]</option>
+                <option th:each="getkhly:${khlylist}" th:value="${getkhly.did}" th:selected="${buslist.khly==getkhly.did}" >[[${getkhly.type_name}]]</option>
             </select>
         </div>
     </div>

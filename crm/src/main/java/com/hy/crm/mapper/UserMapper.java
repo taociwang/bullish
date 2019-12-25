@@ -25,7 +25,7 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select id from user where username = #{username}")
     String getUidByUsername(String username);
     @Select("insert into user(username,password) values(#{username},#{password})")
-     Integer insert_user(User user);
+    Integer insert_user(User user);
     @Select("select id from user where username=#{value}")
     Integer getIdByName(String username);
 

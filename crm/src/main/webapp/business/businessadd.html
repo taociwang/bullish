@@ -41,12 +41,13 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">所属行业</label>
         <div class="layui-input-block">
-            <select name="bsshy" lay-filter="aihao">
+            <select name="sshy" lay-filter="aihao">
                 <option>请选择</option>
                 <option  th:each="dat:${da2}" th:value="${dat.type_name}" th:text="${dat.type_name}" th:id="${dat.did}" id="${dat.did}"></option>
             </select>
         </div>
     </div>
+
     <br>
     <br>
     <div class="layui-inline">
@@ -78,7 +79,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="blxr" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input">
+            <input type="text" name="blxr" lay-verify="required" lay-reqtext="联系人，不可为空" autocomplete="off" placeholder="请输入联系人" class="layui-input">
         </div>
     </div>
     <div class="layui-input-inline">
@@ -103,13 +104,42 @@
     </div>
     <br>
     <br>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">客户来源</label>
+        <div class="layui-input-block">
+            <select name="khly" >
+                <option value="">请选择</option>
+                <option  th:each="dat:${da1}" th:value="${dat.did}" th:text="${dat.type_name}"></option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机所属行业</label>
+        <div class="layui-input-block">
+            <select name="bsshy" lay-filter="aihao">
+                <option value="">请选择</option>
+                <option value="IT" >IT</option>
+                <option value="医疗" >医疗</option>
+                <option value="酒店" >酒店</option>
+                <option value="旅游业">旅游业</option>
+                <option value="教育科研">教育科研</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-input-inline">
+        <label class="layui-form-label">商机状态</label>
+        <div class="layui-input-block">
+            <select name="syzt" lay-filter="aihao">
+                <option value="">请选择</option>
+                <option  th:each="bm:${da3}" th:value="${bm.did}" th:text="${bm.type_name}"></option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <br>
 
     <div class="layui-form-item layui-form-text">
-<<<<<<< HEAD
-        <label class="layui-form-label">普通文本域</label>
-=======
         <label class="layui-form-label">附加说明</label>
->>>>>>> eed753232ae201273381ded23935166d7d1c54c1
         <div class="layui-input-block">
             <textarea name="shuoming" placeholder="请输入内容" class="layui-textarea"></textarea>
         </div>
@@ -125,7 +155,13 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">商机所属部门</label>
         <div class="layui-input-block">
-            <input type="text" name="sjssbm" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <select name="sjssbm" lay-filter="">
+                <option value="">请选择</option>
+                <option value="销售部" >销售部</option>
+                <option value="研发部" >研发部</option>
+                <option value="人事部" >人事部</option>
+                <option value="市场部">市场部</option>
+            </select>
         </div>
     </div>
     <div class="layui-input-inline">
@@ -161,11 +197,13 @@
 <script src="/static/js/jquery-3.3.1.js"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function(){
+    layui.use(['form', 'layedit', 'laydate','upload'], function(){
+        var upload = layui.upload;
         var form = layui.form
             ,layer = layui.layer
             ,layedit = layui.layedit
             ,laydate = layui.laydate;
+
 
         //监听提交
         form.on('submit(demo1)', function(data){
@@ -202,9 +240,9 @@
 
             alert(JSON.stringify(data));
         });*/
-    /*    var uploadInst = upload.render({
+        var uploadInst = upload.render({
             elem: '#accessory' //绑定元素
-            , url: './excel.do' //上传接口
+            , url: '/upload.do' //上传接口
             , accept: 'file' //限制上传为文件
             , done: function (res) {
                 if (res == '1') {
@@ -217,10 +255,10 @@
             }
             , error: function () {
                 //请求异常回调
-                layer.msg("你导入的不是Excel文件,请重新上传", {icon: 5});
+                layer.msg("上传失败", {icon: 5});
                 table.reload("test", {});
             }
-        });*/
+        });
         /*    var uploadInst = upload.render({
                 elem: '#accessory' //绑定元素
                 , url: './excel.do' //上传接口
