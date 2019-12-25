@@ -35,7 +35,6 @@ public interface BusinessMapper extends BaseMapper<Business> {
     /*, @Param("bname") String bname, @Param("syzt") String syzt, @Param("predictsum") Integer predictsum, @Param("fzr") String fzr, @Param("sjssbm")String sjssbm , @Param("time") String time*/
     //根据商机外键clienid查询客户信息
 
-
     @Select("SELECT c.`uname`,c.`sshy`,c.`shi`,c.site FROM business b LEFT JOIN clien c ON b.clienid = c.cid WHERE clienid=#{cid}")
     public List<Business> queryClien(Integer cid);
  /*   @Select("select * from clien ")
