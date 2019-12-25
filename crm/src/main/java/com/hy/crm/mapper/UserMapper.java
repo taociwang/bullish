@@ -2,6 +2,7 @@ package com.hy.crm.mapper;
 
 import com.hy.crm.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("update user set password=#{password} where username=#{username}")
     public void  updateuser(String username);
     @Select("select * from user where id=#{id}")
-    public String getid(String id);
+    public User getUserByid(Integer id);
     @Select("select * from user where username = #{username}")
     public User getUserByname(String username);
     @Select("select id from user where username = #{username}")
@@ -28,6 +29,5 @@ public interface UserMapper extends BaseMapper<User> {
     Integer insert_user(User user);
     @Select("select id from user where username=#{value}")
     Integer getIdByName(String username);
-
-
+    Integer changePassword(@Param("password") String password,@Param("id") Integer uid);
 }

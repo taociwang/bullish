@@ -34,7 +34,7 @@ public class After_saleServiceImpl extends ServiceImpl<After_saleMapper, After_s
     public LayuiData query(After_sale after_sale,Integer current,Integer size,String column,String value){
         LayuiData layuiData=new LayuiData();
         //单表分页插件
-        Page page = PageHelper.startPage(current, size, true);
+        Page page = PageHelper.startPage(current, size,true);
         List<After_sale> afterSaleList=new ArrayList<>();
         QueryWrapper wrapper=new QueryWrapper<After_sale>();
         if((!StringUtil.isEmpty(column))&&(!StringUtil.isEmpty(value))){
@@ -74,38 +74,25 @@ public class After_saleServiceImpl extends ServiceImpl<After_saleMapper, After_s
     /**
      * 数据
      */
-    public List<Long> counts(){
-        List<Long> counts=new ArrayList<>();
+    public List<Integer> counts(){
+        List<Integer> counts=new ArrayList<>();
         for (int i = 1; i <=3 ; i++) {
             QueryWrapper wrapper=new QueryWrapper<After_sale>();
-            Page page = PageHelper.startPage(1, 3, true);
             wrapper.eq("status",i+"");
             after_saleMapper.selectList(wrapper);
-            counts.add(page.getTotal());
+            counts.add(after_saleMapper.selectList(wrapper).size());
         }
-        Page page2 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.week();
-        counts.add(page2.getTotal());
+        counts.add(after_saleMapper.week().size());
 
-        Page page3 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.lastWeek();
-        counts.add(page3.getTotal());
+        counts.add(after_saleMapper.lastWeek().size());
 
-        Page page4 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.month();
-        counts.add(page4.getTotal());
+        counts.add(after_saleMapper.month().size());
 
-        Page page5 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.lastMonth();
-        counts.add(page5.getTotal());
+        counts.add(after_saleMapper.lastMonth().size());
 
-        Page page6 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.quarter();
-        counts.add(page6.getTotal());
+        counts.add(after_saleMapper.quarter().size());
 
-        Page page7 = PageHelper.startPage(1, 3, true);
-        after_saleMapper.lastQuarter();
-        counts.add(page7.getTotal());
+        counts.add(after_saleMapper.lastQuarter().size());
         return counts;
     }
 

@@ -57,7 +57,7 @@ public class After_saleController {
      */
     @RequestMapping("/statistics.do")
     @ResponseBody
-    public List<Long> statistics(){
+    public List<Integer> statistics(){
         return after_saleService.counts();
     }
 

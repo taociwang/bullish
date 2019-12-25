@@ -208,7 +208,8 @@
                 success: function (data) {
                     layer.close(loginLoadIndex);
                     if ( data === '1' || data===1) {
-                        window.location.href = '1.html?usern='+loginUsername;
+                        window.location.href='crm/user/saveName.do?name='+loginUsername;
+                        //window.location.href = '1.html?usern='+loginUsername;
                     } else {
                         layer.msg("登录失败", {icon: 5});
                         $('#loginBtn').val("登录");
