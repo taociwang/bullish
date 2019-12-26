@@ -278,11 +278,8 @@
                 });
             }
             ,done: function(res){
-                console.log("res:"+res);
-                if(res.code > 0){//自定义返回失败
-                    return layer.msg('上传失败');
-                }else{
-                    window.document.getElementById("fileName").value=res;
+                if(res==='1'||res===1){
+                    alert("上传成功");
                 }
             }
             ,error: function(){

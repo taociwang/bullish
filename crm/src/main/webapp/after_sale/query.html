@@ -79,7 +79,7 @@
                         <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1"><span class="layui-icon layui-icon-search">搜索</span></button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                         <div class="divcss5-right">
-                            <button class="layui-btn layui-btn-sm" lay-event="add" ><span class="layui-icon layui-icon-add-1">添加</span></button>
+                            <a class="layui-btn layui-btn-sm" href="/after_sale/add.html" ><span class="layui-icon layui-icon-add-1">添加</span></a>
                             <a class="layui-btn layui-btn-sm" href="/after_sale/query.html" lay-event="refresh" ><span class="layui-icon layui-icon-refresh-1">刷新</span></a>
                         </div>
                     </form>
@@ -92,6 +92,11 @@
         </div>
     </div>
 </div>
+
+<script type="text/html" id="theme">
+    <a href="/crm/after-sale/toUpdate.do?id={{d.id}}" target="blank">{{d.theme}}</a>
+</script>
+
 <script src="/static/js/jquery-3.3.1.js" charset="utf-8"></script>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
@@ -116,8 +121,8 @@
             ,title: '用户数据表'
             ,cols: [[
                 //{type: 'checkbox', fixed: 'left'}
-                {field:'', title:'编号', width:120, templet:'<div>{{ d.LAY_INDEX }}</div>'}
-                ,{field:'theme', title:'主题', width:150}
+                {field:'', title:'编号', width:80, templet:'<div>{{ d.LAY_INDEX }}</div>'}
+                ,{field:'theme', title:'主题', width:150,templet:'#theme'}
                 ,{field:'serve_type', title:'服务类型', width:150}
                 ,{field:'state_time', title:'开始时间', width:150, templet: function(d){
                         if (d.state_time == null)
@@ -127,7 +132,7 @@
                         return util.toDateString(d.state_time, "yyyy-MM-dd");
                     }}
                 ,{field:'serve_per', title:'服务人员', width:150}
-                ,{field:'', title:'服务评分', width:100}
+                ,{field:'serve_grade', title:'服务评分', width:100}
             ]]
             ,page: true
             ,limit:10

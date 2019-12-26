@@ -36,10 +36,7 @@ public class StatisticsController {
      */
     @RequestMapping("/weekStatistics.do")
     public String weekStatistics(HttpServletRequest request, Model model){
-        //User user=(User) request.getSession().getAttribute("user");
-        User user=new User();
-        user.setId(1);
-        user.setUsername("张三");
+        User user=(User) request.getSession().getAttribute("user");
         model.addAttribute("statistics",statisticsService.week_statistics(user));
         return "statistics/week";
     }
@@ -51,10 +48,7 @@ public class StatisticsController {
      */
     @RequestMapping("/monthStatistics.do")
     public String monthStatistics(HttpServletRequest request, Model model){
-        //User user=(User) request.getSession().getAttribute("user");
-        User user=new User();
-        user.setId(1);
-        user.setUsername("张三");
+        User user=(User) request.getSession().getAttribute("user");
         model.addAttribute("statistics",statisticsService.monthStatistics(user));
         return "statistics/month";
     }
@@ -66,10 +60,7 @@ public class StatisticsController {
      */
     @RequestMapping("/quarterStatistics.do")
     public String quarterStatistics(HttpServletRequest request, Model model){
-        //User user=(User) request.getSession().getAttribute("user");
-        User user=new User();
-        user.setId(1);
-        user.setUsername("张三");
+        User user=(User) request.getSession().getAttribute("user");
         model.addAttribute("statistics",statisticsService.monthStatistics(user));
         return "statistics/quarter";
     }

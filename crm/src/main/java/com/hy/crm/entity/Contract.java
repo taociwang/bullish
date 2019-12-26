@@ -72,12 +72,12 @@ public class Contract implements Serializable {
     /**
      * 固定电话
      */
-    private Integer immobilization_phone;
+    private String immobilization_phone;
 
     /**
      * 移动电话
      */
-    private Integer move_phone;
+    private String move_phone;
 
     /**
      * 邮箱/qq
@@ -202,18 +202,18 @@ public class Contract implements Serializable {
     public void setOpposite_ren(String opposite_ren) {
         this.opposite_ren = opposite_ren;
     }
-    public Integer getImmobilization_phone() {
+    public String getImmobilization_phone() {
         return immobilization_phone;
     }
 
-    public void setImmobilization_phone(Integer immobilization_phone) {
+    public void setImmobilization_phone(String immobilization_phone) {
         this.immobilization_phone = immobilization_phone;
     }
-    public Integer getMove_phone() {
+    public String getMove_phone() {
         return move_phone;
     }
 
-    public void setMove_phone(Integer move_phone) {
+    public void setMove_phone(String move_phone) {
         this.move_phone = move_phone;
     }
     public String getE_mail_qq() {

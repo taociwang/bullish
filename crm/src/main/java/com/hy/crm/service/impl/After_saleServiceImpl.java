@@ -5,7 +5,9 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.util.StringUtil;
 import com.hy.crm.bo.After_sale_bo;
+import com.hy.crm.controller.UploadController;
 import com.hy.crm.entity.After_sale;
+import com.hy.crm.entity.User;
 import com.hy.crm.mapper.After_saleMapper;
 import com.hy.crm.service.IAfter_saleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -116,5 +118,17 @@ public class After_saleServiceImpl extends ServiceImpl<After_saleMapper, After_s
      */
     public After_sale_bo queryById(String id){
         return after_saleMapper.queryById(id);
+    }
+
+    /**
+     * 保存售后信息
+     * @param after_sale
+     * @param user
+     */
+    public void add(After_sale after_sale, User user){
+        after_sale.setAccessory(UploadController.url);
+        after_sale.setServe_per(user.getUsername());
+        after_sale.setUserid(user.getId()+"");
+        after_saleMapper.insert(after_sale);
     }
 }
