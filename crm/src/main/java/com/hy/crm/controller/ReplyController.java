@@ -1,9 +1,12 @@
 package com.hy.crm.controller;
 
-
+import com.hy.crm.entity.Reply;
+import com.hy.crm.service.impl.ReplyServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
 
 /**
  * <p>
@@ -13,8 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
  * @author wangsq
  * @since 2019-12-04
  */
-@RestController
+@Controller
 @RequestMapping("/crm/reply")
 public class ReplyController {
+    @Autowired
+    private ReplyServiceImpl replyService;
+
+
+    @RequestMapping("/add.do")
+    public String add(Reply reply){
+       // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        reply.setReply_time(new Date());
+        replyService.addreply(reply);
+        return "redirect:/luntan/luntan.html";
+    }
 
 }

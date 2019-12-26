@@ -44,14 +44,13 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         -->
         <property name="filterChainDefinitions">
             <value>
-                /login.html=anon
+               <!-- /login.html=anon
                 /login.do=anon
                 /1.html=anon
                 /wpt/clien.html=anon
-               /welcome.html=anon
-                /static/**=anon
+                /welcome.html=anon
+                /static/**=anon-->
                 /**=anon
-
             </value>
         </property>
     </bean>

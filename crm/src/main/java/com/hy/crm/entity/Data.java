@@ -1,5 +1,8 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -17,6 +20,7 @@ public class Data implements Serializable {
     /**
      * 基本数据管理主键did
      */
+    @TableId(value = "did",type = IdType.AUTO)
     private Integer did;
 
     /**

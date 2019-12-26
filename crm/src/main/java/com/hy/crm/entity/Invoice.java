@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -17,6 +21,7 @@ public class Invoice implements Serializable {
     /**
      * 开票id
      */
+    @TableId(value = "tid",type = IdType.AUTO)
     private Integer tid;
 
     /**
@@ -93,6 +98,28 @@ public class Invoice implements Serializable {
      * 附件
      */
     private String accessory;
+    /**
+     * 主题
+     */
+    private String zhuti;
+    /**
+     * 结束时间
+     */
+    private String time;
+    /**
+     * 详细地址
+     */
+    private String dizhi;
+    @TableField(exist = false)
+    private int cid;
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
 
     public Integer getTid() {
         return tid;
@@ -207,6 +234,31 @@ public class Invoice implements Serializable {
         this.accessory = accessory;
     }
 
+    public String getZhuti() {
+        return zhuti;
+    }
+
+    public void setZhuti(String zhuti) {
+        this.zhuti = zhuti;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDizhi() {
+        return dizhi;
+    }
+
+    public void setDizhi(String dizhi) {
+        this.dizhi = dizhi;
+    }
+
+
     @Override
     public String toString() {
         return "Invoice{" +
@@ -226,6 +278,9 @@ public class Invoice implements Serializable {
         ", kaipiao_date=" + kaipiao_date +
         ", invoice_number=" + invoice_number +
         ", accessory=" + accessory +
+        ", zhuti=" + zhuti +
+        ", time=" + time +
+        ", dizhi=" + dizhi +
         "}";
     }
 }

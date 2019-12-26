@@ -16,5 +16,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class InvoiceServiceImpl extends ServiceImpl<InvoiceMapper, Invoice> implements IInvoiceService {
-
 }
