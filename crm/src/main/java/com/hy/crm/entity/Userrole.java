@@ -23,6 +23,15 @@ public class Userrole implements Serializable {
      * 角色id
      */
     private Integer roleid;
+    private Integer[] userR;
+
+    public Integer[] getUserR() {
+        return userR;
+    }
+
+    public void setUserR(Integer[] userR) {
+        this.userR = userR;
+    }
 
     public Integer getUserid() {
         return userid;

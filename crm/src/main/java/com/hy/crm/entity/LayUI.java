@@ -1,17 +1,11 @@
-package com.hy.crm.util;
+package com.hy.crm.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import java.io.Serializable;
 import java.util.List;
 
-@Getter
-@Setter
-public class LayuiData implements Serializable {
+public class LayUI {
     private Integer code;
     private String msg;
-    private long count;
+    private Integer count;
     private List data;
 
     public Integer getCode() {
@@ -30,11 +24,11 @@ public class LayuiData implements Serializable {
         this.msg = msg;
     }
 
-    public long getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(long count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 

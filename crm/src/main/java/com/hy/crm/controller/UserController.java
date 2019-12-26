@@ -3,7 +3,6 @@ package com.hy.crm.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hy.crm.entity.User;
-import com.hy.crm.service.IUserService;
 import com.hy.crm.service.impl.UserServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -14,7 +13,6 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +39,7 @@ public class UserController {
     @ResponseBody
     public int login(User user, HttpServletRequest request){
         //将用户名存入shiro usernamePasswordToken;
+        request.getSession().setAttribute("user",user);
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
         //获取主体对象
         Subject subject= SecurityUtils.getSubject();

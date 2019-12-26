@@ -3,9 +3,7 @@ package com.hy.crm.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
-
 /**
  * <p>
  * 基本数据管理表
@@ -14,8 +12,8 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
-@TableName(value = "data")
-public class Data implements Serializable {
+@TableName("data")
+public class Data implements  Serializable{
 
     private static final long serialVersionUID = 1L;
 

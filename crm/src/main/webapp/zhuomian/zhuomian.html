@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>我的桌面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <link rel="stylesheet" href="../static/css/mycss.css" />
+    <script type="text/javascript">
+              function f(){
+            var obj = document.getElementById("div6-1");
+            obj.style.display = 'inline';
+        }
+
+
+    </script>
+    <script src="../static/js/echarts.min.js"></script>
+
+</head>
+<body>
+
+<div id="mydesktop">
+    <i class="layui-icon" style="font-size: 50px;color:  black">&#xe68e;</i>我的桌面
+</div>
+<div id="div2">
+    <p align="center" style="font-size: 20px;color: #000000">待处理事务<i class="layui-icon">&#xe629;</i> </p>
+</div>
+<div id="div1">
+    <table>
+        <tr><th style="width: 260px"></th><th></th></tr>
+        <tr>
+            <td><a href="#"><font style="color: red">金州勇士队</font></a></td><td>1/9</td>
+        </tr>
+        <tr>
+            <td><a href="#">洛杉矶湖人队</a></td><td>1/9</td>
+        </tr>
+        <tr>
+            <td><a href="#">休斯顿火箭队</a></td><td>1/9</td>
+        </tr>
+        <tr>
+            <td><a href="#">布鲁克林篮网队</a></td><td>1/9</td>
+        </tr>
+    </table>
+</div>
+<input type="hidden" id="business" th:value="${business}">
+<input type="hidden" id="clien" th:value="${clien}">
+<input type="hidden" id="con" th:value="${con}">
+
+<div id="div3">
+    <p align="center" style="font-size: 20px;color: #000000">客户关系<i class="layui-icon">&#xe613;</i> </p>
+</div>
+<div id="div4">
+    <div id="div4-1">
+        <p align="center">客户数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全部商机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全部合同</p>
+        <p align="center" style="font-size: 22px"><font th:text="${clien}"></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font th:text="${business}"></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font th:text="${con}"></font></p>
+    </div>
+    <div id="main">
+
+    </div>
+</div>
+
+<div id="div5">
+    <p align="center" style="font-size: 20px;color: #000000">信息公告<i class="layui-icon">&#xe667;</i> </p>
+</div>
+
+<div id="div6">
+    <table>
+        <tr>
+            <th>safjhasaa</th>
+            <td>aa</td>
+        </tr>
+    </table>
+</div>
+
+<div id="div7">
+    <p align="center" style="font-size: 20px;color: #000000">我关注的知识<i class="layui-icon">&#xe63c;</i></p>
+</div>
+<div id="div8">
+    <!--这是友情链接主体-->
+    <a href="#"><i class="layui-icon">&#xe677;</i>张三李四王五赵六</a><br>
+    <a href="#"><i class="layui-icon">&#xe677;</i>赵钱孙李周吴郑王</a>
+</div>
+
+<div id="div6-1">
+<!--    <p style="font-size: 25px" th:text="${noticeDetails.notice_title}"></p>
+    <p style="font-size: 15px" th:text="${noticeDetails.issuer}"></p><p style="font-size: 15px" th:text="${noticeDetails.notice_time}"></p>
+    <p style="font-size: 20px" th:text="${noticeDetails.notice_content}"></p>
+    <a href="#" id="button2"><i class="layui-icon">&#x1006;</i> </a>-->
+</div>
+
+<script src="../static/layui/layui.js" charset="utf-8"></script>
+<!--<script src="../static/js/jquery-3.3.1.js"></script>
+<script src="../static/js/echarts.min.js"></script>-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+    option = {
+
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['已成交','已搁置','已丢单','进行中']
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'已成交'},
+                    {value:310, name:'已搁置'},
+                    {value:234, name:'已丢单'},
+                    {value:135, name:'进行中'},
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+
+</script>
+</body>
+</html>
