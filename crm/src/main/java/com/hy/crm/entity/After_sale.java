@@ -1,5 +1,8 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -13,6 +16,9 @@ import java.io.Serializable;
 public class After_sale implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @TableId(type = IdType.UUID)
+    private String id;
 
     /**
      * 主题
@@ -69,7 +75,53 @@ public class After_sale implements Serializable {
      */
     private String serve_per;
 
+    /**
+     * 附件
+     */
     private String accessory;
+
+    /**
+     * 状态 1,处理中，2，已完成，3.已撤销
+     */
+    private String status;
+
+    /**
+     * 服务评分
+     */
+    private Integer serve_grade;
+
+    /**
+     * 用户id
+     */
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public Integer getServe_grade() {
+        return serve_grade;
+    }
+
+    public void setServe_grade(Integer serve_grade) {
+        this.serve_grade = serve_grade;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getTheme() {
         return theme;
@@ -156,21 +208,32 @@ public class After_sale implements Serializable {
         this.accessory = accessory;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "After_sale{" +
-        "theme=" + theme +
-        ", clientid=" + clientid +
-        ", contractid=" + contractid +
-        ", phone=" + phone +
-        ", contact=" + contact +
-        ", serve_type=" + serve_type +
-        ", state_time=" + state_time +
-        ", end_time=" + end_time +
-        ", serve_content=" + serve_content +
-        ", contarc_tfeedback=" + contarc_tfeedback +
-        ", serve_per=" + serve_per +
-        ", accessory=" + accessory +
-        "}";
+                "id='" + id + '\'' +
+                ", theme='" + theme + '\'' +
+                ", clientid='" + clientid + '\'' +
+                ", contractid=" + contractid +
+                ", phone='" + phone + '\'' +
+                ", contact='" + contact + '\'' +
+                ", serve_type='" + serve_type + '\'' +
+                ", state_time='" + state_time + '\'' +
+                ", end_time='" + end_time + '\'' +
+                ", serve_content='" + serve_content + '\'' +
+                ", contarc_tfeedback='" + contarc_tfeedback + '\'' +
+                ", serve_per='" + serve_per + '\'' +
+                ", accessory='" + accessory + '\'' +
+                ", status='" + status + '\'' +
+                ", serve_grade=" + serve_grade +
+                '}';
     }
 }

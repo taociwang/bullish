@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="wrap">
-    <img src="" class="imgStyle">
+    <img src="static/img/12-191112142002.jpg" class="imgStyle">
     <div class="loginForm">
         <form>
             <div class="logoHead">
@@ -59,10 +59,77 @@
         </form>
     </div>
 </div>
+
+
+<div class="registerPage">
+    <div class="registerDiv">
+        <form>
+            <div class="usernameWrapDiv">
+                <div class="usernameLabel">
+                    <label>用户名:</label>
+                </div>
+                <div class="usernameDiv">
+                    <i class="layui-icon layui-icon-username adminIcon"></i>
+                    <input id="registerUsername" class="layui-input adminInput" type="text" name="username" onblur="usernamezz(this.value)" placeholder="输入用户名">
+                </div>
+            </div>
+            <div class="usernameWrapDiv">
+                <div class="usernameLabel">
+                    <label>密码:</label>
+                </div>
+                <div class="passwordDiv">
+                    <i class="layui-icon layui-icon-password adminIcon"></i>
+                    <input id="registerPassword" class="layui-input adminInput" type="password" name="password"
+                           placeholder="输入密码">
+                </div>
+            </div>
+            <div class="usernameWrapDiv">
+                <div class="usernameLabel">
+                    <label>确认密码:</label>
+                </div>
+                <div class="passwordDiv">
+                    <i class="layui-icon layui-icon-password adminIcon"></i>
+                    <input id="registerWellPassword" class="layui-input adminInput" type="password" name="password"
+                           placeholder="输入密码">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
 <script src="static/layui/layui.js" type="text/javascript"></script>
+
 <script>
     layui.use(['layer'], function () {
         var layer = layui.layer;
+
+        window.usernamezz=function (name) {
+            console.log("name"+name);
+            $.ajax({
+                //请求方式
+                type: "get",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url: "/crm/user/username.do",
+                //数据，json字符串
+                data: {username:name},
+                //请求成功
+                success: function (result) {
+                    if (null !=result){
+                        window.document.getElementById('registerUsername').value='';
+                        layer.alert("用户名已存在");
+                    }
+
+                },
+                //请求失败，包含具体的错误信息
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
+        };
     })
     $(function () {
         // 页面初始化生成验证码
@@ -136,12 +203,13 @@
             $('#loginBtn').val("正在登录...");
             $.ajax({
                 type: 'post',
-                url: '/spring_mybatis_10_8_war_exploded/querylogin.do',
+                url: 'crm/user/login.do',
                 data: {username: loginUsername, password: loginPassword},
                 success: function (data) {
                     layer.close(loginLoadIndex);
-                    if ( data === '1') {
-                        window.location.href = 'layui.html?usern='+loginUsername;
+                    if ( data === '1' || data===1) {
+                        window.location.href='crm/user/saveName.do?name='+loginUsername;
+                        //window.location.href = '1.html?usern='+loginUsername;
                     } else {
                         layer.msg("登录失败", {icon: 5});
                         $('#loginBtn').val("登录");
@@ -154,7 +222,7 @@
             });
         }
 
-    }
+    };
 
     // 注册流程
     function register() {
@@ -176,7 +244,7 @@
                 if (registerPassword === registerWellPassword) {
                     $.ajax({
                         type: 'post',
-                        url: '/spring_mybatis_10_8_war_exploded/user_add.do',
+                        url: '/crm/user/user_add.do',
                         data: {
                             username: registerUsername,
                             password: registerPassword,
@@ -210,46 +278,13 @@
             btn3: function (index, layero) {
                 //取消回调
             }
-        })
+        });
+
     }
 </script>
 
-</body>
-<div class="registerPage">
-    <div class="registerDiv">
-        <form>
-            <div class="usernameWrapDiv">
-                <div class="usernameLabel">
-                    <label>用户名:</label>
-                </div>
-                <div class="usernameDiv">
-                    <i class="layui-icon layui-icon-username adminIcon"></i>
-                    <input id="registerUsername" class="layui-input adminInput" type="text" name="username"
-                           placeholder="输入用户名">
-                </div>
-            </div>
-            <div class="usernameWrapDiv">
-                <div class="usernameLabel">
-                    <label>密码:</label>
-                </div>
-                <div class="passwordDiv">
-                    <i class="layui-icon layui-icon-password adminIcon"></i>
-                    <input id="registerPassword" class="layui-input adminInput" type="password" name="password"
-                           placeholder="输入密码">
-                </div>
-            </div>
-            <div class="usernameWrapDiv">
-                <div class="usernameLabel">
-                    <label>确认密码:</label>
-                </div>
-                <div class="passwordDiv">
-                    <i class="layui-icon layui-icon-password adminIcon"></i>
-                    <input id="registerWellPassword" class="layui-input adminInput" type="password" name="password"
-                           placeholder="输入密码">
-                </div>
-            </div>
 
-        </form>
-    </div>
-</div>
+
+</body>
+
 </html>

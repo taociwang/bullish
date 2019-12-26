@@ -40,21 +40,21 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //获取页面放入token的用户名
-        UsernamePasswordToken token=(UsernamePasswordToken)authenticationToken;
-        String username=token.getUsername();
-
-        /**
-         * 根据用户名查询数据库得到user
-         */
-        QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.eq("username",username);
-        User user=userService.getOne(queryWrapper);
-        if(null==user){
-            throw new UnknownAccountException("账号不存在");
+        UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
+        String username = usernamePasswordToken.getUsername();
+        User user = userService.getOne(new QueryWrapper<User>().eq("username", username));
+        if (user == null) {
+            throw new UnknownAccountException("用户不存在");
         }
-        ByteSource salt=ByteSource.Util.bytes(user.getUsername());
-        //凭证类 拿到根据token的用户名查到user 用户名密码 和token中的比对(自行)
-        AuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),salt,getName());
-        return authenticationInfo;
+        //根据用户的情况构建 SimpleAuthenticationInfo 并返回
+        //以下的数据是从数据库获取的
+        Object uname = user.getUsername();
+        Object upwd = user.getPassword();
+
+        ByteSource salt = ByteSource.Util.bytes(username);
+        //返回认证信息由父类 AuthenticatingRealm 进行认证
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(uname, upwd, salt, getName());
+        return info;
     }
+
 }

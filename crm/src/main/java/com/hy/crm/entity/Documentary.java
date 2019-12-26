@@ -1,5 +1,10 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -10,6 +15,7 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName("documentary")
 public class Documentary implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,6 +23,7 @@ public class Documentary implements Serializable {
     /**
      * id
      */
+    @TableId(value = "docid",type = IdType.AUTO)
     private Integer docid;
 
     /**
@@ -53,6 +60,43 @@ public class Documentary implements Serializable {
      * 外键 跟单分类
      */
     private String deId;
+    @TableField(exist = false)
+    private String classify;
+    private Integer busid;
+
+    public Integer getBusid() {
+        return busid;
+    }
+
+    public void setBusid(Integer busid) {
+        this.busid = busid;
+    }
+
+    /**
+     * 文本框死值
+     */
+
+
+    /**
+     * 用户id
+     */
+    private String userid;
+
+    public String getClassify() {
+        return classify;
+    }
+
+    public void setClassify(String classify) {
+        this.classify = classify;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
 
     public Integer getDocid() {
         return docid;
@@ -114,14 +158,15 @@ public class Documentary implements Serializable {
     @Override
     public String toString() {
         return "Documentary{" +
-        "docid=" + docid +
-        ", date=" + date +
-        ", topic=" + topic +
-        ", dpeople=" + dpeople +
-        ", particular=" + particular +
-        ", accessory=" + accessory +
-        ", stute=" + stute +
-        ", deId=" + deId +
-        "}";
+                "docid=" + docid +
+                ", date='" + date + '\'' +
+                ", topic='" + topic + '\'' +
+                ", dpeople='" + dpeople + '\'' +
+                ", particular='" + particular + '\'' +
+                ", accessory='" + accessory + '\'' +
+                ", stute=" + stute +
+                ", deId='" + deId + '\'' +
+                ", classify='" + classify + '\'' +
+                '}';
     }
 }

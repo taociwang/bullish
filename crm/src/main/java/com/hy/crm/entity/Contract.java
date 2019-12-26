@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -17,6 +21,7 @@ public class Contract implements Serializable {
     /**
      * 合同主键cid
      */
+    @TableId(type = IdType.AUTO)
     private Integer cid;
 
     /**
@@ -103,6 +108,29 @@ public class Contract implements Serializable {
      * 关联人员
      */
     private String gl_person;
+
+    /**
+     * 客户id
+     */
+    private String clienid;
+
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getClienid() {
+        return clienid;
+    }
+
+    public void setClienid(String clienid) {
+        this.clienid = clienid;
+    }
 
     public Integer getCid() {
         return cid;

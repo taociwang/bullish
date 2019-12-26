@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>后台登录-L-admin2.0</title>
@@ -9,12 +9,12 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="static/template/css/font.css">
-	<link rel="stylesheet" href="static/template/css/xadmin.css">
+    <link rel="stylesheet" href="/static/template/css/font.css">
+	<link rel="stylesheet" href="/static/template/css/xadmin.css">
 	
-    <script src="static/js/jquery-3.3.1.js"></script>
-    <script src="static/template/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="static/template/js/xadmin.js"></script>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/template/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/template/js/xadmin.js"></script>
 
 </head>
 <body>
@@ -26,7 +26,7 @@
         </div>
         <ul class="layui-nav left fast-add" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">+新增</a>
+            <a href="javascript:;"><span th:text="${session.user.getUsername()}"></span></a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a onClick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
               <dd><a onClick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
@@ -36,10 +36,9 @@
         </ul>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+              <span id="name" th:text="${session.user.getUsername()}"></span>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a onClick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-              <dd><a onClick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
               <dd><a href="login.html">退出</a></dd>
             </dl>
           </li>
@@ -60,7 +59,7 @@
                     <i class="iconfont nav_right">&#xe6a7;</i>
                 </a>
                 <ul class="sub-menu">
-                    <li><a _href="/welcome.html"><i class="iconfont">&#xe6a7;</i><cite>我的桌面</cite></a></li >
+                    <li><a _href="zhuomian/zhuomian.html"><i class="iconfont">&#xe6a7;</i><cite>我的桌面</cite></a></li >
                 </ul>
             </li>
              <li >
@@ -70,7 +69,7 @@
                     <i class="iconfont nav_right">&#xe6a7;</i>
                 </a>
                 <ul class="sub-menu">
-                    <li><a _href="html/unicode.html"><i class="iconfont">&#xe6a7;</i><cite>我的客户</cite></a></li>      
+                    <li><a _href="/clien/clien.html"><i class="iconfont">&#xe6a7;</i><cite>我的客户</cite></a></li>
                 </ul>
             </li>
             
@@ -78,8 +77,8 @@
             <li>
                 <a href="javascript:;"><i class="iconfont">&#xe6f6;</i><cite>商机</cite><i class="iconfont nav_right">&#xe6a7;</i></a>
                 <ul class="sub-menu">
-                    <li><a _href="html/upload.html"><i class="iconfont">&#xe6a7;</i><cite>我的商机</cite></a></li>
-                    <li><a _href="html/page.html"><i class="iconfont">&#xe6a7;</i><cite>所有商机</cite></a></li>
+                    <li><a _href="/business/wobusiness.html"><i class="iconfont">&#xe6a7;</i><cite>我的商机</cite></a></li>
+                    <li><a _href="/business/business.html"><i class="iconfont">&#xe6a7;</i><cite>所有商机</cite></a></li>
                 </ul>
             </li>
              <li >
@@ -89,8 +88,8 @@
                     <i class="iconfont nav_right">&#xe6a7;</i>
                 </a>
                 <ul class="sub-menu">
-                    <li><a _href="html/grid.html"><i class="iconfont">&#xe6a7;</i><cite>我的跟单</cite></a></li>
-                    <li><a _href="html/welcome2.html"><i class="iconfont">&#xe6a7;</i><cite>全部跟单</cite></a></li>
+                    <li><a _href="gandan/wdgd.html"><i class="iconfont">&#xe6a7;</i><cite>我的跟单</cite></a></li>
+                    <li><a _href="gandan/gendan.html"><i class="iconfont">&#xe6a7;</i><cite>全部跟单</cite></a></li>
                 </ul>
             </li>
                    
@@ -140,7 +139,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="html/admin-list.html">
+                        <a _href="after_sale/add.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>新增售后服务</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="after_sale/query.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>售后服务</cite>
                         </a>
@@ -155,13 +160,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="html/admin-list.html">
+                        <a _href="quanxian/Roleauthority.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>用户管理</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="html/admin-role.html">
+                        <a _href="quanxian/ramiss.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>角色管理</cite>
                         </a>
@@ -172,60 +177,19 @@
 			<li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6ae;</i>
-                    <cite>系统统计</cite>
+                    <cite>统计分析</cite>
                     <i class="iconfont nav_right">&#xe6a7;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="html/echarts1.html">
+                        <a _href="statistics/query.html">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>拆线图</cite>
+                            <cite>统计分析</cite>
                         </a>
                     </li >
-                    <li>
-                        <a _href="html/echarts2.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>柱状图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts3.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>地图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts4.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>饼图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts5.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>雷达图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts6.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>k线图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts7.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>热力图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="html/echarts8.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>仪表图</cite>
-                        </a>
-                    </li>
                 </ul>
-            </li>            </ul>
+            </li>
+        </ul>
       </div>
     </div>
     <!-- <div class="x-slide_left"></div> -->

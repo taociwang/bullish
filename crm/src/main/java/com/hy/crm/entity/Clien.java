@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -10,10 +14,11 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName(value = "clien")
 public class Clien implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId(value = "cid",type = IdType.AUTO)
     private Integer cid;
 
     /**
@@ -34,7 +39,7 @@ public class Clien implements Serializable {
     /**
      * 电话
      */
-    private Integer phone;
+    private String phone;
 
     /**
      * 所属行业
@@ -89,7 +94,7 @@ public class Clien implements Serializable {
     /**
      * 办公电话
      */
-    private Integer bgdh;
+    private String bgdh;
 
     private String cz;
 
@@ -123,6 +128,58 @@ public class Clien implements Serializable {
      */
     private Integer shuihao;
 
+    /*
+    * 客户分类
+    * */
+    private String typeid;
+
+    /*
+    * 拼音
+    * */
+    private String spell;
+
+    /*
+    * 客户来源
+    * */
+    private String khly;
+
+    /*
+    * 银行电话
+    * */
+    private String yhphone;
+
+    public String getYhphone() {
+        return yhphone;
+    }
+
+    public void setYhphone(String yhphone) {
+        this.yhphone = yhphone;
+    }
+
+    public String getKhly() {
+        return khly;
+    }
+
+    public void setKhly(String khly) {
+        this.khly = khly;
+    }
+
+    public String getTypeid() {
+        return typeid;
+    }
+
+    public void setTypeid(String typeid) {
+        this.typeid = typeid;
+    }
+
+    public String getSpell() {
+        return spell;
+    }
+
+    public void setSpell(String spell) {
+        this.spell = spell;
+    }
+
     public Integer getCid() {
         return cid;
     }
@@ -151,11 +208,11 @@ public class Clien implements Serializable {
     public void setBm(String bm) {
         this.bm = bm;
     }
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public String getSshy() {
@@ -228,11 +285,11 @@ public class Clien implements Serializable {
     public void setPart(String part) {
         this.part = part;
     }
-    public Integer getBgdh() {
+    public String getBgdh() {
         return bgdh;
     }
 
-    public void setBgdh(Integer bgdh) {
+    public void setBgdh(String bgdh) {
         this.bgdh = bgdh;
     }
     public String getCz() {
@@ -288,29 +345,33 @@ public class Clien implements Serializable {
     @Override
     public String toString() {
         return "Clien{" +
-        "cid=" + cid +
-        ", uname=" + uname +
-        ", lxr=" + lxr +
-        ", bm=" + bm +
-        ", phone=" + phone +
-        ", sshy=" + sshy +
-        ", sheng=" + sheng +
-        ", shi=" + shi +
-        ", qu=" + qu +
-        ", site=" + site +
-        ", mailbox=" + mailbox +
-        ", yzbm=" + yzbm +
-        ", zczb=" + zczb +
-        ", frdb=" + frdb +
-        ", part=" + part +
-        ", bgdh=" + bgdh +
-        ", cz=" + cz +
-        ", shuoming=" + shuoming +
-        ", yhzh=" + yhzh +
-        ", khmc=" + khmc +
-        ", khyh=" + khyh +
-        ", yhdz=" + yhdz +
-        ", shuihao=" + shuihao +
-        "}";
+                "cid=" + cid +
+                ", uname='" + uname + '\'' +
+                ", lxr='" + lxr + '\'' +
+                ", bm='" + bm + '\'' +
+                ", phone=" + phone +
+                ", sshy='" + sshy + '\'' +
+                ", sheng='" + sheng + '\'' +
+                ", shi='" + shi + '\'' +
+                ", qu='" + qu + '\'' +
+                ", site='" + site + '\'' +
+                ", mailbox='" + mailbox + '\'' +
+                ", yzbm='" + yzbm + '\'' +
+                ", zczb=" + zczb +
+                ", frdb='" + frdb + '\'' +
+                ", part='" + part + '\'' +
+                ", bgdh=" + bgdh +
+                ", cz='" + cz + '\'' +
+                ", shuoming='" + shuoming + '\'' +
+                ", yhzh=" + yhzh +
+                ", khmc='" + khmc + '\'' +
+                ", khyh='" + khyh + '\'' +
+                ", yhdz='" + yhdz + '\'' +
+                ", shuihao=" + shuihao +
+                ", typeid=" + typeid +
+                ", spell='" + spell + '\'' +
+                ", khly='" + khly + '\'' +
+                ", yhphone=" + yhphone +
+                '}';
     }
 }

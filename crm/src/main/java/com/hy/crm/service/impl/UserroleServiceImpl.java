@@ -4,6 +4,7 @@ import com.hy.crm.entity.Userrole;
 import com.hy.crm.mapper.UserroleMapper;
 import com.hy.crm.service.IUserroleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserroleServiceImpl extends ServiceImpl<UserroleMapper, Userrole> implements IUserroleService {
-
+    @Autowired
+    private UserroleMapper userroleMapper;
 }
