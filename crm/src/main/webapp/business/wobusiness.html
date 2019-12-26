@@ -50,11 +50,11 @@
                 <div class="layui-card-body">
                     <div class="divcss5-b">
                         <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
-                        <a href="/emp/download.do">新客户</a>&nbsp;<span></span><br>
+                        <a href="#" id="cg" >以成交的商机</a>&nbsp;<span></span><br>
                         <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
-                        <a href="/emp/download.do">老客户</a>&nbsp;<span></span><br>
+                        <a href="#" id="gez">以搁置的商机</a>&nbsp;<span></span><br>
                         <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
-                        <a href="/emp/download.do">vip客户</a>&nbsp;<span></span><br>
+                        <a href="#" id="diudan">以丢单的商机</a>&nbsp;<span></span><br>
                         <hr>
 
                     </div>
@@ -92,12 +92,8 @@
                                         <input name="predictsum" class="layui-input" type="text" placeholder="请输入姓名" autocomplete="off" lay-verify="title">
                                     </div>
                                 </div>
-                                <!--<div class="layui-inline">
-                                    <label class="layui-form-label">预计结账日期</label>
-                                    <div class="layui-input-inline">
-                                        <input name="time" class="layui-input" id="date" type="text" placeholder="yyyy-MM-dd" autocomplete="off" lay-verify="date">
-                                    </div>
-                                </div>-->
+                                <input name="syzt" value="" type="hidden">
+
 
                                 <div class="layui-inline">
                                     <div class="layui-input-block">
@@ -131,6 +127,14 @@
     <a href= "/crm/business/toupdatebus.do?bid={{d.bid}}" class="layui-table-link"  target="blank" >{{d.bname}}</a>
 </script>
 
+<script type="text/html" id="getname">
+    {{#  if(d.data==null){ }}
+
+    {{#  } else { }}
+    {{d.data.type_name}}
+    {{#  } }}
+</script>
+
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
@@ -155,7 +159,7 @@
             , cols: [[
                 //{type: 'checkbox', fixed: 'left'}
                 {field: 'bname', title: '商机名称', width: 150, event:'detail',templet:'#titleTpl'}
-                , {field: 'syzt', title: '商机阶段', width: 150, sort: true,}
+                , {field: 'type_name', title: '商机阶段', width: 150, sort: true,templet:'#getname'}
                 , {field: 'predictsum', title: '预计成交金额', width: 150, sort: true}
                 , {field: 'fzr', title: '商机负责人', width: 150, sort: true}
                 , {field: 'zdate', title: '最后跟单', width: 150, sort: true}
@@ -201,6 +205,25 @@
             }
         });
 
+
+        $("#cg").click(function () {
+            table.reload("test",{
+                url: '/crm/business/queryAllbus.do'
+                ,where: {syzt:13}
+            });
+        });
+        $("#diudan").click(function () {
+            table.reload("test",{
+                url: '/crm/business/queryAllbus.do'
+                ,where: {syzt:14}
+            });
+        });
+        $("#gez").click(function () {
+            table.reload("test",{
+                url: '/crm/business/queryAllbus.do'
+                ,where: {syzt:18}
+            });
+        });
         /* table.on('toolbar(test)', function (obj) {
              var layEvent = obj.event;
              if (layEvent === "reflush") {

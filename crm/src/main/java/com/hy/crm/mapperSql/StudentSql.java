@@ -7,7 +7,7 @@ public class StudentSql {
 
     //查询我的商机动态sql
     public String MyBusAll(Business business, String id) {
-        StringBuffer sql = new StringBuffer("select * from business where userid='"+id+"'");
+        StringBuffer sql = new StringBuffer("select * from business b left join data a on a.did= b.syzt where userid='"+id+"'");
         if (null != business) {
             if (null != business.getSyzt() && !"".equals(business.getSyzt())) {
                 sql.append(" and b.Syzt like '%" + business.getSyzt() + "%'");
@@ -27,11 +27,14 @@ public class StudentSql {
 
     }
 
+/*
+* 所有商机
+* */
     /*
      * 所有商机
      * */
     public String select(String bname, String syzt, Integer predictsum, String fzr, String sjssbm, String date) {
-        StringBuffer sql = new StringBuffer("select * from business b left join data a on a.typeid = b.syzt where  1=1 ");
+        StringBuffer sql = new StringBuffer("select * from business b left join data a on a.did= b.syzt where  1=1 ");
         if (bname != null && !"".equals(bname)) {
             sql.append(" and  bname like '%" + bname + "%'");
         }

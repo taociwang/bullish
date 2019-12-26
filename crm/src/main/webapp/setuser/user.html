@@ -14,48 +14,95 @@
     <legend>修改用户</legend>
 </fieldset>
 <form>
-<div class="logoHead">
-    <!--<h2 style="margin-top: 15px">房产销售平台管理系统</h2>-->
-</div>
-<div class="usernameWrapDiv">
-    <div class="usernameLabel">
-        <label>用户名:</label>
+    <div class="registerPage">
+        <div class="registerDiv">
+            <form>
+                <div class="usernameWrapDiv">
+                    <div class="usernameLabel">
+                        <label>用户名:</label>
+                    </div>
+                    <div class="usernameDiv">
+                        <i class="layui-icon layui-icon-username adminIcon"></i>
+                        <input id="registerUsername" class="layui-input adminInput" type="text" name="username" onblur="usernamezz(this.value)" placeholder="输入用户名">
+                    </div>
+                </div>
+                <div class="usernameWrapDiv">
+                    <div class="usernameLabel">
+                        <label>密码:</label>
+                    </div>
+                    <div class="passwordDiv">
+                        <i class="layui-icon layui-icon-password adminIcon"></i>
+                        <input id="registerPassword" class="layui-input adminInput" type="password" name="password"
+                               placeholder="输入密码">
+                    </div>
+                </div>
+                <div class="usernameWrapDiv">
+                    <div class="usernameLabel">
+                        <label>确认密码:</label>
+                    </div>
+                    <div class="passwordDiv">
+                        <i class="layui-icon layui-icon-password adminIcon"></i>
+                        <input id="registerWellPassword" class="layui-input adminInput" type="password" name="password"
+                               placeholder="输入密码">
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
-    <div class="usernameDiv">
-        <i class="layui-icon layui-icon-username adminIcon"></i>
-        <input id="loginUsername" class="layui-input adminInput" type="text" name="username"
-               placeholder="输入用户名">
-    </div>
-</div>
-<div class="usernameWrapDiv">
-    <div class="usernameLabel">
-        <label>密码:</label>
-    </div>
-    <div class="passwordDiv">
-        <i class="layui-icon layui-icon-password adminIcon"></i>
-        <input id="loginPassword" class="layui-input adminInput" type="password" name="password"
-               placeholder="输入密码">
-    </div>
-</div>
-<div class="usernameWrapDiv">
-    <div class="usernameLabel">
-        <label>验证码:</label>
-    </div>
-    <div class="cardDiv">
-        <input id="loginCard" class="layui-input cardInput" type="text" name="card" placeholder="输入验证码">
-    </div>
-    <div class="codeDiv">
-        <input id="loginCode" class="layui-input codeInput" type="button">
-    </div>
-</div>
-<div class="usernameWrapDiv">
-    <div class="submitLabel">
-        <label>没有账号？<a href="#" id="loginRegister">点击注册</a></label>
-    </div>
-    <div class="submitDiv">
-        <input id="loginBtn" type="button" class="submit layui-btn layui-btn-primary" value="登录"></input>
-    </div>
-</div>
 </form>
+<script>
+    layui.use(['element', 'layer', 'table', 'util','form'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var table = layui.table;
+        var util = layui.util;
+        var form = layui.form;
+
+        function register() {
+            layer.open({
+                type: '1',
+                content: $('.registerPage'),
+                title: '注册',
+                area: ['430px', '400px'],
+                btn: ['注册', '重置', '取消'],
+                closeBtn: '1',
+                btn1: function (index, layero) {
+                    //注册回调
+                    layer.close(index);
+                    var registerUsername = $('#registerUsername').val();
+                    var registerPassword = $('#registerPassword').val();
+                    var registerWellPassword = $('#registerWellPassword').val();
+                    var selectValue = $('#roleSelect option:selected').val();
+                    var registerLoadIndex = layer.load(2);
+                    if (registerPassword === registerWellPassword) {
+                        $.ajax({
+                            type: 'post',
+                            url: '/crm/user/user_add.do',
+                            data: {
+                                username: registerUsername,
+                                password: registerPassword,
+                                registerWellPassword: registerWellPassword
+                            },
+                            success: function (data) {
+                                layer.close(registerLoadIndex);
+                                layer.msg(data);
+                                layer.alert("注册完成")
+                            },
+                            error: function () {
+                                layer.close(registerLoadIndex);
+                                layer.alert("请求超时！")
+                            }
+                        });
+                    } else {
+                        layer.close(registerLoadIndex);
+                        layer.alert("两次密码不一致");
+                        var registerPassword = $('#registerPassword').val("");
+                        var registerWellPassword = $('#registerWellPassword').val("");
+                    }
+                }
+            })
+</script>
 </body>
+
 </html>

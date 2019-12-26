@@ -35,16 +35,18 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">客户分类</label>
         <div class="layui-input-block">
-            <select name="typeid" lay-filter="aihao">
-                <option>请选择</option>
-                <option  th:each="dat:${da}" th:value="${dat.typeid}" th:text="${dat.type_name}"></option>
+            <select name="typeid" lay-filter="">
+                <option value="">请选择</option>
+                <option value="老客户" >老客户</option>
+                <option value="新客户" >新客户</option>
+                <option value="vip客户" >vip客户</option>
             </select>
         </div>
     </div>
     <div class="layui-input-inline">
         <label class="layui-form-label">客户来源</label>
         <div class="layui-input-block">
-            <select name="khly" lay-filter="aihao">
+            <select name="khly" >
                 <option>请选择</option>
                 <option  th:each="dat:${da1}" th:value="${dat.typeid}" th:text="${dat.type_name}"></option>
             </select>
@@ -105,7 +107,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="lxr" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="lxr" lay-verify="required" lay-reqtext="联系人，不能为空？" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
     <br>
@@ -122,26 +124,17 @@
             <input type="text" name="part" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
-    <div class="layui-input-inline">
-        <label class="layui-form-label">商机阶段</label>
-        <div class="layui-input-block">
-            <select name="khly" lay-filter="aihao">
-                <option>请选择</option>
-                <option  th:each="dat:${da1}" th:value="${dat.typeid}" th:text="${dat.type_name}"></option>
-            </select>
-        </div>
-    </div>
     <br>
     <br>
     <div class="layui-input-inline">
         <label class="layui-form-label">办公电话</label>
         <div class="layui-input-block">
-            <input type="text" name="bgdh" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="bgdh" lay-verify="required|phone" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div><div class="layui-input-inline">
     <label class="layui-form-label">移动电话</label>
     <div class="layui-input-block">
-        <input type="text" name="phone" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        <input type="text" name="phone" lay-verify="required|phone" autocomplete="off" placeholder="请输入标题" class="layui-input">
     </div>
 </div>
     <br>
@@ -149,7 +142,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">QQ邮箱</label>
         <div class="layui-input-block">
-            <input type="text" name="mailbox" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="mailbox" lay-verify="email" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div><div class="layui-input-inline">
     <label class="layui-form-label">法人代表</label>
@@ -213,7 +206,7 @@
     <div class="layui-input-inline">
         <label class="layui-form-label">电话</label>
         <div class="layui-input-block">
-            <input type="text" name="yhphone" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="yhphone" lay-verify="required|phone" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
     <br>

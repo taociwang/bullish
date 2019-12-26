@@ -21,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.naming.CompositeName;
@@ -90,9 +91,11 @@ public class BusinessController {
     @RequestMapping("/add.do")
     public String add(Business business){
         System.out.println(business.toString());
+        business.setXgfj(UploadController.url);
         businessService.insert(business);
         return "redirect:/business/wobusiness.html";
     }
+
 
 
     /**
@@ -103,12 +106,13 @@ public class BusinessController {
         //客户类型
         model.addAttribute("da",dataService.list(new QueryWrapper<Data>().eq("typeid",1)));
         //客户来源
-        model.addAttribute("da1",dataService.list(new QueryWrapper<Data>().eq("typeid",207)));
+        model.addAttribute("da1",dataService.list(new QueryWrapper<Data>().eq("typeid",209)));
         //所属行业
         model.addAttribute("da2",dataService.list(new QueryWrapper<Data>().eq("typeid",607)));
-        //获取部门
-        model.addAttribute("bmlist",dataService.list(new QueryWrapper<Data>().eq("typeid",1003)));
-
+        //获取商机所属部门
+        /*model.addAttribute("bmlist",dataService.list(new QueryWrapper<Data>().eq("typeid",1003)));*/
+        //商机状态
+        model.addAttribute("da3",dataService.list(new QueryWrapper<Data>().eq("typeid",4)));
         model.addAttribute("clienlist",clienService.list(null));
         return "business/businessadd";
     }
@@ -119,11 +123,13 @@ public class BusinessController {
     @RequestMapping("/toupdatebus.do")
     public String toupdatebus(Model model, Integer bid){
         //客户来源
-        model.addAttribute("customerSourceList",dataService.list(new QueryWrapper<Data>().eq("typeid",207)));
+        model.addAttribute("khlylist",dataService.list(new QueryWrapper<Data>().eq("typeid",209)));
         //所属行业
         model.addAttribute("categoryList",dataService.list(new QueryWrapper<Data>().eq("typeid",3)));
         //获取部门
         model.addAttribute("bmlist",dataService.list(new QueryWrapper<Data>().eq("typeid",1003)));
+        //商机状态
+        model.addAttribute("getsyzt",dataService.list(new QueryWrapper<Data>().eq("typeid",4)));
         model.addAttribute("buslist",businessService.getById(bid));
         return "business/businessupdate";
     }
@@ -141,8 +147,4 @@ public class BusinessController {
         return clienService.getById(cid);
 
     }
-
-
-
-
 }

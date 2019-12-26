@@ -39,7 +39,7 @@ public class Clien implements Serializable {
     /**
      * 电话
      */
-    private Integer phone;
+    private String phone;
 
     /**
      * 所属行业
@@ -94,7 +94,7 @@ public class Clien implements Serializable {
     /**
      * 办公电话
      */
-    private Integer bgdh;
+    private String bgdh;
 
     private String cz;
 
@@ -146,13 +146,13 @@ public class Clien implements Serializable {
     /*
     * 银行电话
     * */
-    private Integer yhphone;
+    private String yhphone;
 
-    public Integer getYhphone() {
+    public String getYhphone() {
         return yhphone;
     }
 
-    public void setYhphone(Integer yhphone) {
+    public void setYhphone(String yhphone) {
         this.yhphone = yhphone;
     }
 
@@ -208,11 +208,11 @@ public class Clien implements Serializable {
     public void setBm(String bm) {
         this.bm = bm;
     }
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public String getSshy() {
@@ -285,11 +285,11 @@ public class Clien implements Serializable {
     public void setPart(String part) {
         this.part = part;
     }
-    public Integer getBgdh() {
+    public String getBgdh() {
         return bgdh;
     }
 
-    public void setBgdh(Integer bgdh) {
+    public void setBgdh(String bgdh) {
         this.bgdh = bgdh;
     }
     public String getCz() {

@@ -1,6 +1,7 @@
 package com.hy.crm.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
@@ -28,12 +29,20 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
     private BusinessMapper businessMapper;
     @Autowired
     private UserServiceImpl userService;
+
     public IPage<Business> queryBusin(Integer pagenum,Integer limit, String bname,String syzt,Integer predictsum,String fzr,String sjssbm,String time){
         Page<Business> p = new Page<Business>(pagenum,limit);
         //IPage iPage=p;
         p.setRecords(businessMapper.queryBus(bname,syzt,predictsum,fzr,sjssbm,time,p));
+
         return p;
         /*return businessMapper.queryBus(bname,syzt,predictsum,fzr,sjssbm,time);*/
+    }
+    /*
+    * 根基商机状态来查询
+    * */
+    public List<Business> querysyzt(String syzt){
+        return businessMapper.querysyzt(syzt);
     }
 
     public List<Business> querycli(Integer cid){
@@ -44,6 +53,5 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
         business.setUserid(userService.getCurrUid());
         businessMapper.insert(business);
     }
-
 
 }

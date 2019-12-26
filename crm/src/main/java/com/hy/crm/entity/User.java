@@ -49,6 +49,13 @@ public class User implements Serializable {
      */
     private Integer state;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getHead() {
         return head;
     }
@@ -86,13 +93,6 @@ public class User implements Serializable {
         this.state = state;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     @Override
     public String toString() {

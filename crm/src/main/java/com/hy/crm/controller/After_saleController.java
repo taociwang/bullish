@@ -10,17 +10,13 @@ import com.hy.crm.service.impl.ClienServiceImpl;
 import com.hy.crm.service.impl.ContractServiceImpl;
 import com.hy.crm.service.impl.DataServiceImpl;
 import com.hy.crm.util.LayuiData;
-import net.sf.jsqlparser.statement.select.Limit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.zip.DataFormatException;
 
 /**
  * <p>
@@ -57,7 +53,7 @@ public class After_saleController {
      */
     @RequestMapping("/statistics.do")
     @ResponseBody
-    public List<Long> statistics(){
+    public List<Integer> statistics(){
         return after_saleService.counts();
     }
 
