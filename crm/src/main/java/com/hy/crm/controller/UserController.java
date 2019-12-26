@@ -12,6 +12,7 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +30,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author wangsq
  * @since 2019-12-04
  */
-@RestController
+@Controller
 @RequestMapping("/crm/user")
 public class UserController {
     @Autowired
@@ -41,6 +42,8 @@ public class UserController {
     @RequestMapping("/login.do")
     @ResponseBody
     public int login(User user, HttpServletRequest request){
+        //根据用户名称(唯一)查询user
+        request.getSession().setAttribute("user",userService.getOne(new QueryWrapper<User>().eq("username",user.getUsername())));
         //将用户名存入shiro usernamePasswordToken;
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
         //获取主体对象
@@ -109,4 +112,51 @@ public class UserController {
     }
 
 
+    /**
+     * 查询密码对不对
+     * @param upwd
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/cha.do")
+    public boolean cha(String upwd,String uname){
+        boolean b=userService.cha(upwd,uname);
+        return b;
+    }
+
+    /**
+     * 修改密码
+     * @param newmm
+     * @param uid
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/xiu.do")
+    public boolean xiu(String newmm,Integer uid,String uname){
+        System.out.println("============="+newmm+"="+uid+"="+uname);
+        boolean b=userService.xiu(newmm,uid,uname);
+        return b;
+    }
+
+    /**
+     * 去修改密码
+     * @param
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/toxiu.do")
+    public ModelAndView byid(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        //User user=userService.getOne(new QueryWrapper<User>().eq("id",id));
+        ModelAndView view=new ModelAndView();
+        view.addObject("getUserlist",user);
+        view.setViewName("/setuser/user.html");
+        return view;
+    }
+    @RequestMapping("/exit.do")
+    public String ss(){
+        Subject subject=SecurityUtils.getSubject();
+        subject.logout();
+        return "redirect:/login.html";
+    }
 }
