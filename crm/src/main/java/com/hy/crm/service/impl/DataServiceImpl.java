@@ -37,5 +37,6 @@ public class DataServiceImpl extends ServiceImpl<DataMapper, Data> implements ID
         return dataMapper.queryData();
     }
 
+    private DataMapper data;
 
 }

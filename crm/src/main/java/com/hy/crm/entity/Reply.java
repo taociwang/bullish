@@ -1,6 +1,10 @@
 package com.hy.crm.entity;
 
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -23,11 +27,18 @@ public class Reply implements Serializable {
      * 回复人姓名
      */
     private String reply_name;
+    /**
+     * 回复内容
+     */
+    private String replycontent;
 
     /**
      * 帖子回复时间
      */
-    private String reply_time;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date reply_time;
+
+    private String fid;
 
     /*
     * 回复内容
@@ -56,12 +67,29 @@ public class Reply implements Serializable {
     public void setReply_name(String reply_name) {
         this.reply_name = reply_name;
     }
-    public String getReply_time() {
+
+    public Date getReply_time() {
         return reply_time;
     }
 
-    public void setReply_time(String reply_time) {
+    public void setReply_time(Date reply_time) {
         this.reply_time = reply_time;
+    }
+
+    public String getReplycontent() {
+        return replycontent;
+    }
+
+    public void setReplycontent(String replycontent) {
+        this.replycontent = replycontent;
+    }
+
+    public String getFid() {
+        return fid;
+    }
+
+    public void setFid(String fid) {
+        this.fid = fid;
     }
 
     @Override

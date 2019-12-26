@@ -1,7 +1,6 @@
 package com.hy.crm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
@@ -21,7 +20,7 @@ public class Contract implements Serializable {
     /**
      * 合同主键cid
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type= IdType.AUTO)
     private Integer cid;
 
     /**
@@ -42,12 +41,12 @@ public class Contract implements Serializable {
     /**
      * 汇款额
      */
-    private String remittance;
+    private Integer remittance;
 
     /**
      * 开票额
      */
-    private String kaipiao_money;
+    private Integer kaipiao_money;
 
     /**
      * 签约日期
@@ -72,12 +71,12 @@ public class Contract implements Serializable {
     /**
      * 固定电话
      */
-    private Integer immobilization_phone;
+    private String immobilization_phone;
 
     /**
      * 移动电话
      */
-    private Integer move_phone;
+    private String move_phone;
 
     /**
      * 邮箱/qq
@@ -110,27 +109,13 @@ public class Contract implements Serializable {
     private String gl_person;
 
     /**
-     * 客户id
+     * 合同状态
      */
-    private String clienid;
-
-    private String userid;
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
-    public String getClienid() {
-        return clienid;
-    }
-
-    public void setClienid(String clienid) {
-        this.clienid = clienid;
-    }
+    private String state;
+    /**
+     * 客户外键
+     */
+    private Integer clienid;
 
     public Integer getCid() {
         return cid;
@@ -160,18 +145,12 @@ public class Contract implements Serializable {
     public void setContract_money(Long contract_money) {
         this.contract_money = contract_money;
     }
-    public String getRemittance() {
-        return remittance;
-    }
 
-    public void setRemittance(String remittance) {
-        this.remittance = remittance;
-    }
-    public String getKaipiao_money() {
+    public Integer getKaipiao_money() {
         return kaipiao_money;
     }
 
-    public void setKaipiao_money(String kaipiao_money) {
+    public void setKaipiao_money(Integer kaipiao_money) {
         this.kaipiao_money = kaipiao_money;
     }
     public String getContract_date() {
@@ -202,18 +181,18 @@ public class Contract implements Serializable {
     public void setOpposite_ren(String opposite_ren) {
         this.opposite_ren = opposite_ren;
     }
-    public Integer getImmobilization_phone() {
+    public String getImmobilization_phone() {
         return immobilization_phone;
     }
 
-    public void setImmobilization_phone(Integer immobilization_phone) {
+    public void setImmobilization_phone(String immobilization_phone) {
         this.immobilization_phone = immobilization_phone;
     }
-    public Integer getMove_phone() {
+    public String getMove_phone() {
         return move_phone;
     }
 
-    public void setMove_phone(Integer move_phone) {
+    public void setMove_phone(String move_phone) {
         this.move_phone = move_phone;
     }
     public String getE_mail_qq() {
@@ -259,6 +238,30 @@ public class Contract implements Serializable {
         this.gl_person = gl_person;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Integer getClienid() {
+        return clienid;
+    }
+
+    public void setClienid(Integer clienid) {
+        this.clienid = clienid;
+    }
+
+    public Integer getRemittance() {
+        return remittance;
+    }
+
+    public void setRemittance(Integer remittance) {
+        this.remittance = remittance;
+    }
+
     @Override
     public String toString() {
         return "Contract{" +
@@ -280,6 +283,8 @@ public class Contract implements Serializable {
         ", xg_accessory=" + xg_accessory +
         ", con_department=" + con_department +
         ", gl_person=" + gl_person +
+        ", state=" + state +
+         ", clid=" + clienid +
         "}";
     }
 }

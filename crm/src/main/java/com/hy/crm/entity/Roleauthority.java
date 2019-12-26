@@ -1,5 +1,7 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+
 import java.io.Serializable;
 
 /**
@@ -23,6 +25,16 @@ public class Roleauthority implements Serializable {
      * 权限id
      */
     private Integer authorityid;
+    @TableField(exist = false)
+    private Integer[] roleauth;
+
+    public Integer[] getRoleauth() {
+        return roleauth;
+    }
+
+    public void setRoleauth(Integer[] roleauth) {
+        this.roleauth = roleauth;
+    }
 
     public Integer getRoleid() {
         return roleid;

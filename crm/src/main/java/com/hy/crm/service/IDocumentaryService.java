@@ -1,7 +1,9 @@
 package com.hy.crm.service;
 
-import com.hy.crm.entity.Documentary;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.hy.crm.entity.Documentary;
+import com.hy.crm.entity.LayUI;
+import com.hy.crm.entity.User;
 
 /**
  * <p>
@@ -12,5 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-12-04
  */
 public interface IDocumentaryService extends IService<Documentary> {
-
+    public LayUI queryAll(Integer pageNum, Integer size, Documentary documentary, String kinds);
+   // public void addDoc(Documentary documentary);
+    public LayUI queryMy(Integer pageNum, Integer size, Documentary documentary, String kinds, User user);
 }

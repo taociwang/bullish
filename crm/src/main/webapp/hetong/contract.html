@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学生信息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md2">
+            <div class="layui-card">
+                <div class="layui-card-header"><b>全部分类</b></div>
+                <div class="layui-card-body">
+                    <div class="divcss5-b">
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="zxz">执行中的合同</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="ygb">已关闭的合同</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="ycc">已撤除的合同</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="ygz">已搁置的合同</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="bzxz">本周新增</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="szxz">上周新增</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="byxz">本月新增</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="syxz">上月新增</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="bjdxz">本季度新增</a>&nbsp;<span></span><br>
+                        <img src="/static/img/zoom_search_24px_505321_easyicon.net.png"/>
+                        <a href="#" id="sjdxz">上季度新增</a>&nbsp;<span></span><br>
+                        <div class="divcss5-b">
+                        </div>
+                            <hr>
+                        <hr>
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md9">
+            <div class="layui-card">
+                <form class="layui-form" action="" lay-filter="example">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-inline">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-inline">
+                                    <select id="classes" name="type" lay-search="">
+                                        <option value="" selected="selected">请选择</option>
+                                        <option value="contract_name">按合同全称</option>
+                                        <option value="contract_number">按合同编号</option>
+                                        <option value="contract_money">按合同金额</option>
+                                        <option value="contract_date">按签约日期</option>
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="keyword" autocomplete="off" placeholder="请输入关键字" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table class="layui-hide" id="test" lay-filter="tool_1"></table>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md9">
+
+    </div>
+</div>
+
+
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <div class="layui-btn-group">
+            <!--添加-->
+            <button type="button" lay-event="add" class="layui-btn layui-btn-sm">
+                <i class="layui-icon">添加合同</i>
+            </button>
+            <!--批量删除-->
+            <!--<button type="button" lay-event="del" class="layui-btn layui-btn-sm">
+                <i class="layui-icon">&#xe640;</i>
+            </button>-->
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="contract_name">
+    {{#  if(d.contract_name==null){ }}
+
+    {{#  } else { }}
+    <a href="/crm/contract/toContract.do?cid={{d.cid}}" style='color: #0cc215'>  {{d.contract_name}}</a>
+    {{#  } }}
+</script>
+
+<script type="text/html" id="remittance">
+    {{#  if(d.remittance==null){ }}
+
+    {{#  } else { }}
+    <a href="/crm/income/toInsert.do?cid={{d.cid}}" style='color: #0cc215'>{{d.remittance}}</a>
+    {{#  } }}
+</script>
+
+<script type="text/html" id="kaipiao_money">
+    {{#  if(d.kaipiao_money==null){ }}
+
+    {{#  } else { }}
+    <a href="/crm/invoice/toInvoice.do?cid={{d.cid}}" style='color: #0cc215'>{{d.kaipiao_money}}</a>
+    {{#  } }}
+</script>
+
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script src="/static/js/jquery-3.3.1.js" charset="utf-8"></script>
+
+<script>
+    layui.use(['table', 'form', 'upload'], function () {
+        var table = layui.table;
+        var form = layui.form;
+        var upload = layui.upload;
+
+        //监听form查询的提交
+        form.on('submit(demo1)', function (data) {
+            table.reload("test", {
+                url: '/crm/contract/queryContract.do'
+                ,
+                where: {
+                    type : data.field.type,
+                    text : data.field.keyword
+                }
+                ,page :{
+                    curr : 1
+                }
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        $("#zxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract.do'
+                ,where: {state:"执行中"}
+            });
+        });
+        $("#ygb").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract.do'
+                ,where: {state:"已关闭"}
+            });
+        });
+        $("#ycc").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract.do'
+                ,where: {state:"已撤除"}
+            });
+        });
+        $("#ygz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract.do'
+                ,where: {state:"已搁置"}
+            });
+        });
+
+
+        $("#bzxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:" YEARWEEK(date_format(contract_date,'%Y-%m-%d')) = YEARWEEK(now())"}
+            });
+        });
+        $("#szxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:"YEARWEEK(date_format(contract_date,'%Y-%m-%d')) = YEARWEEK(now())-1"}
+            });
+        });
+        $("#byxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:" DATE_FORMAT( contract_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )"}
+            });
+        });
+        $("#syxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:" PERIOD_DIFF( date_format( now( ),'%Y%m' ) , date_format( contract_date,'%Y%m' ) ) =1"}
+            });
+        });
+        $("#bjdxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:"QUARTER(contract_date)=QUARTER(now())"}
+            });
+        });
+        $("#sjdxz").click(function () {
+            table.reload("test",{
+                url: '/crm/contract/queryContract1.do'
+                ,where: {contract_date:"QUARTER(contract_date)=QUARTER(DATE_SUB(now(),interval 1 QUARTER))"}
+            });
+        });
+
+
+        table.render({
+            elem: '#test'
+            , url: '/crm/contract/queryContract.do'
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+                title: '提示'
+                , layEvent: 'LAYTABLE_TIPS'
+                , icon: 'layui-icon-tips'
+            }]
+            , title: '用户数据表'
+            , cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                , {
+                    field: 'id',
+                    title: '编号',
+                    width: 80,
+                    fixed: 'left',
+                    unresize: true,
+                    sort: true,
+                    templet: '<div>{{d.LAY_INDEX}}<div>'
+                }
+                , {field: 'contract_name', title: '合同全称', width: 120, templet:'#contract_name'}
+                , {field: 'contract_number', title: '合同编号', width: 120, sort: true}
+                , {field: 'contract_money', title: '合同金额', width: 150}
+                , {field: 'remittance', title: '汇款额', width: 120, sort: true,templet:'#remittance'}
+                , {field: 'kaipiao_money', title: '开票额', width: 120, sort: true,templet:'#kaipiao_money'}
+                , {field: 'contract_date', title: '签约日期', width: 120, sort: true}
+            ]]
+            , page: true
+            , limit: 3
+            , limits: [3, 7, 10, 15]
+        });
+
+        //监听头工具栏事件
+        table.on('toolbar(tool_1)', function (obj) {
+            var data = obj.data;
+            var checkStatus = table.checkStatus(obj.config.id);
+            var even = obj.event;
+            if (even == 'add') {
+                //添加
+                layer.open({
+                    type: 2,
+                    title: "添加合同",
+                    area: ['1050px', '490px'],
+                    content: '/crm/contract/toconadd.do',
+                    //弹出层关闭回调
+                    cancel: function (index, layero) {
+                        if (confirm('确定要关闭么')) { //只有当点击confirm框的确定时，该层才会关闭
+                            layer.close(index)
+                        }
+                        return false;
+                    },
+                    //弹出层销毁回调
+                    end: function () {
+                        table.reload("test", {});
+                    }
+                });
+            } else if (even == 'del') {
+                //批量删除
+                //获取表格选中数据
+                var checkStatus = table.checkStatus('test');
+                //获取选中的数据的值
+                var data = checkStatus.data;
+                var str = "";
+                for (var i = 0; i < data.length; i++) {
+                    if (i < data.length - 1) {
+                        str = str + data[i].sid + ",";
+                    } else {
+                        str = str + data[i].sid;
+                    }
+                }
+                //异步请求后台批量删除
+                $.ajax({
+                    url: "/student/deleteBackStudent.action",
+                    data: {sid: str},
+                    type: 'post',
+                    traditional: true,
+                    success: function (data) {
+                        if (data === '1') {
+                            layer.msg('删除成功', {icon: 6, time: 2000});
+                            table.reload("test", {
+                                page: {
+                                    curr: 1
+                                }
+                            });
+                        } else {
+                            layer.msg('删除失败', {icon: 5, time: 2000});
+                        }
+                    }
+                });
+
+            } else if (even == 'xz') {
+                window.location.href = "/student/dowLoad.action";
+            }
+        });
+
+
+        //执行实例
+        //上传文件
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            , url: '/student/fileUpload.action' //上传接口
+            , accept: 'file'
+            , done: function (res) {
+                //上传完毕回调
+                if (res == '1') {
+                    layer.msg('上传成功', {icon: 6, time: 2000});
+                    table.reload("test", {
+                        page: {
+                            curr: 1
+                        }
+                    });
+                } else {
+                    layer.msg('上传失败', {icon: 5, time: 2000});
+                }
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

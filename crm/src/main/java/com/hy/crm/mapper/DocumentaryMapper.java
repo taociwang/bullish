@@ -1,8 +1,8 @@
 package com.hy.crm.mapper;
 
-import com.hy.crm.entity.Documentary;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
+import com.hy.crm.entity.Documentary;
 
 /**
  * <p>
@@ -13,6 +13,10 @@ import org.apache.ibatis.annotations.Select;
  * @since 2019-12-04
  */
 public interface DocumentaryMapper extends BaseMapper<Documentary> {
+   // @Select("select date,topic,dpeople,particular,accessory from documentary ")
+   /* @SelectProvider(type = DocSql.class,method = "queryMy")
+    public List<Documentary> queryMy(Documentary documentary, Page<Documentary> page, String kinds, User user);*/
+
 
 
 

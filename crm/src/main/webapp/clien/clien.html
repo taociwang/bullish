@@ -1,221 +1,1900 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Layui</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
-    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
-    <style>
-        .divcss5-a {
-            line-height: 22px
-        }
-
-        /* css 注释说明：设置行距行高22px */
-        .divcss5-b {
-            line-height: 40px
-        }
-
-        /* 设置行距行高22px */
-        a:link {
-            color: #1E9FFF;
-        }
-
-        a:hover {
-            color: black;
-            text-decoration: none;
-        }
-
-        .divcss5-right {
-            float: right;
-            width: 250px;
-            height: 50px
-        }
-    </style>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>客户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../static/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../static/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../static/css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="../static/css/styles1.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+        AXSHARE_HOST_URL = 'http://www.axshare.cn';
+        AXSHARE_HOST_SECURE_URL = 'http://www.axshare.cn';
+        ACCOUNT_SERVICE_URL = 'http://www.axshare.cn';
+        ACCOUNT_SERVICE_SECURE_URL = 'http://www.axshare.cn';
+        ON_PREM_LDAP_ENABLED = 'false';
+    </script><script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/客户管理/data.js"></script>
+    <script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return 'http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/resources/images/transparent.gif?token=3c933dc1147ab6bbd69bc5af0cfcb5fbaf4909f99decdf0c00f32a4fb980a222'; };
+        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
 </head>
 <body>
-<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <legend>
-        客户管理
-    </legend>
-</fieldset>
+<div id="base" class="">
 
-<div style="padding: 20px; background-color: #F2F2F2;">
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-md2">
-            <div class="layui-card">
-                <div class="layui-card-header"><b>全部分类</b></div>
-                <div class="layui-card-body">
-                    <div class="divcss5-b">
-                        <form class="layui-form" action="" lay-filter="example">
-                            <select name="typeid" class="layui-select" id="dept1">
-                                <option value="">请选择</option>
-                                <option value="老客户">老客户</option>
-                                <option value="新客户">新客户</option>
-                                <option value="vip客户">vip客户</option>
-                            </select>
-                            <button class="layui-btn" type="submit" lay-filter="example_1" lay-submit=""
-                                    lay-event="search">搜索
-                            </button>
-                        </form>
+    <!-- Unnamed (Group) -->
+    <div id="u191" class="ax_default" data-left="300" data-top="40" data-width="210" data-height="34">
+
+        <!-- Unnamed (Group) -->
+        <div id="u192" class="ax_default" data-left="300" data-top="40" data-width="210" data-height="34">
+
+            <!-- 边框 (Rectangle) -->
+            <div id="u193" class="ax_default" data-label="边框">
+                <div id="u193_div" class=""></div>
+                <div id="u193_text" class="text ">
+                    <p><span>按客户名称</span></p>
+                </div>
+            </div>
+
+            <!-- 指示箭头 (Dynamic Panel) -->
+            <div id="u194" class="ax_default" data-label="指示箭头">
+                <div id="u194_state0" class="panel_state" data-label="向下" style="">
+                    <div id="u194_state0_content" class="panel_state_content">
+
+                        <!-- Unnamed (Shape) -->
+                        <div id="u195" class="ax_default">
+                            <img id="u195_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u195.png?token=53e94934a38f1c93d4c4f7da9879d913e1c3a69308c125354f0bb711e857a600"/>
+                        </div>
                     </div>
-                    <br><br><br><br><br><br>
+                </div>
+                <div id="u194_state1" class="panel_state" data-label="向上" style="visibility: hidden;">
+                    <div id="u194_state1_content" class="panel_state_content">
+
+                        <!-- Unnamed (Shape) -->
+                        <div id="u196" class="ax_default _形状">
+                            <img id="u196_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u196.png?token=e4d075a02241de5502f75597cb11d2bd8c1b74b53650d7b88b9a227cced7cd4e"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="layui-col-md10">
-            <div class="layui-card">
-                <div class="layui-card-body">
-                    <div class="demoTable">
-                        <form class="layui-form" action="" lay-filter="example">
-                            <div class="layui-inline">
-                                <select name="type" class="layui-select" id="dept">
-                                    <option value="">请选择</option>
-                                    <option value="uname">客户名称</option>
-                                    <option value="spell">拼音</option>
-                                    <option value="khly">客户来源</option>
-                                </select>
-                            </div>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div class="layui-inline">
-                                <input class="layui-input" name="value" id="demoReload" autocomplete="off">
-                            </div>
-                            <button class="layui-btn" type="submit" lay-filter="example" lay-submit=""
-                                    lay-event="search">搜索
-                            </button>
-                            <div class="divcss5-right">
-                                <a href="/crm/clien/toadd.do" class="layui-btn layui-btn-sm" lay-event="add"
-                                   id="toclien"><span class="layui-icon layui-icon-add-1">添加客户</span></a>
-                                <a href="clien.html">
-                                    <button class="layui-btn layui-btn-sm" lay-event="reflush" id="reflush"><span
-                                            class="layui-icon layui-icon-refresh-1">刷新</span></button>
-                                </a>
-                            </div>
-                        </form>
+        <!-- 下拉内容 (Group) -->
+        <div id="u197" class="ax_default ax_default_hidden" data-label="下拉内容" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u198" class="ax_default box_1">
+                <div id="u198_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Menu) -->
+            <div id="u199" class="ax_default">
+                <img id="u199_menu" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u199_menu.png?token=3885c0aa370a01e763aa2c6b9487126d2bdeedb3b7b88515d1c9e0d76664fbfb" alt="u199_menu"/>
+
+                <!-- Unnamed (Table) -->
+                <div id="u200" class="ax_default">
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u201" class="ax_default">
+                        <img id="u201_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u201_text" class="text ">
+                            <p><span>请选择</span></p>
+                        </div>
                     </div>
-                    <table class="layui-hide" id="test" lay-filter="test"></table>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u202" class="ax_default">
+                        <img id="u202_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u202_text" class="text ">
+                            <p><span>按客户名称</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u203" class="ax_default">
+                        <img id="u203_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u203_text" class="text ">
+                            <p><span>按拼音</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u204" class="ax_default">
+                        <img id="u204_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u204_text" class="text ">
+                            <p><span>按客户来源</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u205" class="ax_default">
+                        <img id="u205_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u205_text" class="text ">
+                            <p><span>按国家/地区</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u206" class="ax_default">
+                        <img id="u206_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u206_text" class="text ">
+                            <p><span>按所在城市</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Unnamed (Menu Item) -->
+                    <div id="u207" class="ax_default">
+                        <img id="u207_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u201.png?token=132017fdfd31b614b351c20e8ac8709d4cf830cdebb2349db757a61bc3774c21"/>
+                        <div id="u207_text" class="text ">
+                            <p><span>按所属行业</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="layui-col-md9">
+    </div>
 
+    <!-- Unnamed (Group) -->
+    <div id="u208" class="ax_default" data-left="30" data-top="40" data-width="131" data-height="31">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u209" class="ax_default _二级标题">
+            <div id="u209_div" class=""></div>
+            <div id="u209_text" class="text ">
+                <p><span>客户管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u210" class="ax_default _图片">
+            <img id="u210_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/我的桌面/u81.png?token=ea316fd6809de89d7f1282ee5493159999aa6df520d1fb1afff3cf455f4832ba"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u211" class="ax_default box_1">
+        <div id="u211_div" class=""></div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u212" class="ax_default box_1">
+        <div id="u212_div" class=""></div>
+        <div id="u212_text" class="text ">
+            <p><span>分类</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u213" class="ax_default" data-left="47" data-top="141" data-width="91" data-height="21">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u214" class="ax_default icon">
+            <img id="u214_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=e5d873d54f3426f55ef1a0ea78f41198389abf14b67b93644677d5af70374ad0"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u215" class="ax_default label">
+            <div id="u215_div" class=""></div>
+            <div id="u215_text" class="text ">
+                <p><span>所有分类</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u216" class="ax_default" data-left="47" data-top="172" data-width="105" data-height="21">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u217" class="ax_default icon">
+            <img id="u217_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=e5d873d54f3426f55ef1a0ea78f41198389abf14b67b93644677d5af70374ad0"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u218" class="ax_default label">
+            <div id="u218_div" class=""></div>
+            <div id="u218_text" class="text ">
+                <p><span>客户分类一</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u219" class="ax_default" data-left="47" data-top="203" data-width="105" data-height="21">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u220" class="ax_default icon">
+            <img id="u220_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=e5d873d54f3426f55ef1a0ea78f41198389abf14b67b93644677d5af70374ad0"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u221" class="ax_default label">
+            <div id="u221_div" class=""></div>
+            <div id="u221_text" class="text ">
+                <p><span>客户分类二</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u222" class="ax_default" data-left="47" data-top="234" data-width="105" data-height="21">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u223" class="ax_default icon">
+            <img id="u223_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u214.png?token=e5d873d54f3426f55ef1a0ea78f41198389abf14b67b93644677d5af70374ad0"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u224" class="ax_default label">
+            <div id="u224_div" class=""></div>
+            <div id="u224_text" class="text ">
+                <p><span>客户分类三</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u225" class="ax_default _文本段落">
+        <div id="u225_div" class=""></div>
+        <div id="u225_text" class="text ">
+            <p><span style="color:#999999;">* 一个客户通常对应着多个商机。可以在本模块中新增客户，然后在新增商机时下拉选取；更方便的做法是，在新增商机时登记新客户的信息，系统将自动新增客户到本模块中</span></p><p><span style="color:#FF0000;">* 如果一个客户已经包含有商机、合同或售后服务信息，请不要修改其名称、也不要删除它</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Table) -->
+    <div id="u226" class="ax_default">
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u227" class="ax_default table_cell">
+            <img id="u227_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u227.png?token=03c5d67cc769715e7188c515e675bbd51cae535bf789e3165c5963e1c2969db5"/>
+            <div id="u227_text" class="text ">
+                <p><span>客户名称</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u228" class="ax_default table_cell">
+            <img id="u228_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u228.png?token=f04431406de50ec419a6959402c543c9e4872cd134f844b76c16447c4a0b4dfc"/>
+            <div id="u228_text" class="text ">
+                <p><span>商机数&nbsp; &nbsp;&nbsp; </span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u229" class="ax_default">
+            <img id="u229_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u229.png?token=80307c7fb2fdc2cff3fe0203dd4d111d391ee3426b364af23777674fc4a16233"/>
+            <div id="u229_text" class="text ">
+                <p><span>预计成交金额</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u230" class="ax_default">
+            <img id="u230_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u230.png?token=fc51d86296457c99d22d8b9ad27a81517bdfba9e914aec385964c44aa1050f00"/>
+            <div id="u230_text" class="text ">
+                <p><span>合同数</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u231" class="ax_default table_cell">
+            <img id="u231_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u231.png?token=594fb97abd6362f990cf20a62856f045a7135fcace898fa7b3c376e1af4d9a52"/>
+            <div id="u231_text" class="text ">
+                <p><span>合同金额</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u232" class="ax_default table_cell">
+            <img id="u232_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u232.png?token=2510be8c221366212a1593af5e0e06084f6e2f499773e54636871c92728bc461"/>
+            <div id="u232_text" class="text ">
+                <p><span>回款额</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u233" class="ax_default table_cell">
+            <img id="u233_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u233.png?token=f8e80b5159e74320b2747cf4a985558173a971a564272bd9ae68f39daf4e18cf"/>
+            <div id="u233_text" class="text ">
+                <p><span>售后服务数</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u234" class="ax_default table_cell">
+            <img id="u234_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u234.png?token=8a1566cb29e5185828f5b559ad171a0bbb546c01ead1f4898a878733e6d82ac7"/>
+            <div id="u234_text" class="text ">
+                <p><span>服务均分</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u235" class="ax_default table_cell">
+            <img id="u235_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u235_text" class="text ">
+                <p><span>北京新旅途投资有限公司 </span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u236" class="ax_default table_cell">
+            <img id="u236_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u237" class="ax_default table_cell">
+            <img id="u237_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u237_text" class="text ">
+                <p><span>125000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u238" class="ax_default table_cell">
+            <img id="u238_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u239" class="ax_default table_cell">
+            <img id="u239_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u239_text" class="text ">
+                <p><span>450000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u240" class="ax_default table_cell">
+            <img id="u240_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u240_text" class="text ">
+                <p><span>300000.00&nbsp; &nbsp;&nbsp; </span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u241" class="ax_default table_cell">
+            <img id="u241_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u242" class="ax_default table_cell">
+            <img id="u242_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u242_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u243" class="ax_default table_cell">
+            <img id="u243_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u243_text" class="text ">
+                <p><span>成都电子集团 </span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u244" class="ax_default table_cell">
+            <img id="u244_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u245" class="ax_default">
+            <img id="u245_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u245_text" class="text ">
+                <p><span>350000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u246" class="ax_default">
+            <img id="u246_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u247" class="ax_default">
+            <img id="u247_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u247_text" class="text ">
+                <p><span>100000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u248" class="ax_default">
+            <img id="u248_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u248_text" class="text ">
+                <p><span>100000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u249" class="ax_default">
+            <img id="u249_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u250" class="ax_default">
+            <img id="u250_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u250_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u251" class="ax_default">
+            <img id="u251_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u251_text" class="text ">
+                <p><span>创造力雕塑</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u252" class="ax_default">
+            <img id="u252_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u253" class="ax_default">
+            <img id="u253_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u253_text" class="text ">
+                <p><span>1530000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u254" class="ax_default">
+            <img id="u254_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u255" class="ax_default">
+            <img id="u255_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u255_text" class="text ">
+                <p><span>200000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u256" class="ax_default">
+            <img id="u256_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u256_text" class="text ">
+                <p><span>100000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u257" class="ax_default">
+            <img id="u257_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u258" class="ax_default">
+            <img id="u258_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u258_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u259" class="ax_default">
+            <img id="u259_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u259_text" class="text ">
+                <p><span>大连天佳集团</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u260" class="ax_default">
+            <img id="u260_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u261" class="ax_default">
+            <img id="u261_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u261_text" class="text ">
+                <p><span>1530000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u262" class="ax_default">
+            <img id="u262_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u263" class="ax_default">
+            <img id="u263_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u263_text" class="text ">
+                <p><span>200000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u264" class="ax_default">
+            <img id="u264_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u264_text" class="text ">
+                <p><span>100000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u265" class="ax_default">
+            <img id="u265_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u266" class="ax_default">
+            <img id="u266_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u266_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u267" class="ax_default">
+            <img id="u267_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u267_text" class="text ">
+                <p><span>广州奇固锁业</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u268" class="ax_default">
+            <img id="u268_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u269" class="ax_default">
+            <img id="u269_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u269_text" class="text ">
+                <p><span>230000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u270" class="ax_default">
+            <img id="u270_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u271" class="ax_default">
+            <img id="u271_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u271_text" class="text ">
+                <p><span>270000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u272" class="ax_default">
+            <img id="u272_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u272_text" class="text ">
+                <p><span>180000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u273" class="ax_default">
+            <img id="u273_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u274" class="ax_default">
+            <img id="u274_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u274_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u275" class="ax_default">
+            <img id="u275_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u275_text" class="text ">
+                <p><span>淮安市地税局</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u276" class="ax_default">
+            <img id="u276_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u277" class="ax_default">
+            <img id="u277_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u277_text" class="text ">
+                <p><span>50000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u278" class="ax_default">
+            <img id="u278_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u279" class="ax_default">
+            <img id="u279_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u279_text" class="text ">
+                <p><span>600000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u280" class="ax_default">
+            <img id="u280_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u280_text" class="text ">
+                <p><span>200000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u281" class="ax_default">
+            <img id="u281_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u282" class="ax_default">
+            <img id="u282_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u282_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u283" class="ax_default">
+            <img id="u283_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u283_text" class="text ">
+                <p><span>江苏经济管理有限公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u284" class="ax_default">
+            <img id="u284_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u285" class="ax_default">
+            <img id="u285_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u285_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u286" class="ax_default">
+            <img id="u286_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u287" class="ax_default">
+            <img id="u287_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u287_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u288" class="ax_default">
+            <img id="u288_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u288_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u289" class="ax_default">
+            <img id="u289_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u290" class="ax_default">
+            <img id="u290_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u290_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u291" class="ax_default">
+            <img id="u291_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u291_text" class="text ">
+                <p><span>江苏苏计咨询有限公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u292" class="ax_default">
+            <img id="u292_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u293" class="ax_default">
+            <img id="u293_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u293_text" class="text ">
+                <p><span>40000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u294" class="ax_default">
+            <img id="u294_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u295" class="ax_default">
+            <img id="u295_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u295_text" class="text ">
+                <p><span>158000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u296" class="ax_default">
+            <img id="u296_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u296_text" class="text ">
+                <p><span>100000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u297" class="ax_default">
+            <img id="u297_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u298" class="ax_default">
+            <img id="u298_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u298_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u299" class="ax_default">
+            <img id="u299_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u299_text" class="text ">
+                <p><span>江苏移动总公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u300" class="ax_default">
+            <img id="u300_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u301" class="ax_default">
+            <img id="u301_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u301_text" class="text ">
+                <p><span>120000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u302" class="ax_default">
+            <img id="u302_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u303" class="ax_default">
+            <img id="u303_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u303_text" class="text ">
+                <p><span>450000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u304" class="ax_default">
+            <img id="u304_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u304_text" class="text ">
+                <p><span>300000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u305" class="ax_default">
+            <img id="u305_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u306" class="ax_default">
+            <img id="u306_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u306_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u307" class="ax_default">
+            <img id="u307_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u307_text" class="text ">
+                <p><span>江西南昌机电有限公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u308" class="ax_default">
+            <img id="u308_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u309" class="ax_default">
+            <img id="u309_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u309_text" class="text ">
+                <p><span>80000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u310" class="ax_default">
+            <img id="u310_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u311" class="ax_default">
+            <img id="u311_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u311_text" class="text ">
+                <p><span>250000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u312" class="ax_default">
+            <img id="u312_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u312_text" class="text ">
+                <p><span>120000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u313" class="ax_default">
+            <img id="u313_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u314" class="ax_default">
+            <img id="u314_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u314_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u315" class="ax_default">
+            <img id="u315_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u315_text" class="text ">
+                <p><span>昆明东山风景区</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u316" class="ax_default">
+            <img id="u316_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u317" class="ax_default">
+            <img id="u317_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u317_text" class="text ">
+                <p><span>600000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u318" class="ax_default">
+            <img id="u318_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u319" class="ax_default">
+            <img id="u319_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u319_text" class="text ">
+                <p><span>450000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u320" class="ax_default">
+            <img id="u320_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u320_text" class="text ">
+                <p><span>200000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u321" class="ax_default">
+            <img id="u321_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u322" class="ax_default">
+            <img id="u322_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u322_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u323" class="ax_default">
+            <img id="u323_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u323_text" class="text ">
+                <p><span>雀巢(中国)有限公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u324" class="ax_default">
+            <img id="u324_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u325" class="ax_default">
+            <img id="u325_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u325_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u326" class="ax_default">
+            <img id="u326_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u327" class="ax_default">
+            <img id="u327_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u327_text" class="text ">
+                <p><span>800000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u328" class="ax_default">
+            <img id="u328_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u328_text" class="text ">
+                <p><span>500000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u329" class="ax_default">
+            <img id="u329_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u330" class="ax_default">
+            <img id="u330_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u330_text" class="text ">
+                <p><span>4.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u331" class="ax_default">
+            <img id="u331_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u331_text" class="text ">
+                <p><span>山西富特光伏能源</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u332" class="ax_default">
+            <img id="u332_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u333" class="ax_default">
+            <img id="u333_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u333_text" class="text ">
+                <p><span>280000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u334" class="ax_default">
+            <img id="u334_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u335" class="ax_default">
+            <img id="u335_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u335_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u336" class="ax_default">
+            <img id="u336_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u336_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u337" class="ax_default">
+            <img id="u337_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u338" class="ax_default">
+            <img id="u338_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u338_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u339" class="ax_default">
+            <img id="u339_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u235.png?token=cc32a42fae08100847a4a0d17b2ac5fb8c0515126cd2db428d28cf4c379af9ea"/>
+            <div id="u339_text" class="text ">
+                <p><span>山西富特光伏能源有限公司</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u340" class="ax_default">
+            <img id="u340_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u236.png?token=a9b2637df6d8dab555f94b06a2ef3c1bc9f0cae19f51b15ad65dd338b4b0fd1f"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u341" class="ax_default">
+            <img id="u341_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u237.png?token=1190ebdcf1610d39bd256d8efbaefcf069aa4cbf37ef6d0d4b61ef47b89156d7"/>
+            <div id="u341_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u342" class="ax_default">
+            <img id="u342_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u238.png?token=b741b241e66e1c36f046e86f680207b598f4a1bced3e031e0c1e319776bb61f5"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u343" class="ax_default">
+            <img id="u343_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u239.png?token=7552f450ac53225b56f5a044201e24f276f268a3bad4e2db9c6603f7149ab4a4"/>
+            <div id="u343_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u344" class="ax_default">
+            <img id="u344_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u240.png?token=8944041e2378e47e703f9b89550791be25785d1550b68beab5d0d86554b783f3"/>
+            <div id="u344_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u345" class="ax_default">
+            <img id="u345_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u241.png?token=c9a791e6ab7209177cd4d6fd980b5bb2ff4dd6664c361fcfa730167452d241df"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u346" class="ax_default">
+            <img id="u346_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u242.png?token=33417d1d449a44579e225b0acc2a3f87561c2a7c181680ee20898b5481b64194"/>
+            <div id="u346_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u347" class="ax_default">
+            <img id="u347_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u347.png?token=faff16da553a54959e2d88f50802729c34b1d5087c5f216965beabe0231d1e40"/>
+            <div id="u347_text" class="text ">
+                <p><span>上海旅游集散中心</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u348" class="ax_default">
+            <img id="u348_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u348.png?token=c21b0ef926e07cc049271e39c171ab87e03195ce89afd85260731793316bcc2a"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u349" class="ax_default">
+            <img id="u349_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u349.png?token=249fcfe6e1f7027b1db0d62f7f7bfbe53b93c3bbd515186ad72371cc35f00823"/>
+            <div id="u349_text" class="text ">
+                <p><span>0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u350" class="ax_default">
+            <img id="u350_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u350.png?token=377543074b138e52fba51f017d96c3e4fd64dc7977b6d6e44b1bcc489b1f64ca"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u351" class="ax_default">
+            <img id="u351_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u351.png?token=25afde3f27ceb9273489a2e6039414499086829fe0e20e6592f55026178f3a30"/>
+            <div id="u351_text" class="text ">
+                <p><span>150000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u352" class="ax_default">
+            <img id="u352_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u352.png?token=89cf4085de94390ab8c1ff36feb72d8ecf0d9d3b938afc08ee6ee07d964aedb0"/>
+            <div id="u352_text" class="text ">
+                <p><span>150000.00</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u353" class="ax_default">
+            <img id="u353_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u353.png?token=e8752e595b08f91ec150d654734b45a4418be6c8091b072015fd5dbdaf860a3e"/>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u354" class="ax_default">
+            <img id="u354_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u354.png?token=0399c7647ca919e77f75f553f69b4995785e34171bd6fa3c142c8ca2eef82a11"/>
+            <div id="u354_text" class="text ">
+                <p><span>0.0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u355" class="ax_default" data-left="569" data-top="138" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u356" class="ax_default icon">
+            <img id="u356_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u357" class="ax_default _文本段落">
+            <div id="u357_div" class=""></div>
+            <div id="u357_text" class="text ">
+                <p><span>1</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u358" class="ax_default" data-left="822" data-top="138" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u359" class="ax_default icon">
+            <img id="u359_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u360" class="ax_default _文本段落">
+            <div id="u360_div" class=""></div>
+            <div id="u360_text" class="text ">
+                <p><span>0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u361" class="ax_default" data-left="1167" data-top="138" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u362" class="ax_default icon">
+            <img id="u362_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u363" class="ax_default _文本段落">
+            <div id="u363_div" class=""></div>
+            <div id="u363_text" class="text ">
+                <p><span>0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u364" class="ax_default" data-left="569" data-top="171" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u365" class="ax_default icon">
+            <img id="u365_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u366" class="ax_default _文本段落">
+            <div id="u366_div" class=""></div>
+            <div id="u366_text" class="text ">
+                <p><span>2</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u367" class="ax_default" data-left="822" data-top="171" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u368" class="ax_default icon">
+            <img id="u368_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u369" class="ax_default _文本段落">
+            <div id="u369_div" class=""></div>
+            <div id="u369_text" class="text ">
+                <p><span>1</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u370" class="ax_default" data-left="1167" data-top="171" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u371" class="ax_default icon">
+            <img id="u371_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u372" class="ax_default _文本段落">
+            <div id="u372_div" class=""></div>
+            <div id="u372_text" class="text ">
+                <p><span>1</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u373" class="ax_default" data-left="569" data-top="204" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u374" class="ax_default icon">
+            <img id="u374_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u375" class="ax_default _文本段落">
+            <div id="u375_div" class=""></div>
+            <div id="u375_text" class="text ">
+                <p><span>3</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u376" class="ax_default" data-left="822" data-top="204" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u377" class="ax_default icon">
+            <img id="u377_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u378" class="ax_default _文本段落">
+            <div id="u378_div" class=""></div>
+            <div id="u378_text" class="text ">
+                <p><span>2</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u379" class="ax_default" data-left="1167" data-top="204" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u380" class="ax_default icon">
+            <img id="u380_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u381" class="ax_default _文本段落">
+            <div id="u381_div" class=""></div>
+            <div id="u381_text" class="text ">
+                <p><span>2</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u382" class="ax_default" data-left="569" data-top="235" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u383" class="ax_default icon">
+            <img id="u383_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u384" class="ax_default _文本段落">
+            <div id="u384_div" class=""></div>
+            <div id="u384_text" class="text ">
+                <p><span>4</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u385" class="ax_default" data-left="822" data-top="235" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u386" class="ax_default icon">
+            <img id="u386_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u387" class="ax_default _文本段落">
+            <div id="u387_div" class=""></div>
+            <div id="u387_text" class="text ">
+                <p><span>3</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u388" class="ax_default" data-left="1167" data-top="235" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u389" class="ax_default icon">
+            <img id="u389_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u390" class="ax_default _文本段落">
+            <div id="u390_div" class=""></div>
+            <div id="u390_text" class="text ">
+                <p><span>3</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u391" class="ax_default" data-left="569" data-top="269" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u392" class="ax_default icon">
+            <img id="u392_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u393" class="ax_default _文本段落">
+            <div id="u393_div" class=""></div>
+            <div id="u393_text" class="text ">
+                <p><span>1</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u394" class="ax_default" data-left="822" data-top="269" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u395" class="ax_default icon">
+            <img id="u395_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u396" class="ax_default _文本段落">
+            <div id="u396_div" class=""></div>
+            <div id="u396_text" class="text ">
+                <p><span>0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u397" class="ax_default" data-left="1167" data-top="269" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u398" class="ax_default icon">
+            <img id="u398_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u399" class="ax_default _文本段落">
+            <div id="u399_div" class=""></div>
+            <div id="u399_text" class="text ">
+                <p><span>0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u400" class="ax_default" data-left="569" data-top="300" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u401" class="ax_default icon">
+            <img id="u401_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u402" class="ax_default _文本段落">
+            <div id="u402_div" class=""></div>
+            <div id="u402_text" class="text ">
+                <p><span>2</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u403" class="ax_default icon">
+        <img id="u403_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u404" class="ax_default _文本段落">
+        <div id="u404_div" class=""></div>
+        <div id="u404_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u405" class="ax_default" data-left="1167" data-top="300" data-width="28" data-height="16">
+
+        <!-- Unnamed (Shape) -->
+        <div id="u406" class="ax_default icon">
+            <img id="u406_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u407" class="ax_default _文本段落">
+            <div id="u407_div" class=""></div>
+            <div id="u407_text" class="text ">
+                <p><span>1</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u408" class="ax_default icon">
+        <img id="u408_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u409" class="ax_default _文本段落">
+        <div id="u409_div" class=""></div>
+        <div id="u409_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u410" class="ax_default icon">
+        <img id="u410_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u411" class="ax_default _文本段落">
+        <div id="u411_div" class=""></div>
+        <div id="u411_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u412" class="ax_default icon">
+        <img id="u412_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u413" class="ax_default _文本段落">
+        <div id="u413_div" class=""></div>
+        <div id="u413_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u414" class="ax_default icon">
+        <img id="u414_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u415" class="ax_default _文本段落">
+        <div id="u415_div" class=""></div>
+        <div id="u415_text" class="text ">
+            <p><span>4</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u416" class="ax_default icon">
+        <img id="u416_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u417" class="ax_default _文本段落">
+        <div id="u417_div" class=""></div>
+        <div id="u417_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u418" class="ax_default icon">
+        <img id="u418_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u419" class="ax_default _文本段落">
+        <div id="u419_div" class=""></div>
+        <div id="u419_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u420" class="ax_default icon">
+        <img id="u420_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u421" class="ax_default _文本段落">
+        <div id="u421_div" class=""></div>
+        <div id="u421_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u422" class="ax_default icon">
+        <img id="u422_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u423" class="ax_default _文本段落">
+        <div id="u423_div" class=""></div>
+        <div id="u423_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u424" class="ax_default icon">
+        <img id="u424_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u425" class="ax_default _文本段落">
+        <div id="u425_div" class=""></div>
+        <div id="u425_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u426" class="ax_default icon">
+        <img id="u426_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u427" class="ax_default _文本段落">
+        <div id="u427_div" class=""></div>
+        <div id="u427_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u428" class="ax_default icon">
+        <img id="u428_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u429" class="ax_default _文本段落">
+        <div id="u429_div" class=""></div>
+        <div id="u429_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u430" class="ax_default icon">
+        <img id="u430_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u431" class="ax_default _文本段落">
+        <div id="u431_div" class=""></div>
+        <div id="u431_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u432" class="ax_default icon">
+        <img id="u432_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u433" class="ax_default _文本段落">
+        <div id="u433_div" class=""></div>
+        <div id="u433_text" class="text ">
+            <p><span>4</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u434" class="ax_default icon">
+        <img id="u434_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u435" class="ax_default _文本段落">
+        <div id="u435_div" class=""></div>
+        <div id="u435_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u436" class="ax_default icon">
+        <img id="u436_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u437" class="ax_default _文本段落">
+        <div id="u437_div" class=""></div>
+        <div id="u437_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u438" class="ax_default icon">
+        <img id="u438_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u439" class="ax_default _文本段落">
+        <div id="u439_div" class=""></div>
+        <div id="u439_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u440" class="ax_default icon">
+        <img id="u440_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u441" class="ax_default _文本段落">
+        <div id="u441_div" class=""></div>
+        <div id="u441_text" class="text ">
+            <p><span>0</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u442" class="ax_default icon">
+        <img id="u442_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u443" class="ax_default _文本段落">
+        <div id="u443_div" class=""></div>
+        <div id="u443_text" class="text ">
+            <p><span>0</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u444" class="ax_default icon">
+        <img id="u444_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u445" class="ax_default _文本段落">
+        <div id="u445_div" class=""></div>
+        <div id="u445_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u446" class="ax_default icon">
+        <img id="u446_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u447" class="ax_default _文本段落">
+        <div id="u447_div" class=""></div>
+        <div id="u447_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u448" class="ax_default icon">
+        <img id="u448_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u449" class="ax_default _文本段落">
+        <div id="u449_div" class=""></div>
+        <div id="u449_text" class="text ">
+            <p><span>1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u450" class="ax_default icon">
+        <img id="u450_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u451" class="ax_default _文本段落">
+        <div id="u451_div" class=""></div>
+        <div id="u451_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u452" class="ax_default icon">
+        <img id="u452_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u453" class="ax_default _文本段落">
+        <div id="u453_div" class=""></div>
+        <div id="u453_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u454" class="ax_default icon">
+        <img id="u454_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u455" class="ax_default _文本段落">
+        <div id="u455_div" class=""></div>
+        <div id="u455_text" class="text ">
+            <p><span>2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u456" class="ax_default icon">
+        <img id="u456_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u457" class="ax_default _文本段落">
+        <div id="u457_div" class=""></div>
+        <div id="u457_text" class="text ">
+            <p><span>4</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u458" class="ax_default icon">
+        <img id="u458_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u459" class="ax_default _文本段落">
+        <div id="u459_div" class=""></div>
+        <div id="u459_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Shape) -->
+    <div id="u460" class="ax_default icon">
+        <img id="u460_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u356.png?token=92af110906896e4d8d498309d20bca8eb8fa43dfe48d0236b6a9e712e41902ba"/>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u461" class="ax_default _文本段落">
+        <div id="u461_div" class=""></div>
+        <div id="u461_text" class="text ">
+            <p><span>3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u462" class="ax_default" data-left="948" data-top="40" data-width="78" data-height="34">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u463" class="ax_default box_1">
+            <div id="u463_div" class=""></div>
+            <div id="u463_text" class="text ">
+                <p><span>查找</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u464" class="ax_default icon">
+            <img id="u464_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u464.png?token=3d295a0097fe9613d4a7f7452f92c3784ae87a13a6a365503c25923b203eba7d"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u465" class="ax_default" data-left="1184" data-top="40" data-width="99" data-height="34">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u466" class="ax_default box_1">
+            <div id="u466_div" class=""></div>
+            <div id="u466_text" class="text ">
+                <p><span>新增客户</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u467" class="ax_default icon">
+            <img id="u467_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u467.png?token=a6dfb811adfe5a0e1e6811b7ddcfa7ee361709fe8e3675dcab323af5f8c4897e"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u468" class="ax_default" data-left="1293" data-top="40" data-width="78" data-height="34">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u469" class="ax_default box_1">
+            <div id="u469_div" class=""></div>
+            <div id="u469_text" class="text ">
+                <p><span>刷新</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u470" class="ax_default icon">
+            <img id="u470_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u470.png?token=5c8dad7de276fe312884e00528b04808f35bf9b15427b87012b0c25711f5a4fb"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u471" class="ax_default" data-left="300" data-top="633" data-width="40" data-height="34">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u472" class="ax_default box_1" selectiongroup="分页">
+            <div id="u472_div" class=""></div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u473" class="ax_default icon">
+            <img id="u473_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u473.png?token=dd29afdb1368f800e11ad4113fd1d9ed3384a604ab14b06f6b22ecf0aa6d2c86"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u474" class="ax_default" data-left="581" data-top="633" data-width="40" data-height="34">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u475" class="ax_default box_1" selectiongroup="分页">
+            <div id="u475_div" class=""></div>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u476" class="ax_default icon">
+            <img id="u476_img" class="img " src="http://www.axshare.cn/gsc/S3EWE1/0c/7f/0a/0c7f0a102aa0468792ba30e848859a83/images/客户管理/u476.png?token=0aff91453baa9ebdc757591c6a2565cf425675a050c29912231bbc768c17dcfd"/>
+        </div>
+    </div>
+
+    <!-- Unnamed (Rectangle) -->
+    <div id="u477" class="ax_default box_1" selectiongroup="分页">
+        <div id="u477_div" class=""></div>
+        <div id="u477_text" class="text ">
+            <p><span>共有24条记录，第1/2页</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (Group) -->
+    <div id="u478" class="ax_default" data-left="520" data-top="40" data-width="418" data-height="34">
+
+        <!-- 边框 (Rectangle) -->
+        <div id="u479" class="ax_default box_1" data-label="边框">
+            <div id="u479_div" class=""></div>
+        </div>
+
+        <!-- Unnamed (Text Field) -->
+        <div id="u480" class="ax_default">
+            <input id="u480_input" type="text" value=""/>
         </div>
     </div>
 </div>
-<script type=" text/html" id="titleTpl">
-    <a href= "/crm/clien/toupdatecli.do?cid={{d.cid}}" class="layui-table-link"  target="blank" >{{d.uname}}</a>
-</script>
-
-<script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-</script>
-
-<script src="/static/layui/layui.js" charset="utf-8"></script>
-<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-<script>
-    layui.use(['element', 'layer', 'table', 'util', 'form'], function () {
-        var element = layui.element;
-        var layer = layui.layer;
-        var table = layui.table;
-        var util = layui.util;
-        var form = layui.form;
-
-
-        form.on('submit(example_1)', function (data) {
-            table.reload('test', {
-                where: {
-                    typeid: data.field.typeid,
-                }
-                , page: {
-                    curr: 1
-                }
-            })
-            return false;
-        });
-
-
-        form.on('submit(example)', function (data) {
-            table.reload('test', {
-                where: {
-                    type: data.field.type,
-                    value: data.field.value,
-                }
-                , page: {
-                    curr: 1
-                }
-            })
-            return false;
-        });
-
-        //监听折叠
-        element.on('collapse(test)', function (data) {
-            layer.msg('展开状态：' + data.show);
-        });
-        //table 渲染
-        table.render({
-            elem: '#test'
-            , url: '/crm/clien/queryAllbo.do'
-            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            , defaultToolbar: []
-            , title: '用户数据表'
-            , cols: [[
-                //{type: 'checkbox', fixed: 'left'}
-                {field: 'uname', title: '客户名称', width: 150, templet:'#titleTpl'}
-                , {field: 'bcount', title: '商机数', width: 150,}
-                , {field: 'bsum', title: '预计成交金额', width: 150,}
-                , {field: 'acount', title: '合同数', width: 150,}
-                , {field: 'asum', title: '合同金额', width: 150,}
-                , {field: 'serve_type', title: '回款金额', width: 150,}
-                , {field: 'serve_type', title: '售后服务数', width: 150,}
-                , {field: 'serve_type', title: '评分', width: 150,}
-
-            ]]
-            , page: true
-            , limit: 3
-            , limits: [3, 5, 10]
-        });
-
-
-        var $ = layui.$, active = {
-            /* reload: function(){
-                 var demoReload = $('#demoReload');
-
-                 //执行重载
-                 table.reload('testReload', {
-                     page: {
-                         curr: 1 //重新从第 1 页开始
-                     }
-                     ,where: {
-                         key: {
-                             id: demoReload.val()
-                         }
-                     }
-                 }, 'data');
-             }*/
-        };
-
-        /*  $('.demoTable .layui-btn').on('click', function(){
-              var type = $(this).data('type');
-              active[type] ? active[type].call(this) : '';
-          });*/
-
-        table.on('toolbar(test)', function (obj) {
-            var layEvent = obj.event;
-            var data = obj.data;
-            if (layEvent === "reflush") {
-                console.log("-----------");
-                table.reload('test', {});
-            }
-        })
-
-
-    });
-
-</script>
-
 </body>
 </html>

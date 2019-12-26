@@ -1,5 +1,11 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 
 /**
@@ -10,6 +16,7 @@ import java.io.Serializable;
  * @author wangsq
  * @since 2019-12-04
  */
+@TableName("forum")
 public class Forum implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,6 +24,7 @@ public class Forum implements Serializable {
     /**
      * 论坛主键fid
      */
+    @TableId(type = IdType.AUTO)
     private Integer fid;
 
     /**
@@ -43,6 +51,11 @@ public class Forum implements Serializable {
      * 回复量
      */
     private Integer reply;
+    /**
+     * 最后回复时间
+     */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private String reply_time;
 
     /**
      * 帖子分类
@@ -57,7 +70,27 @@ public class Forum implements Serializable {
     /**
      * 帖子相关附件
      */
+    @TableField("related_accessory")
     private String related_accessory;
+    /**
+     * 发帖内容
+     */
+    @TableField("neirong")
+    private String neirong;
+
+
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getReply_time() {
+        return reply_time;
+    }
+
+    public void setReply_time(String reply_time) {
+        this.reply_time = reply_time;
+    }
 
     public Integer getFid() {
         return fid;
@@ -123,6 +156,14 @@ public class Forum implements Serializable {
         this.related_accessory = related_accessory;
     }
 
+    public String getNeirong() {
+        return neirong;
+    }
+
+    public void setNeirong(String neirong) {
+        this.neirong = neirong;
+    }
+
     @Override
     public String toString() {
         return "Forum{" +
@@ -135,6 +176,7 @@ public class Forum implements Serializable {
         ", invitation_uppere=" + invitation_uppere +
         ", label=" + label +
         ", related_accessory=" + related_accessory +
+        ", neirong=" + neirong +
         "}";
     }
 }

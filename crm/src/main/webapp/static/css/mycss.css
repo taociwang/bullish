@@ -1,0 +1,120 @@
+#mydesktop{
+    left: 50px;
+}
+<!--
+#div1{
+    /*
+        待处理事务  主体
+    */
+    border:3px solid  #b7c0cc;
+    width:300px;
+    height:220px;
+    z-index:1;
+    position:absolute;
+    top: 80px;
+    left: 50px;
+}
+#div2{
+    /*
+        待处理事务  头
+    */
+    border-top:3px solid  #b7c0cc;
+    border-left: 3px solid  #b7c0cc;
+    border-right:3px solid  #b7c0cc;
+    background-color: #b7c0cc;
+    width:300px;
+    height:30px;
+    z-index:1;
+    position:absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#div3{
+    /*
+        客户关系  头
+    */
+    background-color: #b7c0cc;
+    border-top:3px solid  #b7c0cc;
+    border-left: 3px solid  #b7c0cc;
+    border-right:3px solid  #b7c0cc;
+    width:600px;
+    height:30px;
+    z-index:1;
+    position:absolute;
+    top: 50px;
+    left: 360px;
+}
+#div4{
+    /*
+        客户关系  主体
+    */
+    border:3px solid  #b7c0cc;
+    width:600px;
+    height:220px;
+    z-index:1;
+    position:absolute;
+    top: 80px;
+    left: 360px;
+}
+#div4-1{
+    /*这个 div是控制客户关系中的三个数据*/
+    width: 600px;
+    height: 40px;
+    border-bottom: 1px solid  black;
+
+}
+
+#div5{
+    /*这是信息公告  头*/
+    background-color: #b7c0cc;
+    border-top:3px solid  #b7c0cc;
+    border-left: 3px solid  #b7c0cc;
+    border-right:3px solid  #b7c0cc;
+    width:300px;
+    height:30px;
+    z-index:1;
+    position:absolute;
+    top: 310px;
+    left: 50px;
+}
+
+#div6{
+    /*这是信息公告的主体*/
+    border:3px solid  #b7c0cc;
+    width:300px;
+    height:140px;
+    z-index:1;
+    position:absolute;
+    top: 340px;
+    left: 50px;
+
+}
+
+#div7{
+    /*这是友情链接的头*/
+    background-color: #b7c0cc;
+    border-top:3px solid  #b7c0cc;
+    border-left: 3px solid  #b7c0cc;
+    border-right:3px solid  #b7c0cc;
+    width:600px;
+    height:30px;
+    z-index:1;
+    position:absolute;
+    top: 310px;
+    left: 360px;
+}
+#div8{
+    /*这是  友情链接  的主体*/
+    border:3px solid  #b7c0cc;
+    width:600px;
+    height:140px;
+    z-index:1;
+    position:absolute;
+    top: 340px;
+    left: 360px;
+}
+
+#main{
+    height: 180px;
+}
