@@ -38,8 +38,8 @@
           <li class="layui-nav-item">
               <span id="name" th:text="${session.user.getUsername()}"></span>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-              <dd><a onClick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-              <dd><a href="login.html">退出</a></dd>
+              <dd><a href="/crm/user/toxiu.do">个人信息</a></dd>
+              <dd><a href="/login.html">退出</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item to-index"><a href="#">前台首页</a></li>
@@ -224,12 +224,16 @@
         </div>
     </div>
     <div class="page-content-bg"></div>
-    <!-- 右侧主体结束 -->
-    <!-- 中部结束 -->
-    <!-- 底部开始 -->
-    <!--<div class="footer">
-        <div class="copyright">Copyright ©2019 L-admin v2.3 All Rights Reserved</div>  
-    </div>-->
-    <!-- 底部结束 -->
+
+    <script>
+        layui.use(['element', 'layer', 'table', 'util','form'], function () {
+            var element = layui.element;
+            var layer = layui.layer;
+            var table = layui.table;
+            var util = layui.util;
+            var form = layui.form;
+
+
+        })
 </body>
 </html>

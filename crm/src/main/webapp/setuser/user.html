@@ -13,44 +13,38 @@
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend>修改用户</legend>
 </fieldset>
-<form>
-    <div class="registerPage">
-        <div class="registerDiv">
-            <form>
-                <div class="usernameWrapDiv">
-                    <div class="usernameLabel">
-                        <label>用户名:</label>
-                    </div>
-                    <div class="usernameDiv">
-                        <i class="layui-icon layui-icon-username adminIcon"></i>
-                        <input id="registerUsername" class="layui-input adminInput" type="text" name="username" onblur="usernamezz(this.value)" placeholder="输入用户名">
-                    </div>
-                </div>
-                <div class="usernameWrapDiv">
-                    <div class="usernameLabel">
-                        <label>密码:</label>
-                    </div>
-                    <div class="passwordDiv">
-                        <i class="layui-icon layui-icon-password adminIcon"></i>
-                        <input id="registerPassword" class="layui-input adminInput" type="password" name="password"
-                               placeholder="输入密码">
-                    </div>
-                </div>
-                <div class="usernameWrapDiv">
-                    <div class="usernameLabel">
-                        <label>确认密码:</label>
-                    </div>
-                    <div class="passwordDiv">
-                        <i class="layui-icon layui-icon-password adminIcon"></i>
-                        <input id="registerWellPassword" class="layui-input adminInput" type="password" name="password"
-                               placeholder="输入密码">
-                    </div>
-                </div>
+<form class="layui-form" lay-filter="example" action="">
 
-            </form>
+
+    <div class="layui-form-item">
+        <input id="uid" name="uid" type="hidden" th:value="${getUserlist.getId()}">
+        <label class="layui-form-label">用户名</label>
+        <div style="width: 200px" class="layui-input-block">
+            <input id="uname" name="uname" th:value="${getUserlist.getUsername()}" style="width: 200px" class="layui-input" readonly="readonly" type="text" autocomplete="off" lay-verify="docPerson">
         </div>
     </div>
-</form>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入当前密码</label>
+        <div class="layui-input-block">
+            <input id="lod" name="lod"   style="width: 200px" class="layui-input" type="password" autocomplete="off" lay-verify="required">
+            <span id="pan"></span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入新密码</label>
+        <div class="layui-input-block">
+            <input id="newmm" name="newmm"  style="width: 200px" class="layui-input" type="text" autocomplete="off" lay-verify="required">
+            </div>
+            </div>
+
+
+
+            <button type="submit" class="layui-btn layui-btn-fluid" style="width: 150px" lay-submit="" lay-filter="xiu">保存</button>
+            </form>
+            <script src="/static/layui/layui.js" charset="utf-8"></script>
+<script src="/static/js/jquery-3.3.1.js"></script>
 <script>
     layui.use(['element', 'layer', 'table', 'util','form'], function () {
         var element = layui.element;
@@ -59,49 +53,44 @@
         var util = layui.util;
         var form = layui.form;
 
-        function register() {
-            layer.open({
-                type: '1',
-                content: $('.registerPage'),
-                title: '注册',
-                area: ['430px', '400px'],
-                btn: ['注册', '重置', '取消'],
-                closeBtn: '1',
-                btn1: function (index, layero) {
-                    //注册回调
-                    layer.close(index);
-                    var registerUsername = $('#registerUsername').val();
-                    var registerPassword = $('#registerPassword').val();
-                    var registerWellPassword = $('#registerWellPassword').val();
-                    var selectValue = $('#roleSelect option:selected').val();
-                    var registerLoadIndex = layer.load(2);
-                    if (registerPassword === registerWellPassword) {
-                        $.ajax({
-                            type: 'post',
-                            url: '/crm/user/user_add.do',
-                            data: {
-                                username: registerUsername,
-                                password: registerPassword,
-                                registerWellPassword: registerWellPassword
-                            },
-                            success: function (data) {
-                                layer.close(registerLoadIndex);
-                                layer.msg(data);
-                                layer.alert("注册完成")
-                            },
-                            error: function () {
-                                layer.close(registerLoadIndex);
-                                layer.alert("请求超时！")
-                            }
-                        });
-                    } else {
-                        layer.close(registerLoadIndex);
-                        layer.alert("两次密码不一致");
-                        var registerPassword = $('#registerPassword').val("");
-                        var registerWellPassword = $('#registerWellPassword').val("");
+
+
+        $(function () {
+            $("#lod").blur(function (a) {
+                $.get("/crm/user/cha.do?upwd=" +$("#lod").val()+"&uname="+$("#uname").val()
+                    , function (data) {
+                        if (data == true) {
+                            $("#pan").text("密码正确");
+                        } else {
+
+                            $("#pan").text("密码错误");
+                            $("#lod").val("");
+                        }
+
+                    });
+            });
+        });
+
+        //监听提交
+        form.on('submit(xiu)', function(data){
+            var da=data.field;
+            $.ajax({
+                url:"/crm/user/xiu.do",
+                data:da,
+                success: function (result){
+                    var datas=JSON.parse(result);
+                    if(datas==true){
+                        layer.msg("保存成功");
+                        window.location.href='/crm/user/exit.do'
+                    }else {
+                        layer.msg("保存失败");
                     }
                 }
             })
+            return false;
+        });
+
+    })
 </script>
 </body>
 
