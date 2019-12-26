@@ -51,7 +51,7 @@ public class Authorization {
         Long total=pageInfo.getTotal();
         LayUI layui=new LayUI();
         layui.setCode(0);
-        layui.setMsg("数据返回正常");
+        layui.setMag("数据返回正常");
         layui.setCount(total.intValue());
         layui.setData(list);
         return layui;

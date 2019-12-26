@@ -4,7 +4,7 @@ import java.util.List;
 
 public class LayUI {
     private Integer code;
-    private String msg;
+    private String mag;
     private Integer count;
     private List data;
 
@@ -16,12 +16,12 @@ public class LayUI {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMag() {
+        return mag;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMag(String mag) {
+        this.mag = mag;
     }
 
     public Integer getCount() {
@@ -40,3 +40,4 @@ public class LayUI {
         this.data = data;
     }
 }
+

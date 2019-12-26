@@ -16,5 +16,5 @@ import com.hy.crm.entity.User;
 public interface IDocumentaryService extends IService<Documentary> {
     public LayUI queryAll(Integer pageNum, Integer size, Documentary documentary, String kinds);
    // public void addDoc(Documentary documentary);
-    public LayUI queryMy(Integer pageNum, Integer size,Documentary documentary,String kinds, User user);
+    public LayUI queryMy(Integer pageNum, Integer size, Documentary documentary, String kinds, User user);
 }

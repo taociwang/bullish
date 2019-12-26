@@ -1,5 +1,9 @@
 package com.hy.crm.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -17,6 +21,7 @@ public class Income implements Serializable {
     /**
      * 收入id
      */
+    @TableId(value = "sid" ,type = IdType.AUTO)
     private Integer sid;
 
     /**
@@ -73,6 +78,9 @@ public class Income implements Serializable {
      * 关联合同
      */
     private String contract;
+
+    @TableField(exist = false)
+    private int cid;
 
     public Integer getSid() {
         return sid;
@@ -157,6 +165,14 @@ public class Income implements Serializable {
 
     public void setContract(String contract) {
         this.contract = contract;
+    }
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
     @Override

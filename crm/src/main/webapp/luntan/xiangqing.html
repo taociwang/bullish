@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的-->
+</head>
+<script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
+<body>
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <div style="text-align: right">
+            <button type="button" class="layui-btn">
+                <a href="/luntan/luntan.html"><i class="layui-icon">&#xe603;</i> 返回</a>
+            </button>
+            <button type="button" class="layui-btn" id="shezhi">
+                <a href="#" onclick="shezhi()"><i class="layui-icon">&#xe620;</i> 设置</a>
+            </button>
+            <button type="button" class="layui-btn">
+                <a href="#"><i class="layui-icon">&#xe640;</i> 删除</a>
+            </button>
+            <button type="button" class="layui-btn">
+                <a href="#"><i class="layui-icon">&#xe666;</i> 刷新</a>
+            </button>
+        </div>
+    </div>
+</div>
+<hr class="layui-bg-red">
+
+<script>
+    window.shezhi=function(){
+        layer.open({
+            type: 2,
+            shade: false,
+            area: ['350px', '400px'],
+            maxmin: true,
+            content: '/luntan/tiezi_setting.html',
+            zIndex: layer.zIndex, //重点1
+            cancel: function(index, layero){
+                if(confirm('确定要关闭么')){ //只有当点击confirm框的确定时，该层才会关闭
+                    layer.close(index)
+                    table.reload('test', {});
+                    loadIndex = layer.load(2, { shade: [0.15, '#ccc'] });
+                }
+                return false;
+            },
+            end:function(){
+                table.reload('test', {});
+            }
+        });
+    }
+</script>
+
+<div style="padding: 20px; background-color: #F2F2F2; width: 200%">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    [[${thelist.theme_author}]] 发表于 [[${thelist.reply_time}]]
+                </div>
+                <div class="layui-card-body">
+                    [[${thelist.neirong}]]
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="padding: 20px; background-color: #F2F2F2; width:200%">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card" th:each="reply:${the1list}">
+                <div class="layui-card-header">
+                    [[${reply.reply_name}]]发表于[[${#dates.format(reply.reply_time,'yyyy-MM-dd HH:mm:ss')}]]
+                </div>
+                <div class="layui-card-body">
+                    [[${reply.replycontent}]]
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form class="layui-form" action="/crm/reply/add.do" lay-filter="example">
+    <input type="hidden" th:value="${thelist.fid}" name="fid">
+    <div class="layui-form-label">发表回复</div><br/><br/><br/>
+    <input type="hidden" name="post_id" th:value="${thelist.getFid()}">
+    <div class="layui-input-inline" style="size: 200px;width: 200%">
+        <div class="layui-input-inline">
+            <input name="replycontent" id="demo" style="display: none;"  autocompxlete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="layui-form" lay-filter="demo1">提交</button>
+            <button type="button" class="layui-btn layui-btn-primary"><a href="/luntan/luntan.html">取消</a></button>
+        </div>
+    </div>
+</form>
+
+
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script src="/static/layui/jquery-3.3.1.min.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','upload'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+        var upload = layui.upload;
+
+        layedit.build('demo'); //建立编辑器
+        //下拉框事件
+        form.on('select(tjhtsj)', function(data){
+
+        });
+
+        //日期
+        laydate.render({
+            elem: '#aa'
+        });
+        laydate.render({
+            elem: '#effectivedate'
+        });
+        laydate.render({
+            elem: '#timelimit'
+        });
+
+        form.on('submit(demo1)', function(data){
+            var index=parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        });
+
+        //上传文件
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            ,url: '/forum/fileUpload.action' //上传接口
+            ,accept: 'file'
+            ,done: function(res){
+                //上传完毕回调
+                if(res=='1'){
+                    layer.msg('上传成功', {icon: 6,time:2000});
+                    table.reload("test",{
+                        page:{
+                            curr:1
+                        }
+                    });
+                }else{
+                    layer.msg('上传失败', {icon: 5,time:2000});
+                }
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+
+        //监听from的提交
+
+
+    });
+</script>
+
+</body>
+</html>

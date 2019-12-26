@@ -114,7 +114,7 @@ public class DocumentaryController {
         LayUI layUI = new LayUI();
 
         layUI.setCode(0);
-        layUI.setMsg("");
+        layUI.setMag("");
         layUI.setData(doc_data.querydd());
         return layUI;
     }

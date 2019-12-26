@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hy.crm.entity.Business;
-import com.hy.crm.entity.Documentary;
-import com.hy.crm.entity.LayUI;
-import com.hy.crm.entity.User;
+import com.hy.crm.entity.*;
 import com.hy.crm.mapper.Doc_busMapper;
 import com.hy.crm.mapper.DocumentaryMapper;
 import com.hy.crm.service.IDocumentaryService;
@@ -31,7 +28,7 @@ public class DocumentaryServiceImpl extends ServiceImpl<DocumentaryMapper, Docum
     @Autowired
     private Doc_busMapper db;
     @Override
-    public LayUI queryAll(Integer pageNum, Integer size,Documentary documentary,String kinds) {
+    public LayUI queryAll(Integer pageNum, Integer size, Documentary documentary, String kinds) {
         System.out.println(kinds);
         //Page page = PageHelper.startPage(size,pageNum,true);
         IPage page=new Page(size,pageNum);
@@ -50,7 +47,7 @@ public class DocumentaryServiceImpl extends ServiceImpl<DocumentaryMapper, Docum
         page=documentaryMapper.selectPage(page,wrapper);
         LayUI layui = new LayUI();
         layui.setCode(0);
-        layui.setMsg("");
+        layui.setMag("");
         Long l = page.getTotal();
         layui.setCount(l.intValue());
         layui.setData(page.getRecords());
@@ -62,7 +59,7 @@ public class DocumentaryServiceImpl extends ServiceImpl<DocumentaryMapper, Docum
     }*/
 
     @Override
-    public LayUI queryMy(Integer pageNum, Integer size,Documentary documentary,String kinds,User user) {
+    public LayUI queryMy(Integer pageNum, Integer size, Documentary documentary, String kinds, User user) {
         System.out.println(kinds);
        // Page page = PageHelper.startPage(size,pageNum,true);
         IPage page=new Page(size,pageNum);
@@ -82,7 +79,7 @@ public class DocumentaryServiceImpl extends ServiceImpl<DocumentaryMapper, Docum
         page=documentaryMapper.selectPage(page,wrapper);
         LayUI layui = new LayUI();
         layui.setCode(0);
-        layui.setMsg("");
+        layui.setMag("");
         Long l = page.getTotal();
         layui.setCount(l.intValue());
         layui.setData(page.getRecords());
