@@ -39,6 +39,8 @@ public class UserController {
     @RequestMapping("/login.do")
     @ResponseBody
     public int login(User user, HttpServletRequest request){
+        //根据用户名称(唯一)查询user
+        request.getSession().setAttribute("user",userService.getOne(new QueryWrapper<User>().eq("username",user.getUsername())));
         //将用户名存入shiro usernamePasswordToken;
         request.getSession().setAttribute("user",user);
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());

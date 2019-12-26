@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class UploadController {
@@ -38,10 +40,17 @@ public class UploadController {
             if (!fileDir.exists()) { //如果不存在 则创建
                 fileDir.mkdirs();
             }
-            File localFile = new File(fileDir,myFileName);//在CRMFileUpload文件夹下创建一个文件对象作为上传的真正位置
+            Date date=new Date();
+            SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
+            String da=dateFormat.format(date);
+            String name=myFileName.substring(0,myFileName.lastIndexOf("."));
+            name=name+da;
+            name=name+myFileName.substring(myFileName.lastIndexOf("."),myFileName.length());
+            System.out.println(name);
+            File localFile = new File(fileDir,name);//在CRMFileUpload文件夹下创建一个文件对象作为上传的真正位置
             try {
                 file.transferTo(localFile);//将文件对象内容复制到localFile
-                url=fileName+"/"+myFileName;
+                url=fileName+"/"+name;
                 return "1";
             } catch (IllegalStateException e) {
                 // TODO Auto-generated catch block

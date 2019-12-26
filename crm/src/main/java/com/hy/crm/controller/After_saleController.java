@@ -1,21 +1,21 @@
 package com.hy.crm.controller;
 
 
-import com.hy.crm.entity.After_sale;
-import com.hy.crm.entity.Clien;
-import com.hy.crm.entity.Contract;
-import com.hy.crm.entity.Data;
+import com.hy.crm.entity.*;
 import com.hy.crm.service.impl.After_saleServiceImpl;
 import com.hy.crm.service.impl.ClienServiceImpl;
 import com.hy.crm.service.impl.ContractServiceImpl;
 import com.hy.crm.service.impl.DataServiceImpl;
 import com.hy.crm.util.LayuiData;
+import net.sf.jsqlparser.statement.select.Limit;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -104,9 +104,10 @@ public class After_saleController {
      * @return
      */
     @RequestMapping("/add.do")
-    public String add(After_sale after_sale){
-        after_sale.setAccessory(UploadController.url);
-        after_saleService.save(after_sale);
+    public String add(After_sale after_sale, HttpServletRequest request){
+        //String username=(String)SecurityUtils.getSubject().getPrincipal();
+        User user=(User)request.getSession().getAttribute("user");
+        after_saleService.add(after_sale,user);
         return "redirect:/after_sale/query.html";
     }
 
